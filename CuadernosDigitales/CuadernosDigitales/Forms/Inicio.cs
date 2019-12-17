@@ -28,8 +28,24 @@ namespace CuadernosDigitales.Forms
 
         }
 
+        private void MostrarFormEnPanel(Object form)
+        {
+            if (this.Controls.Count > 0)
+            {
+                this.Controls.RemoveAt(0);
+            }
+
+            Form formPanel = form as Form;
+            formPanel.TopLevel =  false;
+            formPanel.Dock = DockStyle.Fill;
+            this.Controls.Add(formPanel);
+            this.Tag = formPanel;
+            formPanel.Show();
+        }
+
         private void NuevoCuadernoButton_Click(object sender, EventArgs e)
         {
+            MostrarFormEnPanel(new NuevoCuaderno());
             if (columasCont == 4)
             {
                 filasCont++;
@@ -44,7 +60,7 @@ namespace CuadernosDigitales.Forms
             pictureBox.Location = new Point(x, y);
             pictureBox.Name = "pictureBox";
             pictureBox.Size = new System.Drawing.Size(100, 110);
-            inicioPaneL.Controls.Add(pictureBox);
+            inicioPanel.Controls.Add(pictureBox);
             columasCont++;
 
         }

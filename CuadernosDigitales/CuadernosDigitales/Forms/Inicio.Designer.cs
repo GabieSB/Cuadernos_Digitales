@@ -32,9 +32,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.buscarCuadernoTextBox = new System.Windows.Forms.TextBox();
-            this.inicioPaneL = new System.Windows.Forms.Panel();
+            this.inicioPanel = new System.Windows.Forms.Panel();
             this.button2 = new System.Windows.Forms.Button();
-            this.inicioPaneL.SuspendLayout();
+            this.inicioPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // nuevoCuadernoButton
@@ -84,16 +84,17 @@
             this.buscarCuadernoTextBox.Size = new System.Drawing.Size(147, 25);
             this.buscarCuadernoTextBox.TabIndex = 4;
             // 
-            // inicioPaneL
+            // inicioPanel
             // 
-            this.inicioPaneL.Controls.Add(this.button2);
-            this.inicioPaneL.Controls.Add(this.nuevoCuadernoButton);
-            this.inicioPaneL.Controls.Add(this.buscarCuadernoTextBox);
-            this.inicioPaneL.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.inicioPaneL.Location = new System.Drawing.Point(0, 0);
-            this.inicioPaneL.Name = "inicioPaneL";
-            this.inicioPaneL.Size = new System.Drawing.Size(670, 443);
-            this.inicioPaneL.TabIndex = 5;
+            this.inicioPanel.BackColor = System.Drawing.SystemColors.Control;
+            this.inicioPanel.Controls.Add(this.button2);
+            this.inicioPanel.Controls.Add(this.nuevoCuadernoButton);
+            this.inicioPanel.Controls.Add(this.buscarCuadernoTextBox);
+            this.inicioPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.inicioPanel.Location = new System.Drawing.Point(0, 0);
+            this.inicioPanel.Name = "inicioPanel";
+            this.inicioPanel.Size = new System.Drawing.Size(670, 443);
+            this.inicioPanel.TabIndex = 5;
             // 
             // button2
             // 
@@ -117,15 +118,15 @@
             this.AutoScroll = true;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(670, 443);
-            this.Controls.Add(this.inicioPaneL);
+            this.Controls.Add(this.inicioPanel);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Inicio";
             this.Text = "Inicio";
             this.Load += new System.EventHandler(this.InicioForm_Load);
-            this.inicioPaneL.ResumeLayout(false);
-            this.inicioPaneL.PerformLayout();
+            this.inicioPanel.ResumeLayout(false);
+            this.inicioPanel.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -137,7 +138,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox buscarCuadernoTextBox;
-        private System.Windows.Forms.Panel inicioPaneL;
+        private System.Windows.Forms.Panel inicioPanel;
         private System.Windows.Forms.Button button2;
     }
 }

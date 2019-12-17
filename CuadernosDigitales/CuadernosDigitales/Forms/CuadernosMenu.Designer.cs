@@ -216,11 +216,12 @@
             // 
             // cuerpoPanel
             // 
+            this.cuerpoPanel.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.cuerpoPanel.Font = new System.Drawing.Font("The Blacklist", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cuerpoPanel.ForeColor = System.Drawing.SystemColors.GrayText;
             this.cuerpoPanel.Location = new System.Drawing.Point(188, 46);
             this.cuerpoPanel.Name = "cuerpoPanel";
-            this.cuerpoPanel.Size = new System.Drawing.Size(688, 548);
+            this.cuerpoPanel.Size = new System.Drawing.Size(688, 577);
             this.cuerpoPanel.TabIndex = 2;
             // 
             // CuadernosInicio
