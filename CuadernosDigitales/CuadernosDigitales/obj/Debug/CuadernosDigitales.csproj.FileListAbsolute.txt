@@ -10,3 +10,4 @@ C:\Users\Asus\Documents\GitHub\Cuadernos_Digitales\CuadernosDigitales\CuadernosD
 C:\Users\Asus\Documents\GitHub\Cuadernos_Digitales\CuadernosDigitales\CuadernosDigitales\obj\Debug\CuadernosDigitales.pdb
 C:\Users\Asus\Documents\GitHub\Cuadernos_Digitales\CuadernosDigitales\CuadernosDigitales\obj\Debug\CuadernosDigitales.Forms.Inicio.resources
 C:\Users\Asus\Documents\GitHub\Cuadernos_Digitales\CuadernosDigitales\CuadernosDigitales\obj\Debug\CuadernosDigitales.Forms.NuevoCuaderno.resources
+C:\Users\Asus\Documents\GitHub\Cuadernos_Digitales\CuadernosDigitales\CuadernosDigitales\obj\Debug\CuadernosDigitales.Forms.NotasMenu.resources

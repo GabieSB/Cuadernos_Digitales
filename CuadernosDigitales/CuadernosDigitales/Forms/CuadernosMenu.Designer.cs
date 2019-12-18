@@ -97,7 +97,7 @@
             this.cerrarButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cerrarButton.Font = new System.Drawing.Font("NewsGoth BT", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cerrarButton.ForeColor = System.Drawing.SystemColors.Control;
-            this.cerrarButton.Location = new System.Drawing.Point(16, 351);
+            this.cerrarButton.Location = new System.Drawing.Point(16, 352);
             this.cerrarButton.Name = "cerrarButton";
             this.cerrarButton.Size = new System.Drawing.Size(163, 63);
             this.cerrarButton.TabIndex = 5;
@@ -185,6 +185,7 @@
             this.cabezaPanel.Name = "cabezaPanel";
             this.cabezaPanel.Size = new System.Drawing.Size(688, 46);
             this.cabezaPanel.TabIndex = 1;
+            this.cabezaPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.CabezaPanel_Paint);
             this.cabezaPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.CabezaPanel_MouseDown);
             // 
             // tituloLabel
@@ -216,12 +217,13 @@
             // 
             // cuerpoPanel
             // 
-            this.cuerpoPanel.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.cuerpoPanel.Font = new System.Drawing.Font("The Blacklist", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cuerpoPanel.BackColor = System.Drawing.SystemColors.Control;
+            this.cuerpoPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cuerpoPanel.Font = new System.Drawing.Font("NewsGoth BT", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cuerpoPanel.ForeColor = System.Drawing.SystemColors.GrayText;
             this.cuerpoPanel.Location = new System.Drawing.Point(188, 46);
             this.cuerpoPanel.Name = "cuerpoPanel";
-            this.cuerpoPanel.Size = new System.Drawing.Size(688, 577);
+            this.cuerpoPanel.Size = new System.Drawing.Size(688, 580);
             this.cuerpoPanel.TabIndex = 2;
             // 
             // CuadernosInicio

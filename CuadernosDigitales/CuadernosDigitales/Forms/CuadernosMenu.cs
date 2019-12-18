@@ -41,8 +41,12 @@ namespace CuadernosDigitales
 
         private void CloseAppButton_Click(object sender, EventArgs e)
         {
-            
-            Application.Exit();
+            DialogResult resultado = MessageBox.Show("¿Desea cerrar la aplicación?", "Confirmacion", MessageBoxButtons.YesNoCancel);
+            if (resultado == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+           
         }
 
         private void ComprimirButton_Click(object sender, EventArgs e)
@@ -94,6 +98,11 @@ namespace CuadernosDigitales
             etiquetaInicio.Visible = true;
             etiquetaHistorial.Visible = false;
             etiquetaCambiarU.Visible = false;
+        }
+
+        private void CabezaPanel_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

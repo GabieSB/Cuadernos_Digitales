@@ -35,34 +35,38 @@
             this.label1 = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.agregarCategoriaButton = new System.Windows.Forms.Button();
-            this.categoriasPanel = new System.Windows.Forms.FlowLayoutPanel();
-            this.categoriaTextBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.colorLabel = new System.Windows.Forms.Label();
+            this.nuevoCuadernoPanel = new System.Windows.Forms.Panel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.colorSeleccionadoPanel = new System.Windows.Forms.Panel();
+            this.coloresPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.greenButton = new System.Windows.Forms.Button();
             this.redButton = new System.Windows.Forms.Button();
             this.orangeButton = new System.Windows.Forms.Button();
             this.yellowButton = new System.Windows.Forms.Button();
             this.blueButton = new System.Windows.Forms.Button();
-            this.purpleButton = new System.Windows.Forms.Button();
-            this.pinkButton = new System.Windows.Forms.Button();
             this.deepSkyBlueButton = new System.Windows.Forms.Button();
+            this.deepPinkButton = new System.Windows.Forms.Button();
+            this.pinkButton = new System.Windows.Forms.Button();
+            this.purpleButton = new System.Windows.Forms.Button();
             this.whiteButton = new System.Windows.Forms.Button();
             this.grayButton = new System.Windows.Forms.Button();
-            this.deepPinkButton = new System.Windows.Forms.Button();
             this.blackButton = new System.Windows.Forms.Button();
+            this.cabezaPanel = new System.Windows.Forms.Panel();
+            this.closeNuevoCuadernoButton = new System.Windows.Forms.Button();
+            this.closeAppButton = new System.Windows.Forms.Button();
             this.crearCuadernoButton = new System.Windows.Forms.Button();
-            this.categoriasPanel.SuspendLayout();
-            this.panel1.SuspendLayout();
-            this.flowLayoutPanel1.SuspendLayout();
+            this.colorLabel = new System.Windows.Forms.Label();
+            this.nuevoCuadernoPanel.SuspendLayout();
+            this.coloresPanel.SuspendLayout();
+            this.cabezaPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // nombreCuadernoTextBox
             // 
             this.nombreCuadernoTextBox.Font = new System.Drawing.Font("NewsGoth BT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nombreCuadernoTextBox.Location = new System.Drawing.Point(177, 122);
+            this.nombreCuadernoTextBox.MaxLength = 50;
             this.nombreCuadernoTextBox.Name = "nombreCuadernoTextBox";
             this.nombreCuadernoTextBox.Size = new System.Drawing.Size(244, 27);
             this.nombreCuadernoTextBox.TabIndex = 0;
@@ -71,7 +75,7 @@
             // 
             this.nuevoCuadernoLabel.AutoSize = true;
             this.nuevoCuadernoLabel.Font = new System.Drawing.Font("Dream Orphans", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nuevoCuadernoLabel.Location = new System.Drawing.Point(232, 36);
+            this.nuevoCuadernoLabel.Location = new System.Drawing.Point(265, 9);
             this.nuevoCuadernoLabel.Name = "nuevoCuadernoLabel";
             this.nuevoCuadernoLabel.Size = new System.Drawing.Size(205, 32);
             this.nuevoCuadernoLabel.TabIndex = 1;
@@ -109,25 +113,6 @@
             this.agregarCategoriaButton.UseVisualStyleBackColor = false;
             this.agregarCategoriaButton.Click += new System.EventHandler(this.AgregarCategoriaButton_Click);
             // 
-            // categoriasPanel
-            // 
-            this.categoriasPanel.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.categoriasPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.categoriasPanel.Controls.Add(this.categoriaTextBox);
-            this.categoriasPanel.Location = new System.Drawing.Point(177, 172);
-            this.categoriasPanel.Name = "categoriasPanel";
-            this.categoriasPanel.Size = new System.Drawing.Size(460, 87);
-            this.categoriasPanel.TabIndex = 7;
-            this.categoriasPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.CategoriasPanel_Paint);
-            // 
-            // categoriaTextBox
-            // 
-            this.categoriaTextBox.Font = new System.Drawing.Font("NewsGoth BT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.categoriaTextBox.Location = new System.Drawing.Point(3, 3);
-            this.categoriaTextBox.Name = "categoriaTextBox";
-            this.categoriaTextBox.Size = new System.Drawing.Size(145, 27);
-            this.categoriaTextBox.TabIndex = 0;
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -137,53 +122,65 @@
             this.label2.TabIndex = 8;
             this.label2.Text = "(max 9)";
             // 
-            // panel1
+            // nuevoCuadernoPanel
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.Control;
-            this.panel1.Controls.Add(this.crearCuadernoButton);
-            this.panel1.Controls.Add(this.flowLayoutPanel1);
-            this.panel1.Controls.Add(this.colorLabel);
-            this.panel1.Controls.Add(this.agregarCategoriaButton);
-            this.panel1.Controls.Add(this.nuevoCuadernoLabel);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.nombreCuadernoLabel);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.categoriasPanel);
-            this.panel1.Controls.Add(this.nombreCuadernoTextBox);
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(695, 543);
-            this.panel1.TabIndex = 9;
-            // 
-            // colorLabel
-            // 
-            this.colorLabel.AutoSize = true;
-            this.colorLabel.Font = new System.Drawing.Font("NewsGoth BT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.colorLabel.Location = new System.Drawing.Point(59, 293);
-            this.colorLabel.Name = "colorLabel";
-            this.colorLabel.Size = new System.Drawing.Size(64, 19);
-            this.colorLabel.TabIndex = 9;
-            this.colorLabel.Text = "COLOR:";
-            this.colorLabel.Click += new System.EventHandler(this.Label3_Click);
+            this.nuevoCuadernoPanel.BackColor = System.Drawing.SystemColors.Control;
+            this.nuevoCuadernoPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.nuevoCuadernoPanel.Controls.Add(this.flowLayoutPanel1);
+            this.nuevoCuadernoPanel.Controls.Add(this.colorSeleccionadoPanel);
+            this.nuevoCuadernoPanel.Controls.Add(this.coloresPanel);
+            this.nuevoCuadernoPanel.Controls.Add(this.cabezaPanel);
+            this.nuevoCuadernoPanel.Controls.Add(this.closeAppButton);
+            this.nuevoCuadernoPanel.Controls.Add(this.crearCuadernoButton);
+            this.nuevoCuadernoPanel.Controls.Add(this.colorLabel);
+            this.nuevoCuadernoPanel.Controls.Add(this.agregarCategoriaButton);
+            this.nuevoCuadernoPanel.Controls.Add(this.label2);
+            this.nuevoCuadernoPanel.Controls.Add(this.nombreCuadernoLabel);
+            this.nuevoCuadernoPanel.Controls.Add(this.label1);
+            this.nuevoCuadernoPanel.Controls.Add(this.nombreCuadernoTextBox);
+            this.nuevoCuadernoPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.nuevoCuadernoPanel.ForeColor = System.Drawing.Color.Black;
+            this.nuevoCuadernoPanel.Location = new System.Drawing.Point(0, 0);
+            this.nuevoCuadernoPanel.Name = "nuevoCuadernoPanel";
+            this.nuevoCuadernoPanel.Size = new System.Drawing.Size(696, 471);
+            this.nuevoCuadernoPanel.TabIndex = 9;
             // 
             // flowLayoutPanel1
             // 
-            this.flowLayoutPanel1.Controls.Add(this.greenButton);
-            this.flowLayoutPanel1.Controls.Add(this.redButton);
-            this.flowLayoutPanel1.Controls.Add(this.orangeButton);
-            this.flowLayoutPanel1.Controls.Add(this.yellowButton);
-            this.flowLayoutPanel1.Controls.Add(this.blueButton);
-            this.flowLayoutPanel1.Controls.Add(this.deepSkyBlueButton);
-            this.flowLayoutPanel1.Controls.Add(this.deepPinkButton);
-            this.flowLayoutPanel1.Controls.Add(this.pinkButton);
-            this.flowLayoutPanel1.Controls.Add(this.purpleButton);
-            this.flowLayoutPanel1.Controls.Add(this.whiteButton);
-            this.flowLayoutPanel1.Controls.Add(this.grayButton);
-            this.flowLayoutPanel1.Controls.Add(this.blackButton);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(177, 293);
+            this.flowLayoutPanel1.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.flowLayoutPanel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(177, 172);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(149, 111);
-            this.flowLayoutPanel1.TabIndex = 10;
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(456, 102);
+            this.flowLayoutPanel1.TabIndex = 17;
+            // 
+            // colorSeleccionadoPanel
+            // 
+            this.colorSeleccionadoPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.colorSeleccionadoPanel.Location = new System.Drawing.Point(181, 308);
+            this.colorSeleccionadoPanel.Name = "colorSeleccionadoPanel";
+            this.colorSeleccionadoPanel.Size = new System.Drawing.Size(26, 24);
+            this.colorSeleccionadoPanel.TabIndex = 16;
+            // 
+            // coloresPanel
+            // 
+            this.coloresPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.coloresPanel.Controls.Add(this.greenButton);
+            this.coloresPanel.Controls.Add(this.redButton);
+            this.coloresPanel.Controls.Add(this.orangeButton);
+            this.coloresPanel.Controls.Add(this.yellowButton);
+            this.coloresPanel.Controls.Add(this.blueButton);
+            this.coloresPanel.Controls.Add(this.deepSkyBlueButton);
+            this.coloresPanel.Controls.Add(this.deepPinkButton);
+            this.coloresPanel.Controls.Add(this.pinkButton);
+            this.coloresPanel.Controls.Add(this.purpleButton);
+            this.coloresPanel.Controls.Add(this.whiteButton);
+            this.coloresPanel.Controls.Add(this.grayButton);
+            this.coloresPanel.Controls.Add(this.blackButton);
+            this.coloresPanel.Location = new System.Drawing.Point(213, 302);
+            this.coloresPanel.Name = "coloresPanel";
+            this.coloresPanel.Size = new System.Drawing.Size(148, 111);
+            this.coloresPanel.TabIndex = 10;
             // 
             // greenButton
             // 
@@ -193,6 +190,7 @@
             this.greenButton.Size = new System.Drawing.Size(30, 30);
             this.greenButton.TabIndex = 0;
             this.greenButton.UseVisualStyleBackColor = false;
+            this.greenButton.Click += new System.EventHandler(this.GreenButton_Click);
             // 
             // redButton
             // 
@@ -203,6 +201,7 @@
             this.redButton.Size = new System.Drawing.Size(30, 30);
             this.redButton.TabIndex = 1;
             this.redButton.UseVisualStyleBackColor = false;
+            this.redButton.Click += new System.EventHandler(this.RedButton_Click);
             // 
             // orangeButton
             // 
@@ -212,6 +211,7 @@
             this.orangeButton.Size = new System.Drawing.Size(30, 30);
             this.orangeButton.TabIndex = 2;
             this.orangeButton.UseVisualStyleBackColor = false;
+            this.orangeButton.Click += new System.EventHandler(this.OrangeButton_Click);
             // 
             // yellowButton
             // 
@@ -221,6 +221,7 @@
             this.yellowButton.Size = new System.Drawing.Size(30, 30);
             this.yellowButton.TabIndex = 3;
             this.yellowButton.UseVisualStyleBackColor = false;
+            this.yellowButton.Click += new System.EventHandler(this.YellowButton_Click);
             // 
             // blueButton
             // 
@@ -230,24 +231,7 @@
             this.blueButton.Size = new System.Drawing.Size(30, 30);
             this.blueButton.TabIndex = 4;
             this.blueButton.UseVisualStyleBackColor = false;
-            // 
-            // purpleButton
-            // 
-            this.purpleButton.BackColor = System.Drawing.Color.Purple;
-            this.purpleButton.Location = new System.Drawing.Point(3, 75);
-            this.purpleButton.Name = "purpleButton";
-            this.purpleButton.Size = new System.Drawing.Size(30, 30);
-            this.purpleButton.TabIndex = 5;
-            this.purpleButton.UseVisualStyleBackColor = false;
-            // 
-            // pinkButton
-            // 
-            this.pinkButton.BackColor = System.Drawing.Color.Pink;
-            this.pinkButton.Location = new System.Drawing.Point(111, 39);
-            this.pinkButton.Name = "pinkButton";
-            this.pinkButton.Size = new System.Drawing.Size(30, 30);
-            this.pinkButton.TabIndex = 6;
-            this.pinkButton.UseVisualStyleBackColor = false;
+            this.blueButton.Click += new System.EventHandler(this.BlueButton_Click);
             // 
             // deepSkyBlueButton
             // 
@@ -257,24 +241,7 @@
             this.deepSkyBlueButton.Size = new System.Drawing.Size(30, 30);
             this.deepSkyBlueButton.TabIndex = 7;
             this.deepSkyBlueButton.UseVisualStyleBackColor = false;
-            // 
-            // whiteButton
-            // 
-            this.whiteButton.BackColor = System.Drawing.Color.White;
-            this.whiteButton.Location = new System.Drawing.Point(39, 75);
-            this.whiteButton.Name = "whiteButton";
-            this.whiteButton.Size = new System.Drawing.Size(30, 30);
-            this.whiteButton.TabIndex = 8;
-            this.whiteButton.UseVisualStyleBackColor = false;
-            // 
-            // grayButton
-            // 
-            this.grayButton.BackColor = System.Drawing.Color.Gray;
-            this.grayButton.Location = new System.Drawing.Point(75, 75);
-            this.grayButton.Name = "grayButton";
-            this.grayButton.Size = new System.Drawing.Size(30, 30);
-            this.grayButton.TabIndex = 9;
-            this.grayButton.UseVisualStyleBackColor = false;
+            this.deepSkyBlueButton.Click += new System.EventHandler(this.DeepSkyBlueButton_Click);
             // 
             // deepPinkButton
             // 
@@ -284,6 +251,47 @@
             this.deepPinkButton.Size = new System.Drawing.Size(30, 30);
             this.deepPinkButton.TabIndex = 10;
             this.deepPinkButton.UseVisualStyleBackColor = false;
+            this.deepPinkButton.Click += new System.EventHandler(this.DeepPinkButton_Click);
+            // 
+            // pinkButton
+            // 
+            this.pinkButton.BackColor = System.Drawing.Color.Pink;
+            this.pinkButton.Location = new System.Drawing.Point(111, 39);
+            this.pinkButton.Name = "pinkButton";
+            this.pinkButton.Size = new System.Drawing.Size(30, 30);
+            this.pinkButton.TabIndex = 6;
+            this.pinkButton.UseVisualStyleBackColor = false;
+            this.pinkButton.Click += new System.EventHandler(this.PinkButton_Click);
+            // 
+            // purpleButton
+            // 
+            this.purpleButton.BackColor = System.Drawing.Color.Purple;
+            this.purpleButton.Location = new System.Drawing.Point(3, 75);
+            this.purpleButton.Name = "purpleButton";
+            this.purpleButton.Size = new System.Drawing.Size(30, 30);
+            this.purpleButton.TabIndex = 5;
+            this.purpleButton.UseVisualStyleBackColor = false;
+            this.purpleButton.Click += new System.EventHandler(this.PurpleButton_Click);
+            // 
+            // whiteButton
+            // 
+            this.whiteButton.BackColor = System.Drawing.Color.White;
+            this.whiteButton.Location = new System.Drawing.Point(39, 75);
+            this.whiteButton.Name = "whiteButton";
+            this.whiteButton.Size = new System.Drawing.Size(30, 30);
+            this.whiteButton.TabIndex = 8;
+            this.whiteButton.UseVisualStyleBackColor = false;
+            this.whiteButton.Click += new System.EventHandler(this.WhiteButton_Click);
+            // 
+            // grayButton
+            // 
+            this.grayButton.BackColor = System.Drawing.Color.Gray;
+            this.grayButton.Location = new System.Drawing.Point(75, 75);
+            this.grayButton.Name = "grayButton";
+            this.grayButton.Size = new System.Drawing.Size(30, 30);
+            this.grayButton.TabIndex = 9;
+            this.grayButton.UseVisualStyleBackColor = false;
+            this.grayButton.Click += new System.EventHandler(this.GrayButton_Click);
             // 
             // blackButton
             // 
@@ -293,6 +301,50 @@
             this.blackButton.Size = new System.Drawing.Size(30, 30);
             this.blackButton.TabIndex = 11;
             this.blackButton.UseVisualStyleBackColor = false;
+            this.blackButton.Click += new System.EventHandler(this.BlackButton_Click);
+            // 
+            // cabezaPanel
+            // 
+            this.cabezaPanel.BackColor = System.Drawing.Color.SkyBlue;
+            this.cabezaPanel.Controls.Add(this.closeNuevoCuadernoButton);
+            this.cabezaPanel.Controls.Add(this.nuevoCuadernoLabel);
+            this.cabezaPanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.cabezaPanel.Location = new System.Drawing.Point(0, 0);
+            this.cabezaPanel.Name = "cabezaPanel";
+            this.cabezaPanel.Size = new System.Drawing.Size(694, 46);
+            this.cabezaPanel.TabIndex = 14;
+            this.cabezaPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.CabezaPanel_MouseDown);
+            // 
+            // closeNuevoCuadernoButton
+            // 
+            this.closeNuevoCuadernoButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.closeNuevoCuadernoButton.BackColor = System.Drawing.Color.Red;
+            this.closeNuevoCuadernoButton.FlatAppearance.BorderColor = System.Drawing.Color.Red;
+            this.closeNuevoCuadernoButton.FlatAppearance.BorderSize = 2;
+            this.closeNuevoCuadernoButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.closeNuevoCuadernoButton.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.closeNuevoCuadernoButton.Location = new System.Drawing.Point(650, 12);
+            this.closeNuevoCuadernoButton.Name = "closeNuevoCuadernoButton";
+            this.closeNuevoCuadernoButton.Size = new System.Drawing.Size(32, 23);
+            this.closeNuevoCuadernoButton.TabIndex = 0;
+            this.closeNuevoCuadernoButton.Text = "X";
+            this.closeNuevoCuadernoButton.UseVisualStyleBackColor = false;
+            this.closeNuevoCuadernoButton.Click += new System.EventHandler(this.CloseNuevoCuadernoButton_Click);
+            // 
+            // closeAppButton
+            // 
+            this.closeAppButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.closeAppButton.BackColor = System.Drawing.Color.Red;
+            this.closeAppButton.FlatAppearance.BorderColor = System.Drawing.Color.Red;
+            this.closeAppButton.FlatAppearance.BorderSize = 2;
+            this.closeAppButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.closeAppButton.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.closeAppButton.Location = new System.Drawing.Point(651, 12);
+            this.closeAppButton.Name = "closeAppButton";
+            this.closeAppButton.Size = new System.Drawing.Size(32, 23);
+            this.closeAppButton.TabIndex = 13;
+            this.closeAppButton.Text = "X";
+            this.closeAppButton.UseVisualStyleBackColor = false;
             // 
             // crearCuadernoButton
             // 
@@ -302,27 +354,39 @@
             this.crearCuadernoButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.crearCuadernoButton.Font = new System.Drawing.Font("Dream Orphans", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.crearCuadernoButton.ForeColor = System.Drawing.Color.LightGray;
-            this.crearCuadernoButton.Location = new System.Drawing.Point(539, 413);
+            this.crearCuadernoButton.Location = new System.Drawing.Point(538, 413);
             this.crearCuadernoButton.Name = "crearCuadernoButton";
             this.crearCuadernoButton.Size = new System.Drawing.Size(133, 34);
             this.crearCuadernoButton.TabIndex = 12;
             this.crearCuadernoButton.Text = "CREAR CUADERNO";
             this.crearCuadernoButton.UseVisualStyleBackColor = false;
+            this.crearCuadernoButton.Click += new System.EventHandler(this.CrearCuadernoButton_Click);
+            // 
+            // colorLabel
+            // 
+            this.colorLabel.AutoSize = true;
+            this.colorLabel.Font = new System.Drawing.Font("NewsGoth BT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.colorLabel.Location = new System.Drawing.Point(65, 307);
+            this.colorLabel.Name = "colorLabel";
+            this.colorLabel.Size = new System.Drawing.Size(64, 19);
+            this.colorLabel.TabIndex = 9;
+            this.colorLabel.Text = "COLOR:";
             // 
             // NuevoCuaderno
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(696, 471);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.nuevoCuadernoPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "NuevoCuaderno";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Nuevo Cuaderno";
-            this.categoriasPanel.ResumeLayout(false);
-            this.categoriasPanel.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.flowLayoutPanel1.ResumeLayout(false);
+            this.nuevoCuadernoPanel.ResumeLayout(false);
+            this.nuevoCuadernoPanel.PerformLayout();
+            this.coloresPanel.ResumeLayout(false);
+            this.cabezaPanel.ResumeLayout(false);
+            this.cabezaPanel.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -335,12 +399,10 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.Button agregarCategoriaButton;
-        private System.Windows.Forms.FlowLayoutPanel categoriasPanel;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox categoriaTextBox;
+        private System.Windows.Forms.Panel nuevoCuadernoPanel;
         private System.Windows.Forms.Label colorLabel;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.FlowLayoutPanel coloresPanel;
         private System.Windows.Forms.Button greenButton;
         private System.Windows.Forms.Button redButton;
         private System.Windows.Forms.Button orangeButton;
@@ -354,5 +416,10 @@
         private System.Windows.Forms.Button grayButton;
         private System.Windows.Forms.Button blackButton;
         private System.Windows.Forms.Button crearCuadernoButton;
+        private System.Windows.Forms.Button closeAppButton;
+        private System.Windows.Forms.Panel cabezaPanel;
+        private System.Windows.Forms.Button closeNuevoCuadernoButton;
+        private System.Windows.Forms.Panel colorSeleccionadoPanel;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
     }
 }

@@ -46,6 +46,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Categoria.cs" />
+    <Compile Include="Cuaderno.cs" />
+    <Compile Include="Forms\NotasMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\NotasMenu.Designer.cs">
+      <DependentUpon>NotasMenu.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\CuadernosMenu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -64,8 +72,12 @@
     <Compile Include="Forms\NuevoCuaderno.Designer.cs">
       <DependentUpon>NuevoCuaderno.cs</DependentUpon>
     </Compile>
+    <Compile Include="Nota.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\NotasMenu.resx">
+      <DependentUpon>NotasMenu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\CuadernosMenu.resx">
       <DependentUpon>CuadernosMenu.cs</DependentUpon>
     </EmbeddedResource>
@@ -80,6 +92,7 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="Clases\CuadernosDigitales.cd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -98,9 +111,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Clases\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="Resources\around-20the-20world-20clipart-the-world-clipart-299_279.png" />
   </ItemGroup>

@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -13,40 +14,145 @@ namespace CuadernosDigitales.Forms
     public partial class NuevoCuaderno : Form
     {
         private int cantidadCategorias;
+        public static Cuaderno cuaderno;
+        public DialogResult cuadernoCreado;
+        private TextBox[] categoriasTexBox;
+        public Bitmap colorSeleccionado;
+
+        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
+        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
+        private extern static void SendMessage(System.IntPtr hwnd, int wmsg, int wparam, int lparam);
+
         public NuevoCuaderno()
         {
             InitializeComponent();
             cantidadCategorias = 1;
+            categoriasTexBox = new TextBox[9];
+            cuaderno = new Cuaderno();
+            agregarTextBoxs();
+            
+            
+        }
+        public void agregarTextBoxs()
+        {
+            for(int i = 0; i < 9; i++)
+            {
+                categoriasTexBox[i] = new TextBox();
+                categoriasTexBox[i].Font = new Font("NewsGoth BT", 12F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(0)));
+                // categoriaTextBox.Location = new System.Drawing.Point(x, y);
+                categoriasTexBox[i].Name = "categoriaTextBox";
+                categoriasTexBox[i].Size = new Size(145, 27);
+                categoriasTexBox[i].TabIndex = 0;
+                categoriasTexBox[i].Visible = false;
+                if (i == 0) categoriasTexBox[i].Visible = true;
+                this.flowLayoutPanel1.Controls.Add(categoriasTexBox[i]);
+            }
         }
 
         private void AgregarCategoriaButton_Click(object sender, EventArgs e)
         {
-            // int x = 171 + (155 * cantidadCategorias);
-            // int y = 167;
             if (cantidadCategorias < 9)
             {
-                TextBox categoriaTextBox = new TextBox();
-                categoriaTextBox.Font = new System.Drawing.Font("NewsGoth BT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-                // categoriaTextBox.Location = new System.Drawing.Point(x, y);
-                categoriaTextBox.Name = "categoriaTextBox";
-                categoriaTextBox.Size = new System.Drawing.Size(145, 27);
-                categoriaTextBox.TabIndex = 0;
-                this.categoriasPanel.Controls.Add(categoriaTextBox);
+                categoriasTexBox[cantidadCategorias].Visible = true;
                 cantidadCategorias++;
             }
-            
-            
+        }
+
+        private void CloseNuevoCuadernoButton_Click(object sender, EventArgs e)
+        {
+                this.Close();
+        }
+
+        private void CabezaPanel_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void GreenButton_Click(object sender, EventArgs e)
+        {
+            colorSeleccionadoPanel.BackColor = System.Drawing.Color.Green;
+            colorSeleccionado = Properties.Resources.Green;
+        }
+
+        private void RedButton_Click(object sender, EventArgs e)
+        {
+            colorSeleccionadoPanel.BackColor = System.Drawing.Color.Red;
+            colorSeleccionado = Properties.Resources.Red;
+        }
+
+        private void OrangeButton_Click(object sender, EventArgs e)
+        {
+            colorSeleccionadoPanel.BackColor = System.Drawing.Color.Orange;
+            colorSeleccionado = Properties.Resources.Orange;
+        }
+
+        private void YellowButton_Click(object sender, EventArgs e)
+        {
+            colorSeleccionadoPanel.BackColor = System.Drawing.Color.Yellow;
+            // colorSeleccionado = Properties.Resources.Yellow;
+        }
+
+        private void BlueButton_Click(object sender, EventArgs e)
+        {
+            colorSeleccionadoPanel.BackColor = System.Drawing.Color.Blue;
+            colorSeleccionado = Properties.Resources.Blue;
+        }
+
+        private void DeepSkyBlueButton_Click(object sender, EventArgs e)
+        {
+            colorSeleccionadoPanel.BackColor = System.Drawing.Color.DeepPink;
+            //colorSeleccionado = Properties.Resources.DeepSkyBlue;
+        }
+
+        private void DeepPinkButton_Click(object sender, EventArgs e)
+        {
+            colorSeleccionadoPanel.BackColor = System.Drawing.Color.DeepPink;
+            //colorSeleccionado = "DeepPink";
 
         }
 
-        private void CategoriasPanel_Paint(object sender, PaintEventArgs e)
+        private void PinkButton_Click(object sender, EventArgs e)
         {
-
+            colorSeleccionadoPanel.BackColor = System.Drawing.Color.Pink;
+           // colorSeleccionado = "Pink";
         }
 
-        private void Label3_Click(object sender, EventArgs e)
+        private void PurpleButton_Click(object sender, EventArgs e)
         {
+            colorSeleccionadoPanel.BackColor = System.Drawing.Color.Purple;
+            colorSeleccionado = Properties.Resources.Purple;
+        }
 
+        private void WhiteButton_Click(object sender, EventArgs e)
+        {
+            colorSeleccionadoPanel.BackColor = System.Drawing.Color.White;
+        }
+
+        private void GrayButton_Click(object sender, EventArgs e)
+        {
+            colorSeleccionadoPanel.BackColor = System.Drawing.Color.Gray;
+        }
+
+        private void BlackButton_Click(object sender, EventArgs e)
+        {
+            colorSeleccionadoPanel.BackColor = System.Drawing.Color.Black;
+        }
+
+        private void CrearCuadernoButton_Click(object sender, EventArgs e)
+        {
+            cuaderno.Nombre = nombreCuadernoTextBox.Text;
+            cuaderno.Color = colorSeleccionadoPanel.BackColor;
+           
+            for (int i = 0; i < 9; i++)
+            {
+                Categoria categoria1 = new Categoria();
+                categoria1.Nombre = categoriasTexBox[i].Text;
+                cuaderno.agregarCategoria(categoria1);
+            }
+            cuadernoCreado = DialogResult.Yes;
+            this.Close();
         }
     }
 }

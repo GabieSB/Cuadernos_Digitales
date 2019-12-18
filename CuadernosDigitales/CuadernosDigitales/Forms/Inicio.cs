@@ -12,7 +12,8 @@ namespace CuadernosDigitales.Forms
 {
     public partial class Inicio : Form
     {
-        List <PictureBox> picturesBooks;
+        public List <Cuaderno> cuadernos;
+        public static Cuaderno CuadernoSeleccionado;
         int columasCont ;
         int filasCont;
         
@@ -21,6 +22,7 @@ namespace CuadernosDigitales.Forms
             InitializeComponent();
             columasCont = 0;
             List<PictureBox> picturesBooks = new List<PictureBox>();
+            cuadernos = new List<Cuaderno>();
         }
 
         private void InicioForm_Load(object sender, EventArgs e)
@@ -43,26 +45,55 @@ namespace CuadernosDigitales.Forms
             formPanel.Show();
         }
 
+        private void CuadernoPicture_Click(object sender, EventArgs e)
+        {
+            PictureBox pic = sender as PictureBox;
+            foreach(Cuaderno cuaderno in cuadernos)
+            {
+                if (pic.Name == cuaderno.Nombre)
+                {
+                    CuadernoSeleccionado = new Cuaderno();
+                    CuadernoSeleccionado = cuaderno;
+                }
+            }
+            NotasMenu notasMenu = new NotasMenu();
+            notasMenu.ShowDialog();
+        }
+
         private void NuevoCuadernoButton_Click(object sender, EventArgs e)
         {
-            MostrarFormEnPanel(new NuevoCuaderno());
-            if (columasCont == 4)
+            NuevoCuaderno nuevoCuaderno = new NuevoCuaderno();
+            nuevoCuaderno.ShowDialog();
+
+            if (nuevoCuaderno.cuadernoCreado == DialogResult.Yes)
             {
-                filasCont++;
-                columasCont = 0;
+                //poner imagenes en 
+                if (columasCont == 4)
+                {
+                    filasCont++;
+                    columasCont = 0;
+                }
+                int x = 40 + (columasCont * 100 + columasCont * 60);
+                int y = 100 + 100 * filasCont + filasCont * 60;
+                
+                PictureBox pictureBox = new PictureBox();
+                pictureBox.Image = nuevoCuaderno.colorSeleccionado;
+                pictureBox.Location = new Point(x, y);
+                pictureBox.Name = NuevoCuaderno.cuaderno.Nombre;
+                pictureBox.Size = new System.Drawing.Size(100, 110);
+                pictureBox.Click += new System.EventHandler(this.CuadernoPicture_Click);
+
+                inicioPanel.Controls.Add(pictureBox);
+                columasCont++;
+                cuadernos.Add(NuevoCuaderno.cuaderno);
             }
-            int x = 40 + (columasCont * 100 + columasCont * 60);
-            int y = 100 + 100 * filasCont + filasCont*60;
+           
+
+        }
+
+        private void DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
             
-
-            PictureBox pictureBox = new PictureBox();
-            pictureBox.Image = global::CuadernosDigitales.Properties.Resources.azul;
-            pictureBox.Location = new Point(x, y);
-            pictureBox.Name = "pictureBox";
-            pictureBox.Size = new System.Drawing.Size(100, 110);
-            inicioPanel.Controls.Add(pictureBox);
-            columasCont++;
-
         }
     }
 }
