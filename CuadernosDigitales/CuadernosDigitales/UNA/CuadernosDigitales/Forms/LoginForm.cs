@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace CuadernosDigitales.UNA.CuadernosDigitales.Forms
 {
-    public partial class Usuario : Form
+    public partial class LoginForm : Form
     {
-        public Usuario()
+        public LoginForm()
         {
             InitializeComponent();
         }
