@@ -80,6 +80,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UNA\CuadernosDigitales\Clases\Usuario.cs" />
     <EmbeddedResource Include="UNA\CuadernosDigitales\Forms\NotasMenu.resx">
       <DependentUpon>NotasMenu.cs</DependentUpon>
     </EmbeddedResource>
