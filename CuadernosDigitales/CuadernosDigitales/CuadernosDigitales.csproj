@@ -46,45 +46,50 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Categoria.cs" />
-    <Compile Include="Cuaderno.cs" />
-    <Compile Include="Forms\NotasMenu.cs">
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="UNA\CuadernosDigitales\Clases\Categoria.cs" />
+    <Compile Include="UNA\CuadernosDigitales\Clases\Cuaderno.cs" />
+    <Compile Include="UNA\CuadernosDigitales\Clases\Nota.cs" />
+    <Compile Include="UNA\CuadernosDigitales\Forms\NotasMenu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\NotasMenu.Designer.cs">
+    <Compile Include="UNA\CuadernosDigitales\Forms\NotasMenu.Designer.cs">
       <DependentUpon>NotasMenu.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\CuadernosMenu.cs">
+    <Compile Include="UNA\CuadernosDigitales\Forms\CuadernosMenu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\CuadernosMenu.Designer.cs">
+    <Compile Include="UNA\CuadernosDigitales\Forms\CuadernosMenu.Designer.cs">
       <DependentUpon>CuadernosMenu.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Inicio.cs">
+    <Compile Include="UNA\CuadernosDigitales\Forms\Inicio.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Inicio.Designer.cs">
+    <Compile Include="UNA\CuadernosDigitales\Forms\Inicio.Designer.cs">
       <DependentUpon>Inicio.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\NuevoCuaderno.cs">
+    <Compile Include="UNA\CuadernosDigitales\Forms\NuevoCuaderno.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\NuevoCuaderno.Designer.cs">
+    <Compile Include="UNA\CuadernosDigitales\Forms\NuevoCuaderno.Designer.cs">
       <DependentUpon>NuevoCuaderno.cs</DependentUpon>
     </Compile>
-    <Compile Include="Nota.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Forms\NotasMenu.resx">
+    <EmbeddedResource Include="UNA\CuadernosDigitales\Forms\NotasMenu.resx">
       <DependentUpon>NotasMenu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\CuadernosMenu.resx">
+    <EmbeddedResource Include="UNA\CuadernosDigitales\Forms\CuadernosMenu.resx">
       <DependentUpon>CuadernosMenu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Inicio.resx">
+    <EmbeddedResource Include="UNA\CuadernosDigitales\Forms\Inicio.resx">
       <DependentUpon>Inicio.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\NuevoCuaderno.resx">
+    <EmbeddedResource Include="UNA\CuadernosDigitales\Forms\NuevoCuaderno.resx">
       <DependentUpon>NuevoCuaderno.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -92,16 +97,11 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="Clases\CuadernosDigitales.cd" />
+    <None Include="UNA\CuadernosDigitales\Clases\CuadernosDigitales.cd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -111,12 +111,17 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
-    <None Include="Resources\around-20the-20world-20clipart-the-world-clipart-299_279.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\descarga.jpg" />
+    <Content Include="UNA\CuadernosDigitales\Resources\azul.png" />
+    <Content Include="UNA\CuadernosDigitales\Resources\azul1.png" />
+    <Content Include="UNA\CuadernosDigitales\Resources\morado.png" />
+    <Content Include="UNA\CuadernosDigitales\Resources\morado1.png" />
+    <Content Include="UNA\CuadernosDigitales\Resources\naranja.png" />
+    <Content Include="UNA\CuadernosDigitales\Resources\naranja1.png" />
+    <Content Include="UNA\CuadernosDigitales\Resources\rojo.png" />
+    <Content Include="UNA\CuadernosDigitales\Resources\rojo1.png" />
+    <Content Include="UNA\CuadernosDigitales\Resources\verde.png" />
+    <Content Include="UNA\CuadernosDigitales\Resources\verde1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
