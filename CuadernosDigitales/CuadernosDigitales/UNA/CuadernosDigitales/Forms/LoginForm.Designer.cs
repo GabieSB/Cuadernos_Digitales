@@ -1,4 +1,4 @@
-﻿namespace CuadernosDigitales.UNA.CuadernosDigitales.Forms
+﻿namespace LoginForm
 {
     partial class LoginForm
     {
@@ -28,71 +28,105 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.LabelUsuario = new System.Windows.Forms.Label();
-            this.LabelContraseña = new System.Windows.Forms.Label();
-            this.TextBoxUsuario = new System.Windows.Forms.TextBox();
-            this.TextBoxContraseña = new System.Windows.Forms.TextBox();
+            this.closeAppButton = new System.Windows.Forms.Button();
+            this.cabezaPanel = new System.Windows.Forms.Panel();
             this.ButtonIngresar = new System.Windows.Forms.Button();
-            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
+            this.TextBoxContraseña = new System.Windows.Forms.TextBox();
+            this.TextBoxUsuario = new System.Windows.Forms.TextBox();
+            this.LabelContraseña = new System.Windows.Forms.Label();
+            this.LabelUsuario = new System.Windows.Forms.Label();
+            this.cabezaPanel.SuspendLayout();
             this.SuspendLayout();
             // 
-            // LabelUsuario
+            // closeAppButton
             // 
-            this.LabelUsuario.AutoSize = true;
-            this.LabelUsuario.Location = new System.Drawing.Point(101, 58);
-            this.LabelUsuario.Name = "LabelUsuario";
-            this.LabelUsuario.Size = new System.Drawing.Size(46, 13);
-            this.LabelUsuario.TabIndex = 0;
-            this.LabelUsuario.Text = "Usuario:";
+            this.closeAppButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.closeAppButton.BackColor = System.Drawing.Color.Red;
+            this.closeAppButton.FlatAppearance.BorderColor = System.Drawing.Color.Red;
+            this.closeAppButton.FlatAppearance.BorderSize = 2;
+            this.closeAppButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.closeAppButton.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.closeAppButton.Location = new System.Drawing.Point(556, 12);
+            this.closeAppButton.Name = "closeAppButton";
+            this.closeAppButton.Size = new System.Drawing.Size(32, 23);
+            this.closeAppButton.TabIndex = 0;
+            this.closeAppButton.Text = "X";
+            this.closeAppButton.UseVisualStyleBackColor = false;
+            this.closeAppButton.Click += new System.EventHandler(this.CloseAppButton_Click);
+            // 
+            // cabezaPanel
+            // 
+            this.cabezaPanel.BackColor = System.Drawing.Color.SkyBlue;
+            this.cabezaPanel.Controls.Add(this.closeAppButton);
+            this.cabezaPanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.cabezaPanel.Location = new System.Drawing.Point(0, 0);
+            this.cabezaPanel.Name = "cabezaPanel";
+            this.cabezaPanel.Size = new System.Drawing.Size(600, 46);
+            this.cabezaPanel.TabIndex = 1;
+            this.cabezaPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.CabezaPanel_MouseDown);
+            // 
+            // ButtonIngresar
+            // 
+            this.ButtonIngresar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ButtonIngresar.Location = new System.Drawing.Point(478, 247);
+            this.ButtonIngresar.Name = "ButtonIngresar";
+            this.ButtonIngresar.Size = new System.Drawing.Size(94, 33);
+            this.ButtonIngresar.TabIndex = 9;
+            this.ButtonIngresar.Text = "Ingresar";
+            this.ButtonIngresar.UseVisualStyleBackColor = true;
+            // 
+            // TextBoxContraseña
+            // 
+            this.TextBoxContraseña.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TextBoxContraseña.Location = new System.Drawing.Point(244, 157);
+            this.TextBoxContraseña.Name = "TextBoxContraseña";
+            this.TextBoxContraseña.Size = new System.Drawing.Size(141, 23);
+            this.TextBoxContraseña.TabIndex = 8;
+            // 
+            // TextBoxUsuario
+            // 
+            this.TextBoxUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TextBoxUsuario.Location = new System.Drawing.Point(244, 94);
+            this.TextBoxUsuario.Name = "TextBoxUsuario";
+            this.TextBoxUsuario.Size = new System.Drawing.Size(141, 23);
+            this.TextBoxUsuario.TabIndex = 7;
             // 
             // LabelContraseña
             // 
             this.LabelContraseña.AutoSize = true;
-            this.LabelContraseña.Location = new System.Drawing.Point(101, 98);
+            this.LabelContraseña.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelContraseña.Location = new System.Drawing.Point(119, 157);
             this.LabelContraseña.Name = "LabelContraseña";
-            this.LabelContraseña.Size = new System.Drawing.Size(64, 13);
-            this.LabelContraseña.TabIndex = 1;
+            this.LabelContraseña.Size = new System.Drawing.Size(96, 17);
+            this.LabelContraseña.TabIndex = 6;
             this.LabelContraseña.Text = "Contraseña:";
             // 
-            // TextBoxUsuario
+            // LabelUsuario
             // 
-            this.TextBoxUsuario.Location = new System.Drawing.Point(231, 58);
-            this.TextBoxUsuario.Name = "TextBoxUsuario";
-            this.TextBoxUsuario.Size = new System.Drawing.Size(141, 20);
-            this.TextBoxUsuario.TabIndex = 2;
-            // 
-            // TextBoxContraseña
-            // 
-            this.TextBoxContraseña.Location = new System.Drawing.Point(231, 98);
-            this.TextBoxContraseña.Name = "TextBoxContraseña";
-            this.TextBoxContraseña.Size = new System.Drawing.Size(141, 20);
-            this.TextBoxContraseña.TabIndex = 3;
-            // 
-            // ButtonIngresar
-            // 
-            this.ButtonIngresar.Location = new System.Drawing.Point(464, 229);
-            this.ButtonIngresar.Name = "ButtonIngresar";
-            this.ButtonIngresar.Size = new System.Drawing.Size(75, 23);
-            this.ButtonIngresar.TabIndex = 4;
-            this.ButtonIngresar.Text = "Ingresar";
-            this.ButtonIngresar.UseVisualStyleBackColor = true;
+            this.LabelUsuario.AutoSize = true;
+            this.LabelUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelUsuario.Location = new System.Drawing.Point(119, 94);
+            this.LabelUsuario.Name = "LabelUsuario";
+            this.LabelUsuario.Size = new System.Drawing.Size(69, 17);
+            this.LabelUsuario.TabIndex = 5;
+            this.LabelUsuario.Text = "Usuario:";
             // 
             // LoginForm
             // 
-            this.AcceptButton = this.ButtonIngresar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(591, 275);
+            this.ClientSize = new System.Drawing.Size(600, 300);
             this.Controls.Add(this.ButtonIngresar);
             this.Controls.Add(this.TextBoxContraseña);
             this.Controls.Add(this.TextBoxUsuario);
             this.Controls.Add(this.LabelContraseña);
             this.Controls.Add(this.LabelUsuario);
+            this.Controls.Add(this.cabezaPanel);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "LoginForm";
-            this.Text = "Usuario";
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Cuadernos Digitales";
+            this.cabezaPanel.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -100,11 +134,13 @@
 
         #endregion
 
-        private System.Windows.Forms.Label LabelUsuario;
-        private System.Windows.Forms.Label LabelContraseña;
-        private System.Windows.Forms.TextBox TextBoxUsuario;
-        private System.Windows.Forms.TextBox TextBoxContraseña;
+        private System.Windows.Forms.Button closeAppButton;
+        private System.Windows.Forms.Panel cabezaPanel;
         private System.Windows.Forms.Button ButtonIngresar;
-        private System.Windows.Forms.BindingSource bindingSource1;
+        private System.Windows.Forms.TextBox TextBoxContraseña;
+        private System.Windows.Forms.TextBox TextBoxUsuario;
+        private System.Windows.Forms.Label LabelContraseña;
+        private System.Windows.Forms.Label LabelUsuario;
     }
 }
+

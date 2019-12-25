@@ -23,4 +23,5 @@ C:\Users\dgcha\Documents\GitHub\Cuadernos_Digitales\CuadernosDigitales\Cuadernos
 C:\Users\dgcha\Documents\GitHub\Cuadernos_Digitales\CuadernosDigitales\CuadernosDigitales\bin\Debug\CuadernosDigitales.exe.config
 C:\Users\dgcha\Documents\GitHub\Cuadernos_Digitales\CuadernosDigitales\CuadernosDigitales\bin\Debug\CuadernosDigitales.exe
 C:\Users\dgcha\Documents\GitHub\Cuadernos_Digitales\CuadernosDigitales\CuadernosDigitales\bin\Debug\CuadernosDigitales.pdb
-C:\Users\dgcha\Documents\GitHub\Cuadernos_Digitales\CuadernosDigitales\CuadernosDigitales\obj\Debug\CuadernosDigitales.UNA.CuadernosDigitales.Forms.LoginForm.resources
+C:\Users\dgcha\Documents\GitHub\Cuadernos_Digitales\CuadernosDigitales\CuadernosDigitales\obj\Debug\LoginForm.LoginForm.resources
+C:\Users\dgcha\Documents\GitHub\Cuadernos_Digitales\CuadernosDigitales\CuadernosDigitales\obj\Debug\CuadernosDigitales.UNA.CuadernosDigitales.Forms.LoginForm2.resources

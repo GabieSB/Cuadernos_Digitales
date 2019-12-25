@@ -95,7 +95,7 @@
             this.cerrarButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DeepSkyBlue;
             this.cerrarButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
             this.cerrarButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cerrarButton.Font = new System.Drawing.Font("NewsGoth BT", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cerrarButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cerrarButton.ForeColor = System.Drawing.SystemColors.Control;
             this.cerrarButton.Location = new System.Drawing.Point(16, 352);
             this.cerrarButton.Name = "cerrarButton";
@@ -110,7 +110,7 @@
             this.historialButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DeepSkyBlue;
             this.historialButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
             this.historialButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.historialButton.Font = new System.Drawing.Font("NewsGoth BT", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.historialButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.historialButton.ForeColor = System.Drawing.SystemColors.Control;
             this.historialButton.Location = new System.Drawing.Point(16, 282);
             this.historialButton.Name = "historialButton";
@@ -133,7 +133,7 @@
             this.inicioButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DeepSkyBlue;
             this.inicioButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
             this.inicioButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.inicioButton.Font = new System.Drawing.Font("NewsGoth BT", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.inicioButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.inicioButton.ForeColor = System.Drawing.SystemColors.Control;
             this.inicioButton.Location = new System.Drawing.Point(16, 215);
             this.inicioButton.Name = "inicioButton";
@@ -191,11 +191,11 @@
             // tituloLabel
             // 
             this.tituloLabel.AutoSize = true;
-            this.tituloLabel.Font = new System.Drawing.Font("Dream Orphans", 21F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tituloLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tituloLabel.ForeColor = System.Drawing.Color.White;
             this.tituloLabel.Location = new System.Drawing.Point(19, 6);
             this.tituloLabel.Name = "tituloLabel";
-            this.tituloLabel.Size = new System.Drawing.Size(82, 34);
+            this.tituloLabel.Size = new System.Drawing.Size(104, 32);
             this.tituloLabel.TabIndex = 1;
             this.tituloLabel.Text = "INICIO";
             // 
@@ -219,7 +219,7 @@
             // 
             this.cuerpoPanel.BackColor = System.Drawing.SystemColors.Control;
             this.cuerpoPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cuerpoPanel.Font = new System.Drawing.Font("NewsGoth BT", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cuerpoPanel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cuerpoPanel.ForeColor = System.Drawing.SystemColors.GrayText;
             this.cuerpoPanel.Location = new System.Drawing.Point(188, 46);
             this.cuerpoPanel.Name = "cuerpoPanel";
