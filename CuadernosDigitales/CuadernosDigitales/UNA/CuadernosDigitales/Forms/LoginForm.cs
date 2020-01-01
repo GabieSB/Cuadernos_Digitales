@@ -10,13 +10,30 @@ using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using CuadernosDigitales.Forms;
 
-namespace LoginForm
+namespace CuadernosDigitales.Forms
 {
     public partial class LoginForm : Form
     {
+        public List<Usuario> Usuarios
+        {
+            get;
+            set;
+        }
+        public Usuario Usuario
+        {
+            get;
+            set;
+        }
+        public int IndiceUsuario
+        {
+            get;
+            set;
+        }
         public LoginForm()
         {
             InitializeComponent();
+            Usuarios = new List<Usuario>();
+            Usuario = new Usuario();
         }
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
@@ -41,10 +58,74 @@ namespace LoginForm
             SendMessage(this.Handle, 0x112,0xf012,0);
         }
 
-        private void InicioButton_Click(object sender, EventArgs e)
+        private void ButtonCancelar_Click(object sender, EventArgs e)
         {
 
         }
 
+        private void ButtonIngresar_Click(object sender, EventArgs e)
+        {
+            Boolean sinErrorNombreUsuario = false;
+            Boolean sinErrorContraseñaUsuario = false;
+            for (int i = 0; i < Usuarios.Count; i++)
+            {
+                if (Usuarios[i].Nombre == Usuario.Nombre)
+                {
+                    sinErrorNombreUsuario = true;
+
+                    if (Usuarios[i].Contraseña == Usuario.Contraseña)
+                    {
+                        sinErrorContraseñaUsuario = true;
+                    }
+                }
+            }
+            if (sinErrorNombreUsuario)
+            {
+                if (sinErrorContraseñaUsuario)
+                {
+                    DialogResult = DialogResult.OK;
+                    this.Hide();
+                }
+                else
+                {
+                    errorProviderContraseña.SetError(TextBoxContraseña, "La contraseña del usuario esta incorrecta");
+                }
+            }
+            else
+            {
+                errorProviderLogin.SetError(TextBoxUsuario, "No existe ningun usuario con ese nombre");
+            }
+        }
+
+        private void LinkLabelRegistrarce_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            LoginRegistrarse loginRegistrarse = new LoginRegistrarse();
+            loginRegistrarse.ShowDialog();
+            Usuarios = loginRegistrarse.Usuarios;
+        }
+
+        private void TextBoxUsuario_Leave(object sender, EventArgs e)
+        {
+            if (TextBoxUsuario.TextLength < 3)
+            {
+                errorProviderLogin.SetError(TextBoxUsuario, "Ingrese el nombre del usuario");
+            }
+            else
+            {
+                Usuario.Nombre = TextBoxUsuario.Text;
+            }
+        }
+
+        private void TextBoxContraseña_Leave(object sender, EventArgs e)
+        {
+            if (TextBoxContraseña.TextLength < 3)
+            {
+                errorProviderLogin.SetError(TextBoxUsuario, "Ingrese la contraseña del usuario");
+            }
+            else
+            {
+                Usuario.Contraseña = TextBoxContraseña.Text;
+            }
+        }
     }
 }

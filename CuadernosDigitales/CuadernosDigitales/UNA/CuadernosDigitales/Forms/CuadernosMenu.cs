@@ -10,13 +10,24 @@ using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using CuadernosDigitales.Forms;
 
-namespace CuadernosDigitales
+namespace CuadernosDigitales.Forms
 {
     public partial class CuadernosInicio : Form
     {
+        public List<Usuario> Usuarios
+        {
+            get;
+            set;
+        }
+        public int IndiceUsuario
+        {
+            get;
+            set;
+        }
         public CuadernosInicio()
         {
             InitializeComponent();
+            
         }
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
@@ -95,9 +106,21 @@ namespace CuadernosDigitales
 
         private void CuadernosInicio_Load(object sender, EventArgs e)
         {
+            LoginForm loginForm = new LoginForm();
+            if (loginForm.ShowDialog() == DialogResult.OK)
+            {
+                Usuarios = loginForm.Usuarios;
+                IndiceUsuario = loginForm.IndiceUsuario;
+                LabelNombre.Text = Usuarios[IndiceUsuario].Nombre;
+            }
+            else
+            {
+                this.Close();
+            }
             etiquetaInicio.Visible = true;
             etiquetaHistorial.Visible = false;
             etiquetaCambiarU.Visible = false;
+            
         }
 
         private void CabezaPanel_Paint(object sender, PaintEventArgs e)

@@ -1,6 +1,6 @@
 ﻿namespace CuadernosDigitales.Forms
 {
-    partial class LoginForm
+    partial class LoginRegistrarse
     {
         /// <summary>
         /// Required designer variable.
@@ -32,18 +32,21 @@
             this.closeAppButton = new System.Windows.Forms.Button();
             this.cabezaPanel = new System.Windows.Forms.Panel();
             this.LabelTitulo = new System.Windows.Forms.Label();
-            this.ButtonIngresar = new System.Windows.Forms.Button();
+            this.ButtonRegistrar = new System.Windows.Forms.Button();
             this.TextBoxContraseña = new System.Windows.Forms.TextBox();
             this.TextBoxUsuario = new System.Windows.Forms.TextBox();
             this.LabelContraseña = new System.Windows.Forms.Label();
             this.LabelUsuario = new System.Windows.Forms.Label();
             this.ButtonCancelar = new System.Windows.Forms.Button();
-            this.LinkLabelRegistrarce = new System.Windows.Forms.LinkLabel();
+            this.TextBoxRepetirContraseña = new System.Windows.Forms.TextBox();
+            this.LabelRepetirContraseña = new System.Windows.Forms.Label();
             this.errorProviderLogin = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProviderContraseña = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProviderRepetirContraseña = new System.Windows.Forms.ErrorProvider(this.components);
             this.cabezaPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderLogin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderContraseña)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderRepetirContraseña)).BeginInit();
             this.SuspendLayout();
             // 
             // closeAppButton
@@ -79,27 +82,27 @@
             this.LabelTitulo.AutoSize = true;
             this.LabelTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LabelTitulo.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.LabelTitulo.Location = new System.Drawing.Point(185, 12);
+            this.LabelTitulo.Location = new System.Drawing.Point(200, 12);
             this.LabelTitulo.Name = "LabelTitulo";
-            this.LabelTitulo.Size = new System.Drawing.Size(197, 24);
-            this.LabelTitulo.TabIndex = 13;
-            this.LabelTitulo.Text = "Cuadernos Digitales";
+            this.LabelTitulo.Size = new System.Drawing.Size(200, 24);
+            this.LabelTitulo.TabIndex = 12;
+            this.LabelTitulo.Text = "Crear nuevo usuario";
             // 
-            // ButtonIngresar
+            // ButtonRegistrar
             // 
-            this.ButtonIngresar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ButtonIngresar.Location = new System.Drawing.Point(478, 247);
-            this.ButtonIngresar.Name = "ButtonIngresar";
-            this.ButtonIngresar.Size = new System.Drawing.Size(94, 33);
-            this.ButtonIngresar.TabIndex = 9;
-            this.ButtonIngresar.Text = "Ingresar";
-            this.ButtonIngresar.UseVisualStyleBackColor = true;
-            this.ButtonIngresar.Click += new System.EventHandler(this.ButtonIngresar_Click);
+            this.ButtonRegistrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ButtonRegistrar.Location = new System.Drawing.Point(478, 247);
+            this.ButtonRegistrar.Name = "ButtonRegistrar";
+            this.ButtonRegistrar.Size = new System.Drawing.Size(94, 33);
+            this.ButtonRegistrar.TabIndex = 9;
+            this.ButtonRegistrar.Text = "Registrar";
+            this.ButtonRegistrar.UseVisualStyleBackColor = true;
+            this.ButtonRegistrar.Click += new System.EventHandler(this.ButtonRegistrar_Click);
             // 
             // TextBoxContraseña
             // 
             this.TextBoxContraseña.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TextBoxContraseña.Location = new System.Drawing.Point(244, 157);
+            this.TextBoxContraseña.Location = new System.Drawing.Point(244, 142);
             this.TextBoxContraseña.Name = "TextBoxContraseña";
             this.TextBoxContraseña.PasswordChar = '*';
             this.TextBoxContraseña.Size = new System.Drawing.Size(141, 23);
@@ -119,7 +122,7 @@
             // 
             this.LabelContraseña.AutoSize = true;
             this.LabelContraseña.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelContraseña.Location = new System.Drawing.Point(119, 157);
+            this.LabelContraseña.Location = new System.Drawing.Point(104, 142);
             this.LabelContraseña.Name = "LabelContraseña";
             this.LabelContraseña.Size = new System.Drawing.Size(96, 17);
             this.LabelContraseña.TabIndex = 6;
@@ -129,7 +132,7 @@
             // 
             this.LabelUsuario.AutoSize = true;
             this.LabelUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelUsuario.Location = new System.Drawing.Point(119, 94);
+            this.LabelUsuario.Location = new System.Drawing.Point(114, 94);
             this.LabelUsuario.Name = "LabelUsuario";
             this.LabelUsuario.Size = new System.Drawing.Size(69, 17);
             this.LabelUsuario.TabIndex = 5;
@@ -147,17 +150,25 @@
             this.ButtonCancelar.UseVisualStyleBackColor = true;
             this.ButtonCancelar.Click += new System.EventHandler(this.ButtonCancelar_Click);
             // 
-            // LinkLabelRegistrarce
+            // TextBoxRepetirContraseña
             // 
-            this.LinkLabelRegistrarce.AutoSize = true;
-            this.LinkLabelRegistrarce.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LinkLabelRegistrarce.Location = new System.Drawing.Point(467, 208);
-            this.LinkLabelRegistrarce.Name = "LinkLabelRegistrarce";
-            this.LinkLabelRegistrarce.Size = new System.Drawing.Size(97, 17);
-            this.LinkLabelRegistrarce.TabIndex = 11;
-            this.LinkLabelRegistrarce.TabStop = true;
-            this.LinkLabelRegistrarce.Text = "¿Registrarse?";
-            this.LinkLabelRegistrarce.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LinkLabelRegistrarce_LinkClicked);
+            this.TextBoxRepetirContraseña.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TextBoxRepetirContraseña.Location = new System.Drawing.Point(244, 186);
+            this.TextBoxRepetirContraseña.Name = "TextBoxRepetirContraseña";
+            this.TextBoxRepetirContraseña.PasswordChar = '*';
+            this.TextBoxRepetirContraseña.Size = new System.Drawing.Size(141, 23);
+            this.TextBoxRepetirContraseña.TabIndex = 12;
+            this.TextBoxRepetirContraseña.Leave += new System.EventHandler(this.TextBoxRepetirContraseña_Leave);
+            // 
+            // LabelRepetirContraseña
+            // 
+            this.LabelRepetirContraseña.AutoSize = true;
+            this.LabelRepetirContraseña.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelRepetirContraseña.Location = new System.Drawing.Point(76, 186);
+            this.LabelRepetirContraseña.Name = "LabelRepetirContraseña";
+            this.LabelRepetirContraseña.Size = new System.Drawing.Size(152, 17);
+            this.LabelRepetirContraseña.TabIndex = 11;
+            this.LabelRepetirContraseña.Text = "Repetir contraseña:";
             // 
             // errorProviderLogin
             // 
@@ -167,29 +178,35 @@
             // 
             this.errorProviderContraseña.ContainerControl = this;
             // 
-            // LoginForm
+            // errorProviderRepetirContraseña
             // 
-            this.AcceptButton = this.ButtonIngresar;
+            this.errorProviderRepetirContraseña.ContainerControl = this;
+            // 
+            // LoginRegistrarse
+            // 
+            this.AcceptButton = this.ButtonRegistrar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.ButtonCancelar;
             this.ClientSize = new System.Drawing.Size(600, 300);
-            this.Controls.Add(this.LinkLabelRegistrarce);
+            this.Controls.Add(this.TextBoxRepetirContraseña);
+            this.Controls.Add(this.LabelRepetirContraseña);
             this.Controls.Add(this.ButtonCancelar);
-            this.Controls.Add(this.ButtonIngresar);
+            this.Controls.Add(this.ButtonRegistrar);
             this.Controls.Add(this.TextBoxContraseña);
             this.Controls.Add(this.TextBoxUsuario);
             this.Controls.Add(this.LabelContraseña);
             this.Controls.Add(this.LabelUsuario);
             this.Controls.Add(this.cabezaPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "LoginForm";
+            this.Name = "LoginRegistrarse";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cuadernos Digitales";
             this.cabezaPanel.ResumeLayout(false);
             this.cabezaPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderLogin)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderContraseña)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderRepetirContraseña)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -199,16 +216,18 @@
 
         private System.Windows.Forms.Button closeAppButton;
         private System.Windows.Forms.Panel cabezaPanel;
-        private System.Windows.Forms.Button ButtonIngresar;
+        private System.Windows.Forms.Button ButtonRegistrar;
         private System.Windows.Forms.TextBox TextBoxContraseña;
         private System.Windows.Forms.TextBox TextBoxUsuario;
         private System.Windows.Forms.Label LabelContraseña;
         private System.Windows.Forms.Label LabelUsuario;
         private System.Windows.Forms.Button ButtonCancelar;
-        private System.Windows.Forms.LinkLabel LinkLabelRegistrarce;
         private System.Windows.Forms.Label LabelTitulo;
+        private System.Windows.Forms.TextBox TextBoxRepetirContraseña;
+        private System.Windows.Forms.Label LabelRepetirContraseña;
         private System.Windows.Forms.ErrorProvider errorProviderLogin;
         private System.Windows.Forms.ErrorProvider errorProviderContraseña;
+        private System.Windows.Forms.ErrorProvider errorProviderRepetirContraseña;
     }
 }
 

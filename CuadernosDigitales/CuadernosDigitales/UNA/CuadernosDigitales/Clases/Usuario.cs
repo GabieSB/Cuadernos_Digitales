@@ -7,6 +7,11 @@ namespace CuadernosDigitales
 {
     public class Usuario
     {
+        public Usuario()
+        {
+           
+        }
+
         public string Nombre
         {
             get;

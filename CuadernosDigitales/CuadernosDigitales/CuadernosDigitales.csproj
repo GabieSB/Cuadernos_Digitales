@@ -55,6 +55,12 @@
     <Compile Include="UNA\CuadernosDigitales\Clases\Categoria.cs" />
     <Compile Include="UNA\CuadernosDigitales\Clases\Cuaderno.cs" />
     <Compile Include="UNA\CuadernosDigitales\Clases\Nota.cs" />
+    <Compile Include="UNA\CuadernosDigitales\Forms\LoginRegistrarse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UNA\CuadernosDigitales\Forms\LoginRegistrarse.Designer.cs">
+      <DependentUpon>LoginRegistrarse.cs</DependentUpon>
+    </Compile>
     <Compile Include="UNA\CuadernosDigitales\Forms\LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -88,17 +94,11 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UNA\CuadernosDigitales\Clases\Usuario.cs" />
-    <Compile Include="UNA\CuadernosDigitales\Forms\LoginForm2.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UNA\CuadernosDigitales\Forms\LoginForm2.Designer.cs">
-      <DependentUpon>LoginForm2.cs</DependentUpon>
-    </Compile>
+    <EmbeddedResource Include="UNA\CuadernosDigitales\Forms\LoginRegistrarse.resx">
+      <DependentUpon>LoginRegistrarse.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UNA\CuadernosDigitales\Forms\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UNA\CuadernosDigitales\Forms\LoginForm2.resx">
-      <DependentUpon>LoginForm2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UNA\CuadernosDigitales\Forms\NotasMenu.resx">
       <DependentUpon>NotasMenu.cs</DependentUpon>

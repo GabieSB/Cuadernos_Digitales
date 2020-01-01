@@ -1,4 +1,4 @@
-﻿namespace CuadernosDigitales
+﻿namespace CuadernosDigitales.Forms
 {
     partial class CuadernosInicio
     {
@@ -43,7 +43,10 @@
             this.tituloLabel = new System.Windows.Forms.Label();
             this.closeAppButton = new System.Windows.Forms.Button();
             this.cuerpoPanel = new System.Windows.Forms.Panel();
+            this.LabelEtiquetaNombre = new System.Windows.Forms.Label();
+            this.LabelNombre = new System.Windows.Forms.Label();
             this.listaOpcionePanel.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.logoPanel.SuspendLayout();
             this.cabezaPanel.SuspendLayout();
             this.SuspendLayout();
@@ -123,6 +126,8 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Gray;
+            this.panel1.Controls.Add(this.LabelNombre);
+            this.panel1.Controls.Add(this.LabelEtiquetaNombre);
             this.panel1.Location = new System.Drawing.Point(0, 46);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(188, 154);
@@ -226,6 +231,27 @@
             this.cuerpoPanel.Size = new System.Drawing.Size(688, 580);
             this.cuerpoPanel.TabIndex = 2;
             // 
+            // LabelEtiquetaNombre
+            // 
+            this.LabelEtiquetaNombre.AutoSize = true;
+            this.LabelEtiquetaNombre.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelEtiquetaNombre.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.LabelEtiquetaNombre.Location = new System.Drawing.Point(8, 14);
+            this.LabelEtiquetaNombre.Name = "LabelEtiquetaNombre";
+            this.LabelEtiquetaNombre.Size = new System.Drawing.Size(124, 19);
+            this.LabelEtiquetaNombre.TabIndex = 1;
+            this.LabelEtiquetaNombre.Text = "Nombre usuario:";
+            // 
+            // LabelNombre
+            // 
+            this.LabelNombre.AutoSize = true;
+            this.LabelNombre.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelNombre.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.LabelNombre.Location = new System.Drawing.Point(8, 65);
+            this.LabelNombre.Name = "LabelNombre";
+            this.LabelNombre.Size = new System.Drawing.Size(0, 19);
+            this.LabelNombre.TabIndex = 2;
+            // 
             // CuadernosInicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -240,6 +266,8 @@
             this.Text = "Cuadernos Digitales";
             this.Load += new System.EventHandler(this.CuadernosInicio_Load);
             this.listaOpcionePanel.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.logoPanel.ResumeLayout(false);
             this.logoPanel.PerformLayout();
             this.cabezaPanel.ResumeLayout(false);
@@ -265,6 +293,8 @@
         private System.Windows.Forms.Panel etiquetaHistorial;
         private System.Windows.Forms.Panel etiquetaInicio;
         private System.Windows.Forms.Label tituloLabel;
+        private System.Windows.Forms.Label LabelNombre;
+        private System.Windows.Forms.Label LabelEtiquetaNombre;
     }
 }
 
