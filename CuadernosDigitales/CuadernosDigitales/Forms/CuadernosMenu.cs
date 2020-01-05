@@ -19,6 +19,8 @@ namespace CuadernosDigitales
             InitializeComponent();
         }
 
+    
+
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
@@ -39,6 +41,26 @@ namespace CuadernosDigitales
             formPanel.Show();
         }
 
+        private void AbrirForm<MiForm>() where MiForm : Form, new()
+        {
+            Form formulario;
+            formulario = cuerpoPanel.Controls.OfType<MiForm>().FirstOrDefault(); //Busca en la coleccion
+            if (formulario == null)
+            {
+                formulario = new MiForm();
+                formulario.TopLevel = false;
+                formulario.Dock = DockStyle.Fill;
+                cuerpoPanel.Controls.Add(formulario);
+                formulario.Show();
+                formulario.BringToFront();
+
+            }
+            else
+            {
+                formulario.BringToFront();
+            }
+        }
+
         private void CloseAppButton_Click(object sender, EventArgs e)
         {
             DialogResult resultado = MessageBox.Show("¿Desea cerrar la aplicación?", "Confirmacion", MessageBoxButtons.YesNoCancel);
@@ -51,13 +73,20 @@ namespace CuadernosDigitales
 
         private void ComprimirButton_Click(object sender, EventArgs e)
         {
-            if (listaOpcionePanel.Width == 188)
+            if (listaOpcionePanel.Width == 52)
             {
-                listaOpcionePanel.Width = 52;
+                //cuerpoPanel.Location = new Point(189, 46);
+               // cuerpoPanel.Width = 660;
+                listaOpcionePanel.Width = 188;
+                listaOpcionePanel.BorderStyle = BorderStyle.FixedSingle;
+
             }
             else
             {
-                listaOpcionePanel.Width = 188;
+                //cuerpoPanel.Location = new Point(61, 46);
+               // cuerpoPanel.Width = 796;
+                listaOpcionePanel.Width = 52;
+                listaOpcionePanel.BorderStyle = BorderStyle.None;
             }
 
         }
@@ -68,7 +97,18 @@ namespace CuadernosDigitales
             SendMessage(this.Handle, 0x112,0xf012,0);
         }
 
+       
+
         private void InicioButton_Click(object sender, EventArgs e)
+        {
+            etiquetaInicio.Visible = true;
+            etiquetaHistorial.Visible = false;
+            etiquetaCambiarU.Visible = false;
+            tituloLabel.Text = "INICIO";
+            AbrirForm<Inicio>(); 
+        }
+       
+        private void InicioButtonAlternative_Click(object sender, EventArgs e)
         {
             etiquetaInicio.Visible = true;
             etiquetaHistorial.Visible = false;
@@ -83,6 +123,7 @@ namespace CuadernosDigitales
             etiquetaHistorial.Visible = true;
             etiquetaCambiarU.Visible = false;
             tituloLabel.Text = "HISTORIAL";
+           // AbrirForm<NuevaNota>();
         }
 
         private void CerrarButton_Click(object sender, EventArgs e)
@@ -101,6 +142,11 @@ namespace CuadernosDigitales
         }
 
         private void CabezaPanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void ListaOpcionePanel_Paint(object sender, PaintEventArgs e)
         {
 
         }

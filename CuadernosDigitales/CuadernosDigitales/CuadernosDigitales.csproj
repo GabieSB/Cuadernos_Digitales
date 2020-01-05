@@ -46,8 +46,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Categoria.cs" />
-    <Compile Include="Cuaderno.cs" />
+    <Compile Include="Clases\Categoria.cs" />
+    <Compile Include="Clases\Cuaderno.cs" />
+    <Compile Include="Clases\Nota.cs" />
+    <Compile Include="Forms\UCCuadernoDigital.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\UCCuadernoDigital.Designer.cs">
+      <DependentUpon>UCCuadernoDigital.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\NotasMenu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -66,15 +73,23 @@
     <Compile Include="Forms\Inicio.Designer.cs">
       <DependentUpon>Inicio.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\NuevaNota.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\NuevaNota.Designer.cs">
+      <DependentUpon>NuevaNota.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\NuevoCuaderno.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\NuevoCuaderno.Designer.cs">
       <DependentUpon>NuevoCuaderno.cs</DependentUpon>
     </Compile>
-    <Compile Include="Nota.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\UCCuadernoDigital.resx">
+      <DependentUpon>UCCuadernoDigital.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\NotasMenu.resx">
       <DependentUpon>NotasMenu.cs</DependentUpon>
     </EmbeddedResource>
@@ -83,6 +98,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Inicio.resx">
       <DependentUpon>Inicio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\NuevaNota.resx">
+      <DependentUpon>NuevaNota.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\NuevoCuaderno.resx">
       <DependentUpon>NuevoCuaderno.cs</DependentUpon>
@@ -111,7 +129,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\back.png" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="Resources\around-20the-20world-20clipart-the-world-clipart-299_279.png" />
   </ItemGroup>

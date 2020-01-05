@@ -49,5 +49,9 @@ namespace CuadernosDigitales
         {
             return categorias;
         }
+        public List<Nota> getListaDeNotas()
+        {
+            return notas;
+        }
     }
 }

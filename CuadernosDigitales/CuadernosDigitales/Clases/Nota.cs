@@ -13,31 +13,31 @@ namespace CuadernosDigitales
             set;
         }
 
-        public string Color
+        public System.Drawing.Color Color
         {
             get;
             set;
         }
 
-        public string Fuente
+        public System.Drawing.Font Fuente
         {
             get;
             set;
         }
 
-        public string ColorDeLetra
+        public System.Drawing.Color ColorDeLetra
         {
             get;
             set;
         }
 
-        public int FechaDeCreacion
+        public DateTime FechaDeCreacion
         {
             get;
             set;
         }
 
-        public int FechaDeModificacion
+        public DateTime FechaDeModificacion
         {
             get;
             set;
@@ -61,5 +61,13 @@ namespace CuadernosDigitales
             set;
         
         }
+
+        public string Contenido
+        {
+            get;
+            set;
+
+        }
+
     }
 }

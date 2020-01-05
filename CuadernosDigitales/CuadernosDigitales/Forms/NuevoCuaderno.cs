@@ -17,7 +17,7 @@ namespace CuadernosDigitales.Forms
         public static Cuaderno cuaderno;
         public DialogResult cuadernoCreado;
         private TextBox[] categoriasTexBox;
-        public Bitmap colorSeleccionado;
+        public static Bitmap colorSeleccionado;
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
