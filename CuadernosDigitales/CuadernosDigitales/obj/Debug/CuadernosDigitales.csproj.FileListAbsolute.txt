@@ -25,3 +25,4 @@ C:\Users\dgcha\Documents\GitHub\Cuadernos_Digitales\CuadernosDigitales\Cuadernos
 C:\Users\dgcha\Documents\GitHub\Cuadernos_Digitales\CuadernosDigitales\CuadernosDigitales\obj\Debug\CuadernosDigitales.Forms.LoginRegistrarse.resources
 C:\Users\dgcha\Documents\GitHub\Cuadernos_Digitales\CuadernosDigitales\CuadernosDigitales\obj\Debug\CuadernosDigitales.Forms.LoginForm.resources
 C:\Users\dgcha\Documents\GitHub\Cuadernos_Digitales\CuadernosDigitales\CuadernosDigitales\obj\Debug\CuadernosDigitales.Forms.CuadernosInicio.resources
+C:\Users\dgcha\Documents\GitHub\Cuadernos_Digitales\CuadernosDigitales\CuadernosDigitales\obj\Debug\CuadernosDigitales.Forms.EditarUsuario.resources

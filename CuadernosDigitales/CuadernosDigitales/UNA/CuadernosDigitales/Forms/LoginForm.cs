@@ -29,7 +29,14 @@ namespace CuadernosDigitales.Forms
             get;
             set;
         }
+
         public LoginForm()
+        {
+            InitializeComponent();
+            Usuarios = new List<Usuario>();
+            Usuario = new Usuario();
+        }
+        public LoginForm(Form form)
         {
             InitializeComponent();
             Usuarios = new List<Usuario>();
@@ -76,6 +83,7 @@ namespace CuadernosDigitales.Forms
                     if (Usuarios[i].Contraseña == Usuario.Contraseña)
                     {
                         sinErrorContraseñaUsuario = true;
+                        IndiceUsuario = i;
                     }
                 }
             }
@@ -100,6 +108,7 @@ namespace CuadernosDigitales.Forms
         private void LinkLabelRegistrarce_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             LoginRegistrarse loginRegistrarse = new LoginRegistrarse();
+            loginRegistrarse.Usuarios = Usuarios;
             loginRegistrarse.ShowDialog();
             Usuarios = loginRegistrarse.Usuarios;
         }
@@ -126,6 +135,11 @@ namespace CuadernosDigitales.Forms
             {
                 Usuario.Contraseña = TextBoxContraseña.Text;
             }
+        }
+
+        private void LoginForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

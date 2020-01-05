@@ -24,11 +24,30 @@ namespace CuadernosDigitales.Forms
             get;
             set;
         }
+        public Boolean NombreUsuario
+        {
+            get;
+            set;
+        }
+        public Boolean ContraseñaUsuario
+        {
+            get;
+            set;
+        }
+        public Boolean RepetirContraseñaUsuario
+        {
+            get;
+            set;
+        }
         public LoginRegistrarse()
         {
             InitializeComponent();
             Usuarios = new List<Usuario>();
             Usuario = new Usuario();
+
+            NombreUsuario = false;
+            ContraseñaUsuario = false;
+            RepetirContraseñaUsuario = false;
         }
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
@@ -55,11 +74,15 @@ namespace CuadernosDigitales.Forms
 
         private void ButtonRegistrar_Click(object sender, EventArgs e)
         {
-            if(Usuario.Nombre.Length > 2)
+            if(NombreUsuario && ContraseñaUsuario && RepetirContraseñaUsuario)
             {
                 Usuarios.Add(Usuario);
                 DialogResult dialogResult = MessageBox.Show("Se registro el nuevo usuario exitosamente");
                 this.Close();
+            }
+            else
+            {
+                DialogResult dialogResult = MessageBox.Show("Ingrese los datos correctamente");
             }
         }
 
@@ -69,6 +92,7 @@ namespace CuadernosDigitales.Forms
             if (TextBoxUsuario.TextLength < 3)
             {
                 errorProviderLogin.SetError(TextBoxUsuario, "Ingrese el nombre del usuario");
+                NombreUsuario = false;
             }
             else
             {
@@ -77,12 +101,14 @@ namespace CuadernosDigitales.Forms
                     if(Usuarios[i].Nombre == TextBoxUsuario.Text)
                     {
                         errorProviderLogin.SetError(TextBoxUsuario, "El nombre de usuario ya existe, escoja otro");
+                        NombreUsuario = false;
                         sinErrores = false;
                     }
                 }
                 if (sinErrores)
                 {
                     Usuario.Nombre = TextBoxUsuario.Text;
+                    NombreUsuario = true;
                 }
             }
         }
@@ -92,10 +118,12 @@ namespace CuadernosDigitales.Forms
             if (TextBoxContraseña.TextLength < 3)
             {
                 errorProviderContraseña.SetError(TextBoxContraseña, "Ingrese la nueva contraseña del Usuario");
+                ContraseñaUsuario = false;
             }
             else
             {
                 Usuario.Contraseña = TextBoxContraseña.Text;
+                ContraseñaUsuario = true;
             }
         }
 
@@ -104,12 +132,19 @@ namespace CuadernosDigitales.Forms
             if (TextBoxRepetirContraseña.TextLength < 3)
             {
                 errorProviderRepetirContraseña.SetError(TextBoxRepetirContraseña, "Repita la nueva contraseña del Usuario");
+                RepetirContraseñaUsuario = false;
             }
             else
             {
                 if(Usuario.Contraseña == TextBoxRepetirContraseña.Text)
                 {
                     Usuario.Identificador = Usuarios.Count;
+                    RepetirContraseñaUsuario = true;
+                }
+                else
+                {
+                    errorProviderRepetirContraseña.SetError(TextBoxRepetirContraseña, "La nueva contraseña del Usuario es diferente al repetirla");
+                    RepetirContraseñaUsuario = false;
                 }
             }
         }

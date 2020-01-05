@@ -24,10 +24,15 @@ namespace CuadernosDigitales.Forms
             get;
             set;
         }
+        public Form FormCerrar
+        {
+            get;
+            set;
+        }
         public CuadernosInicio()
         {
             InitializeComponent();
-            
+            Usuarios = new List<Usuario>();
         }
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
@@ -96,17 +101,10 @@ namespace CuadernosDigitales.Forms
             tituloLabel.Text = "HISTORIAL";
         }
 
-        private void CerrarButton_Click(object sender, EventArgs e)
-        {
-            etiquetaInicio.Visible = false;
-            etiquetaHistorial.Visible = false;
-            etiquetaCambiarU.Visible = true;
-           
-        }
-
         private void CuadernosInicio_Load(object sender, EventArgs e)
         {
             LoginForm loginForm = new LoginForm();
+            loginForm.Usuarios = Usuarios;
             if (loginForm.ShowDialog() == DialogResult.OK)
             {
                 Usuarios = loginForm.Usuarios;
@@ -126,6 +124,30 @@ namespace CuadernosDigitales.Forms
         private void CabezaPanel_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void ButtonUsuarioEditar_Click(object sender, EventArgs e)
+        {
+            etiquetaInicio.Visible = false;
+            etiquetaHistorial.Visible = false;
+            etiquetaCambiarU.Visible = true;
+            tituloLabel.Text = "EDITAR USUARIO";
+            EditarUsuario editarUsuario = new EditarUsuario();
+            editarUsuario.Usuarios = Usuarios;
+            editarUsuario.IndiceUsuario = IndiceUsuario;
+            MostrarFormEnPanel(editarUsuario);
+        }
+
+        private void ButtonCerrarSecion_Click(object sender, EventArgs e)
+        {
+            DialogResult resultado = MessageBox.Show("¿Desea cerrar la seción?", "Confirmacion", MessageBoxButtons.YesNoCancel);
+            if (resultado == DialogResult.Yes)
+            {
+                CuadernosInicio cuadernosInicio = new CuadernosInicio();
+                cuadernosInicio.Usuarios = Usuarios;
+                this.Close();
+                cuadernosInicio.Show();
+            }            
         }
     }
 }

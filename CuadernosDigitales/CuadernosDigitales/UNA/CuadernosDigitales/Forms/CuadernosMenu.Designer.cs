@@ -32,9 +32,11 @@
             this.etiquetaCambiarU = new System.Windows.Forms.Panel();
             this.etiquetaHistorial = new System.Windows.Forms.Panel();
             this.etiquetaInicio = new System.Windows.Forms.Panel();
-            this.cerrarButton = new System.Windows.Forms.Button();
+            this.ButtonUsuarioEditar = new System.Windows.Forms.Button();
             this.historialButton = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.LabelNombre = new System.Windows.Forms.Label();
+            this.LabelEtiquetaNombre = new System.Windows.Forms.Label();
             this.inicioButton = new System.Windows.Forms.Button();
             this.comprimirButton = new System.Windows.Forms.Button();
             this.logoPanel = new System.Windows.Forms.Panel();
@@ -43,8 +45,7 @@
             this.tituloLabel = new System.Windows.Forms.Label();
             this.closeAppButton = new System.Windows.Forms.Button();
             this.cuerpoPanel = new System.Windows.Forms.Panel();
-            this.LabelEtiquetaNombre = new System.Windows.Forms.Label();
-            this.LabelNombre = new System.Windows.Forms.Label();
+            this.ButtonCerrarSecion = new System.Windows.Forms.Button();
             this.listaOpcionePanel.SuspendLayout();
             this.panel1.SuspendLayout();
             this.logoPanel.SuspendLayout();
@@ -54,10 +55,11 @@
             // listaOpcionePanel
             // 
             this.listaOpcionePanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.listaOpcionePanel.Controls.Add(this.ButtonCerrarSecion);
             this.listaOpcionePanel.Controls.Add(this.etiquetaCambiarU);
             this.listaOpcionePanel.Controls.Add(this.etiquetaHistorial);
             this.listaOpcionePanel.Controls.Add(this.etiquetaInicio);
-            this.listaOpcionePanel.Controls.Add(this.cerrarButton);
+            this.listaOpcionePanel.Controls.Add(this.ButtonUsuarioEditar);
             this.listaOpcionePanel.Controls.Add(this.historialButton);
             this.listaOpcionePanel.Controls.Add(this.panel1);
             this.listaOpcionePanel.Controls.Add(this.inicioButton);
@@ -93,20 +95,20 @@
             this.etiquetaInicio.Size = new System.Drawing.Size(10, 47);
             this.etiquetaInicio.TabIndex = 0;
             // 
-            // cerrarButton
+            // ButtonUsuarioEditar
             // 
-            this.cerrarButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DeepSkyBlue;
-            this.cerrarButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
-            this.cerrarButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cerrarButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cerrarButton.ForeColor = System.Drawing.SystemColors.Control;
-            this.cerrarButton.Location = new System.Drawing.Point(16, 352);
-            this.cerrarButton.Name = "cerrarButton";
-            this.cerrarButton.Size = new System.Drawing.Size(163, 63);
-            this.cerrarButton.TabIndex = 5;
-            this.cerrarButton.Text = "CAMBIAR DE USUARIO";
-            this.cerrarButton.UseVisualStyleBackColor = true;
-            this.cerrarButton.Click += new System.EventHandler(this.CerrarButton_Click);
+            this.ButtonUsuarioEditar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DeepSkyBlue;
+            this.ButtonUsuarioEditar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.ButtonUsuarioEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ButtonUsuarioEditar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ButtonUsuarioEditar.ForeColor = System.Drawing.SystemColors.Control;
+            this.ButtonUsuarioEditar.Location = new System.Drawing.Point(16, 352);
+            this.ButtonUsuarioEditar.Name = "ButtonUsuarioEditar";
+            this.ButtonUsuarioEditar.Size = new System.Drawing.Size(163, 63);
+            this.ButtonUsuarioEditar.TabIndex = 5;
+            this.ButtonUsuarioEditar.Text = "EDITAR USUARIO";
+            this.ButtonUsuarioEditar.UseVisualStyleBackColor = true;
+            this.ButtonUsuarioEditar.Click += new System.EventHandler(this.ButtonUsuarioEditar_Click);
             // 
             // historialButton
             // 
@@ -132,6 +134,27 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(188, 154);
             this.panel1.TabIndex = 3;
+            // 
+            // LabelNombre
+            // 
+            this.LabelNombre.AutoSize = true;
+            this.LabelNombre.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelNombre.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.LabelNombre.Location = new System.Drawing.Point(8, 65);
+            this.LabelNombre.Name = "LabelNombre";
+            this.LabelNombre.Size = new System.Drawing.Size(0, 19);
+            this.LabelNombre.TabIndex = 2;
+            // 
+            // LabelEtiquetaNombre
+            // 
+            this.LabelEtiquetaNombre.AutoSize = true;
+            this.LabelEtiquetaNombre.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelEtiquetaNombre.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.LabelEtiquetaNombre.Location = new System.Drawing.Point(8, 14);
+            this.LabelEtiquetaNombre.Name = "LabelEtiquetaNombre";
+            this.LabelEtiquetaNombre.Size = new System.Drawing.Size(124, 19);
+            this.LabelEtiquetaNombre.TabIndex = 1;
+            this.LabelEtiquetaNombre.Text = "Nombre usuario:";
             // 
             // inicioButton
             // 
@@ -231,26 +254,20 @@
             this.cuerpoPanel.Size = new System.Drawing.Size(688, 580);
             this.cuerpoPanel.TabIndex = 2;
             // 
-            // LabelEtiquetaNombre
+            // ButtonCerrarSecion
             // 
-            this.LabelEtiquetaNombre.AutoSize = true;
-            this.LabelEtiquetaNombre.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelEtiquetaNombre.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.LabelEtiquetaNombre.Location = new System.Drawing.Point(8, 14);
-            this.LabelEtiquetaNombre.Name = "LabelEtiquetaNombre";
-            this.LabelEtiquetaNombre.Size = new System.Drawing.Size(124, 19);
-            this.LabelEtiquetaNombre.TabIndex = 1;
-            this.LabelEtiquetaNombre.Text = "Nombre usuario:";
-            // 
-            // LabelNombre
-            // 
-            this.LabelNombre.AutoSize = true;
-            this.LabelNombre.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelNombre.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.LabelNombre.Location = new System.Drawing.Point(8, 65);
-            this.LabelNombre.Name = "LabelNombre";
-            this.LabelNombre.Size = new System.Drawing.Size(0, 19);
-            this.LabelNombre.TabIndex = 2;
+            this.ButtonCerrarSecion.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DeepSkyBlue;
+            this.ButtonCerrarSecion.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.ButtonCerrarSecion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ButtonCerrarSecion.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ButtonCerrarSecion.ForeColor = System.Drawing.SystemColors.Control;
+            this.ButtonCerrarSecion.Location = new System.Drawing.Point(16, 432);
+            this.ButtonCerrarSecion.Name = "ButtonCerrarSecion";
+            this.ButtonCerrarSecion.Size = new System.Drawing.Size(163, 63);
+            this.ButtonCerrarSecion.TabIndex = 6;
+            this.ButtonCerrarSecion.Text = "CERRAR SECION";
+            this.ButtonCerrarSecion.UseVisualStyleBackColor = true;
+            this.ButtonCerrarSecion.Click += new System.EventHandler(this.ButtonCerrarSecion_Click);
             // 
             // CuadernosInicio
             // 
@@ -285,7 +302,7 @@
         private System.Windows.Forms.Label nombreProgramaLabel;
         private System.Windows.Forms.Button closeAppButton;
         private System.Windows.Forms.Button comprimirButton;
-        private System.Windows.Forms.Button cerrarButton;
+        private System.Windows.Forms.Button ButtonUsuarioEditar;
         private System.Windows.Forms.Button historialButton;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button inicioButton;
@@ -295,6 +312,7 @@
         private System.Windows.Forms.Label tituloLabel;
         private System.Windows.Forms.Label LabelNombre;
         private System.Windows.Forms.Label LabelEtiquetaNombre;
+        private System.Windows.Forms.Button ButtonCerrarSecion;
     }
 }
 

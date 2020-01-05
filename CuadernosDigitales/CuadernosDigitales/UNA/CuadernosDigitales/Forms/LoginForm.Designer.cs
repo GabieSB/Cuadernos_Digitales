@@ -186,6 +186,7 @@
             this.Name = "LoginForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cuadernos Digitales";
+            this.Load += new System.EventHandler(this.LoginForm_Load);
             this.cabezaPanel.ResumeLayout(false);
             this.cabezaPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderLogin)).EndInit();
