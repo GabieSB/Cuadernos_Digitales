@@ -33,10 +33,10 @@
             this.button1 = new System.Windows.Forms.Button();
             this.buscarCuadernoTextBox = new System.Windows.Forms.TextBox();
             this.inicioPanel = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
+            this.cuadernosContainer = new System.Windows.Forms.FlowLayoutPanel();
             this.buscaNotaButton = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.cuadernosContainer = new System.Windows.Forms.FlowLayoutPanel();
+            this.button2 = new System.Windows.Forms.Button();
             this.inicioPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -47,7 +47,7 @@
             this.nuevoCuadernoButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.nuevoCuadernoButton.Font = new System.Drawing.Font("Dream Orphans", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nuevoCuadernoButton.ForeColor = System.Drawing.Color.LightGray;
-            this.nuevoCuadernoButton.Location = new System.Drawing.Point(22, 13);
+            this.nuevoCuadernoButton.Location = new System.Drawing.Point(22, 17);
             this.nuevoCuadernoButton.Name = "nuevoCuadernoButton";
             this.nuevoCuadernoButton.Size = new System.Drawing.Size(133, 34);
             this.nuevoCuadernoButton.TabIndex = 0;
@@ -102,20 +102,14 @@
             this.inicioPanel.Size = new System.Drawing.Size(800, 545);
             this.inicioPanel.TabIndex = 5;
             // 
-            // button2
+            // cuadernosContainer
             // 
-            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button2.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Dream Orphans", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.LightGray;
-            this.button2.Location = new System.Drawing.Point(1173, 13);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(88, 34);
-            this.button2.TabIndex = 5;
-            this.button2.Text = "BUSCAR";
-            this.button2.UseVisualStyleBackColor = false;
+            this.cuadernosContainer.AutoScroll = true;
+            this.cuadernosContainer.Location = new System.Drawing.Point(34, 85);
+            this.cuadernosContainer.Margin = new System.Windows.Forms.Padding(15);
+            this.cuadernosContainer.Name = "cuadernosContainer";
+            this.cuadernosContainer.Size = new System.Drawing.Size(727, 445);
+            this.cuadernosContainer.TabIndex = 10;
             // 
             // buscaNotaButton
             // 
@@ -140,14 +134,20 @@
             this.textBox1.Size = new System.Drawing.Size(229, 25);
             this.textBox1.TabIndex = 8;
             // 
-            // cuadernosContainer
+            // button2
             // 
-            this.cuadernosContainer.AutoScroll = true;
-            this.cuadernosContainer.Location = new System.Drawing.Point(34, 85);
-            this.cuadernosContainer.Margin = new System.Windows.Forms.Padding(15);
-            this.cuadernosContainer.Name = "cuadernosContainer";
-            this.cuadernosContainer.Size = new System.Drawing.Size(727, 445);
-            this.cuadernosContainer.TabIndex = 10;
+            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button2.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Dream Orphans", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.LightGray;
+            this.button2.Location = new System.Drawing.Point(1173, 13);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(88, 34);
+            this.button2.TabIndex = 5;
+            this.button2.Text = "BUSCAR";
+            this.button2.UseVisualStyleBackColor = false;
             // 
             // Inicio
             // 

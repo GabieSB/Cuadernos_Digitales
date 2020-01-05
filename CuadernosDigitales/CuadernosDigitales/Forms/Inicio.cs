@@ -30,23 +30,6 @@ namespace CuadernosDigitales.Forms
 
         }
 
-        private void MostrarFormEnPanel(Object form)
-        {
-            if (this.Controls.Count > 0)
-            {
-                this.Controls.RemoveAt(0);
-            }
-
-            Form formPanel = form as Form;
-            formPanel.TopLevel =  false;
-            formPanel.Dock = DockStyle.Fill;
-            this.Controls.Add(formPanel);
-            this.Tag = formPanel;
-            formPanel.Show();
-        }
-
-        
-
         public void CuadernoPicture_Click(object sender, EventArgs e)
         {
             PictureBox pic = sender as PictureBox;
@@ -87,28 +70,10 @@ namespace CuadernosDigitales.Forms
 
            
             NuevoCuaderno nuevoCuaderno = new NuevoCuaderno();
-          //  nuevoCuaderno.TopLevel = false;
-           // nuevoCuaderno.AutoScroll = true;
-           // panel.Controls.Add(nuevoCuaderno);
             nuevoCuaderno.ShowDialog();
 
             if (nuevoCuaderno.cuadernoCreado == DialogResult.Yes)
             {
-                //poner imagenes en 
-                //if (columasCont == 4)
-                //{
-                //    filasCont++;
-                //    columasCont = 0;
-                //}
-                //int x = 40 + (columasCont * 100 + columasCont * 60);
-                //int y = 100 + 100 * filasCont + filasCont * 60;
-
-                //PictureBox pictureBox = new PictureBox();
-                //pictureBox.Image = NuevoCuaderno.colorSeleccionado;
-                //pictureBox.Location = new Point(x, y);
-                //pictureBox.Name = NuevoCuaderno.cuaderno.Nombre;
-                //pictureBox.Size = new System.Drawing.Size(100, 110);
-                //pictureBox.Click += new EventHandler(this.CuadernoPicture_Click);
                 MostrarCuadernoEnPantalla(NuevoCuaderno.cuaderno);
                 cuadernos.Add(NuevoCuaderno.cuaderno);
             }

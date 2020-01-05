@@ -133,10 +133,40 @@
     <None Include="Resources\back.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\around-20the-20world-20clipart-the-world-clipart-299_279.png" />
+    <None Include="Resources\Black.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\descarga.jpg" />
+    <None Include="Resources\Blue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DeepPink.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DeepSkyBlue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Gray.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Green.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Orange.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pink.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Purple.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Red.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\White.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Yellow.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

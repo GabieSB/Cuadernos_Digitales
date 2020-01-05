@@ -18,6 +18,11 @@ namespace CuadernosDigitales
             get;
             set;
         }
+        public int TamanoLetra
+        {
+            get;
+            set;
+        }
 
         public System.Drawing.Font Fuente
         {

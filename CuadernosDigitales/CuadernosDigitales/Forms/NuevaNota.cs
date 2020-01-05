@@ -15,18 +15,45 @@ namespace CuadernosDigitales.Forms
         public Bitmap colorSeleccionado;
         public  static Nota nota;
         private NotasMenu notasMenu;
-        public NuevaNota(NotasMenu notasMenu)
+        private bool esNueva;
+        private bool atras;
+
+        public NuevaNota(NotasMenu notasMenu, bool esNueva)
         {
             InitializeComponent();
             this.notasMenu = notasMenu;
+            this.esNueva = esNueva;
+            nota = new Nota();
+            if (!esNueva)
+            {
+                cargarNota();
+            }
 
-           // OcultarPropiedades();
-
-            tituloNotaTextBox.Select();
         }
 
-       
+        private void cargarNota()
+        {
+            tituloNotaTextBox.Text = NotasMenu.notaSeleccionada.Titulo;
+            notaTextBox.Text = NotasMenu.notaSeleccionada.Contenido;
+            categoriaTextBox.Text = NotasMenu.notaSeleccionada.Categoria ;
+            colorSeleccionadoPanel.BackColor = NotasMenu.notaSeleccionada.Color ;
+            notaTextBox.Font = NotasMenu.notaSeleccionada.Fuente;
+            notaTextBox.ForeColor = NotasMenu.notaSeleccionada.ColorDeLetra;
+            tituloNotaTextBox.ForeColor = NotasMenu.notaSeleccionada.ColorDeLetra;
+            ocultarCheckBox.Checked = NotasMenu.notaSeleccionada.Privacidad;
+            notaTextBox.BackColor = NotasMenu.notaSeleccionada.Color;
+            tituloNotaTextBox.BackColor = NotasMenu.notaSeleccionada.Color;
+            if (NotasMenu.notaSeleccionada.FechaDeModificacion == DateTime.MinValue)
+            {
+                fechaNotaLabel.Text = "Fecha de creación: "+Convert.ToString(NotasMenu.notaSeleccionada.FechaDeCreacion);
+            }
+            else
+            {
+                fechaNotaLabel.Text = "Fecha de modificación: " + Convert.ToString(NotasMenu.notaSeleccionada.FechaDeModificacion);
+            }
+            OcultarPropiedades();
 
+        }
         private void MostrarPropiedades()
         {
             
@@ -70,6 +97,7 @@ namespace CuadernosDigitales.Forms
         private void GuardarNotaButton_Click(object sender, EventArgs e)
         {
             bool mensaje = false;
+            bool informacionCompleta = false;
             if (String.IsNullOrEmpty(categoriaTextBox.Text) && String.IsNullOrEmpty(tituloNotaTextBox.Text))
             {
                 MessageBox.Show("La Nota no tiene titulo, ni categoria", "Alerta", MessageBoxButtons.OK);
@@ -87,21 +115,32 @@ namespace CuadernosDigitales.Forms
                 MessageBox.Show("La Nota no tiene un titulo", "Alerta", MessageBoxButtons.OK);
                 errorProvider.SetError(tituloNotaTextBox, "Ingrese un titulo");
             }else if (!String.IsNullOrEmpty(categoriaTextBox.Text) && !String.IsNullOrEmpty(tituloNotaTextBox.Text))
-            {
-                nota = new Nota();
+            {  
                 nota.Categoria = categoriaTextBox.Text;
                 nota.ColorDeLetra = fontDialog.Color;
                 nota.Color = colorSeleccionadoPanel.BackColor;
                 nota.Fuente = fontDialog.Font;
-                nota.Categoria = categoriaTextBox.Text;
+                nota.Contenido = notaTextBox.Text;
                 nota.Titulo = tituloNotaTextBox.Text;
                 nota.FechaDeCreacion = DateTime.Now;
+               // nota.FechaDeModificacion = null;
                 nota.Privacidad = ocultarCheckBox.Checked;
                 nota.Orden = 1;
-                this.Close();
-
+                informacionCompleta = true;
 
             }
+            if (!esNueva)
+            {
+                nota.FechaDeModificacion = DateTime.Now;
+                NotasMenu.notaNueva = nota;
+                MessageBox.Show(nota.Titulo);
+            }
+            if (informacionCompleta)
+            {
+                atras = false;
+                this.Close();
+            } 
+
         }
 
         private void LightGreen_Click(object sender, EventArgs e)
@@ -222,7 +261,19 @@ namespace CuadernosDigitales.Forms
 
         private void NuevaNota_FormClosed(object sender, FormClosedEventArgs e)
         {
-            notasMenu.NuevaNota_itsClosed();
+            if (!atras)
+            {
+                if (esNueva) notasMenu.NuevaNotaGuardada();
+                if (!esNueva) notasMenu.NotaEditada();
+            }
+            
         }
+
+        private void AtrarButton_Click(object sender, EventArgs e)
+        {
+            atras = true;
+            this.Close();
+        }
+
     }
 }

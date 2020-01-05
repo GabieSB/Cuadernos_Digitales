@@ -13,51 +13,23 @@ namespace CuadernosDigitales.Forms
     public partial class NotasMenu : Form
 
     {
-        // private List<Cuaderno> cuadernos ;
-        private Panel panel;
+        private Cuaderno cuadernoPadre;
         public static Nota notaNueva;
+        public static Nota notaSeleccionada;
+     
         public NotasMenu()
         {
             InitializeComponent();
-            nombreCuadernoLabel.Text = Inicio.CuadernoSeleccionado.Nombre;
-            cargarNotas();
-            // categoriasGridView.DataSource = Inicio.CuadernoSeleccionado.getListaDeCategorias();
-        }
-
-        private void MostrarFormEnPanel(Object form)
-        {
-            panel = new Panel();
-            panel = notasMenuPanel;
-
-            notasMenuPanel.Visible = false;
+            cuadernoPadre = Inicio.CuadernoSeleccionado;
+            nombreCuadernoLabel.Text = cuadernoPadre.Nombre;
+            cargarNotas(cuadernoPadre.getListaDeNotas(),false);
 
         }
-        private void AbrirForm<MiForm>() where MiForm : Form, new()
-        {
-            Form formulario;
-            formulario = notasMenuPanel.Controls.OfType<MiForm>().FirstOrDefault(); //Busca en la coleccion
-            if (formulario == null)
-            {
-                formulario = new MiForm();
-                formulario.TopLevel = false;
-                formulario.Dock = DockStyle.Fill;
-                notasMenuPanel.Controls.Add(formulario);
-                formulario.BringToFront();
-                formulario.Show();
-
-
-            }
-            else
-            {
-                formulario.BringToFront();
-            }
-        }
+      
         private void NuevaNotaButton_Click(object sender, EventArgs e)
         {
 
-            // AbrirForm<NuevaNota>();
-            //  this.Close();
-            NuevaNota nuevaNota = new NuevaNota(this);
+            NuevaNota nuevaNota = new NuevaNota(this, true);
             AddOwnedForm(nuevaNota);
             nuevaNota.TopLevel = false;
             nuevaNota.Dock = DockStyle.Fill;
@@ -67,13 +39,40 @@ namespace CuadernosDigitales.Forms
             nuevaNota.Show();
 
         }
-         public  void NuevaNota_itsClosed()
+         public  void NuevaNotaGuardada()
         {
             notaNueva = NuevaNota.nota;
-            MessageBox.Show(notaNueva.Titulo);
             Inicio.CuadernoSeleccionado.agregarNota(notaNueva);
-            MostrarNotaEnPantalla(notaNueva);
-           
+            if(!notaNueva.Privacidad) MostrarNotaEnPantalla(notaNueva);
+
+
+        }
+        public void NotaEditada()
+        {
+            int numeroNota = Inicio.CuadernoSeleccionado.BuscarNota(notaSeleccionada.Titulo);
+            
+            if (numeroNota!=-1)
+            {
+                foreach(Control item in notasContainer.Controls)
+                {
+
+                    if(item.Name == Inicio.CuadernoSeleccionado.ObtenerNombre(numeroNota)&&item is Panel)
+                    {
+                        ((Panel)item).BackColor = notaNueva.Color;
+                        ((Panel)item).Name = notaNueva.Titulo;
+                        foreach(Control c in ((Panel)item).Controls)
+                        {
+                            if(c is Label)
+                            {
+                                ((Label)c).Name = item.Name;
+                                ((Label)c).Text = item.Name;
+                            }
+                        }
+                    }
+                }
+
+                Inicio.CuadernoSeleccionado.ModificarNota(numeroNota, notaNueva);
+            }
         }
 
         private void MostrarNotaEnPantalla(Nota nota)
@@ -81,39 +80,120 @@ namespace CuadernosDigitales.Forms
             Panel panel = new Panel();
             Label nombre = new Label();
             panel.BackColor = nota.Color;
-            panel.Margin = new System.Windows.Forms.Padding(15);
-            panel.Size = new System.Drawing.Size(355, 45);
+            panel.Margin = new Padding(15);
+            panel.Size = new Size(355, 45);
             panel.TabIndex = 9;
+            panel.Name = nota.Titulo;
+            nombre.AutoSize = true;
+            nombre.Name = nota.Titulo;
             nombre.Text = nota.Titulo;
             nombre.Location = new Point(14, 12);
+            nombre.Enabled = false;
+            nombre.Font = new Font("NewsGoth BT", 12F, FontStyle.Bold);
             panel.Controls.Add(nombre);
+            panel.Click += new EventHandler(this.NotaSeleccionada_Click);
             notasContainer.Controls.Add(panel);
             
         }
 
-        private void cargarNotas()
+        private void cargarNotas(List<Nota> notas, bool mostrarOcultas)
         {
-            if (Inicio.CuadernoSeleccionado.getListaDeNotas()!=null)
+            if (notas!=null)
             {
-                foreach(Nota item in Inicio.CuadernoSeleccionado.getListaDeNotas())
+                foreach(Nota item in notas)
                 {
-                    MostrarNotaEnPantalla(item);
+                    if (!item.Privacidad)
+                    {
+                        MostrarNotaEnPantalla(item);
+                    }else if(item.Privacidad && mostrarOcultas)
+                    {
+                        MostrarNotaEnPantalla(item);
+                    }
+
                 }
             }
 
         }
 
-        
-        
-
-        private void CloseNotasCuadernoButton_Click(object sender, EventArgs e)
+        private void limpiarNotas()
         {
-            this.Close(); 
+            notasContainer.Controls.Clear();
+        }
+        private void NotaSeleccionada_Click(object sender, EventArgs e)
+        {
+            
+            Panel notaSelect = sender as Panel;
+            
+
+            foreach (Nota nota in cuadernoPadre.getListaDeNotas())
+            {
+                if (notaSelect.Name == nota.Titulo)
+                {
+                    notaSeleccionada = new Nota();
+                    notaSeleccionada = nota;
+
+                    NuevaNota nuevaNota = new NuevaNota(this, false);
+                    AddOwnedForm(nuevaNota);
+                    nuevaNota.TopLevel = false;
+                    nuevaNota.Dock = DockStyle.Fill;
+                    this.Controls.Add(nuevaNota);
+                    this.Tag = nuevaNota;
+                    nuevaNota.BringToFront();
+                    nuevaNota.Show();
+
+                }
+            }
+
         }
 
         private void RegresarButton_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void BuscaNotaButton_Click(object sender, EventArgs e)
+        {
+            if (buscarCuadernoTextBox.Text.Length != 0)
+            {
+                Nota note = new Nota();
+                note = cuadernoPadre.BuscarNota(buscarCuadernoTextBox.Text,true);
+                if (note != null)
+                {
+                    notasContainer.Controls.Clear();
+                    MostrarNotaEnPantalla(note);
+                    nuevaNotaButton.Visible = false;
+                    verNotasButton.Visible = true;
+                }
+ 
+            }
+           
+            
+        }
+
+        private void VerNotasButton_Click(object sender, EventArgs e)
+        {
+            notasContainer.Controls.Clear();
+            verNotasButton.Visible = false;
+            nuevaNotaButton.Visible = true;
+            verOcultasButton.Visible = true;
+            buscarCuadernoTextBox.Text = "";
+            cargarNotas(cuadernoPadre.getListaDeNotas(),false);
+        }
+
+        private void VerOcultasButton_Click(object sender, EventArgs e)
+        {
+            List<Nota> notasOcultas = new List<Nota>();
+            notasOcultas = cuadernoPadre.getNotasOcultas();
+            if (notasOcultas != null)
+            {
+                notasContainer.Controls.Clear();
+                nuevaNotaButton.Visible = false;
+                verOcultasButton.Visible = false;
+                verNotasButton.Visible = true;
+                cargarNotas(notasOcultas,true);
+            }
+            
+
         }
     }
 }

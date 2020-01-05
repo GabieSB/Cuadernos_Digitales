@@ -56,6 +56,8 @@
             this.tituloNotaTextBox = new System.Windows.Forms.TextBox();
             this.notaYpropiedadesPanel = new System.Windows.Forms.Panel();
             this.notaPanel = new System.Windows.Forms.Panel();
+            this.atrarButton = new System.Windows.Forms.Button();
+            this.fechaNotaLabel = new System.Windows.Forms.Label();
             this.fontDialog = new System.Windows.Forms.FontDialog();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.propiedadesPanel.SuspendLayout();
@@ -85,17 +87,17 @@
             // notaTextBox
             // 
             this.notaTextBox.Font = new System.Drawing.Font("NewsGoth BT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.notaTextBox.Location = new System.Drawing.Point(12, 67);
+            this.notaTextBox.Location = new System.Drawing.Point(12, 85);
             this.notaTextBox.MaxLength = 1000000;
             this.notaTextBox.Multiline = true;
             this.notaTextBox.Name = "notaTextBox";
-            this.notaTextBox.Size = new System.Drawing.Size(552, 384);
+            this.notaTextBox.Size = new System.Drawing.Size(552, 366);
             this.notaTextBox.TabIndex = 17;
             this.notaTextBox.Text = "NOTA";
             // 
             // propiedadesPanel
             // 
-            this.propiedadesPanel.BackColor = System.Drawing.Color.Gray;
+            this.propiedadesPanel.BackColor = System.Drawing.Color.Silver;
             this.propiedadesPanel.Controls.Add(this.controlsPropiedadesPanel);
             this.propiedadesPanel.Controls.Add(this.propiedadesButton);
             this.propiedadesPanel.Dock = System.Windows.Forms.DockStyle.Left;
@@ -321,7 +323,7 @@
             // 
             // propiedadesButton
             // 
-            this.propiedadesButton.Location = new System.Drawing.Point(6, 5);
+            this.propiedadesButton.Location = new System.Drawing.Point(11, 11);
             this.propiedadesButton.Name = "propiedadesButton";
             this.propiedadesButton.Size = new System.Drawing.Size(38, 23);
             this.propiedadesButton.TabIndex = 19;
@@ -332,7 +334,7 @@
             // tituloNotaTextBox
             // 
             this.tituloNotaTextBox.Font = new System.Drawing.Font("NewsGoth BT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tituloNotaTextBox.Location = new System.Drawing.Point(12, 20);
+            this.tituloNotaTextBox.Location = new System.Drawing.Point(12, 38);
             this.tituloNotaTextBox.MaxLength = 1000;
             this.tituloNotaTextBox.Name = "tituloNotaTextBox";
             this.tituloNotaTextBox.Size = new System.Drawing.Size(552, 27);
@@ -355,7 +357,9 @@
             // 
             // notaPanel
             // 
-            this.notaPanel.BackColor = System.Drawing.Color.Silver;
+            this.notaPanel.BackColor = System.Drawing.Color.LightGray;
+            this.notaPanel.Controls.Add(this.atrarButton);
+            this.notaPanel.Controls.Add(this.fechaNotaLabel);
             this.notaPanel.Controls.Add(this.tituloNotaTextBox);
             this.notaPanel.Controls.Add(this.notaTextBox);
             this.notaPanel.Controls.Add(this.guardarNotaButton);
@@ -363,6 +367,31 @@
             this.notaPanel.Name = "notaPanel";
             this.notaPanel.Size = new System.Drawing.Size(578, 543);
             this.notaPanel.TabIndex = 19;
+            // 
+            // atrarButton
+            // 
+            this.atrarButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.atrarButton.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.atrarButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.atrarButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.atrarButton.Font = new System.Drawing.Font("Dream Orphans", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.atrarButton.ForeColor = System.Drawing.Color.LightGray;
+            this.atrarButton.Location = new System.Drawing.Point(291, 457);
+            this.atrarButton.Name = "atrarButton";
+            this.atrarButton.Size = new System.Drawing.Size(133, 34);
+            this.atrarButton.TabIndex = 19;
+            this.atrarButton.Text = "ATRAS";
+            this.atrarButton.UseVisualStyleBackColor = false;
+            this.atrarButton.Click += new System.EventHandler(this.AtrarButton_Click);
+            // 
+            // fechaNotaLabel
+            // 
+            this.fechaNotaLabel.AutoSize = true;
+            this.fechaNotaLabel.Font = new System.Drawing.Font("NewsGoth BT", 12F);
+            this.fechaNotaLabel.Location = new System.Drawing.Point(14, 10);
+            this.fechaNotaLabel.Name = "fechaNotaLabel";
+            this.fechaNotaLabel.Size = new System.Drawing.Size(0, 19);
+            this.fechaNotaLabel.TabIndex = 18;
             // 
             // errorProvider
             // 
@@ -421,5 +450,7 @@
         private System.Windows.Forms.Label categoriaLabel;
         private System.Windows.Forms.TextBox categoriaTextBox;
         private System.Windows.Forms.ErrorProvider errorProvider;
+        private System.Windows.Forms.Label fechaNotaLabel;
+        private System.Windows.Forms.Button atrarButton;
     }
 }

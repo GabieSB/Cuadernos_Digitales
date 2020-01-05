@@ -53,5 +53,54 @@ namespace CuadernosDigitales
         {
             return notas;
         }
+
+        public int BuscarNota(string name)
+        {
+            foreach(Nota nota in notas)
+            {
+                if(nota.Titulo == name)
+                {
+                    return notas.IndexOf(nota);
+                }
+            }
+
+            return -1;
+        }
+        public Nota BuscarNota(string name, bool sinNumero)
+        {
+            foreach (Nota nota in notas)
+            {
+                if (nota.Titulo == name)
+                {
+                    return nota;
+                }
+            }
+
+            return null;
+        }
+
+
+        public void ModificarNota(int num, Nota nota)
+        {
+            notas[num] = nota;
+        }
+        public string ObtenerNombre(int num)
+        {
+            return notas[num].Titulo;
+        }
+
+        public List<Nota> getNotasOcultas()
+        {
+            List<Nota> notasOcultas = new List<Nota>();
+            foreach (Nota nota in notas)
+            {
+                if (nota.Privacidad)
+                {
+                    notasOcultas.Add(nota);
+                }
+                
+            }
+            return notasOcultas;
+        }
     }
 }

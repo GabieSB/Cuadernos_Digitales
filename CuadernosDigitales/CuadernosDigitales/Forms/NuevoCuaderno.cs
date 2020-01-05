@@ -91,7 +91,7 @@ namespace CuadernosDigitales.Forms
         private void YellowButton_Click(object sender, EventArgs e)
         {
             colorSeleccionadoPanel.BackColor = System.Drawing.Color.Yellow;
-            // colorSeleccionado = Properties.Resources.Yellow;
+            colorSeleccionado = Properties.Resources.Yellow;
         }
 
         private void BlueButton_Click(object sender, EventArgs e)
@@ -103,20 +103,20 @@ namespace CuadernosDigitales.Forms
         private void DeepSkyBlueButton_Click(object sender, EventArgs e)
         {
             colorSeleccionadoPanel.BackColor = System.Drawing.Color.DeepPink;
-            //colorSeleccionado = Properties.Resources.DeepSkyBlue;
+            colorSeleccionado = Properties.Resources.DeepSkyBlue;
         }
 
         private void DeepPinkButton_Click(object sender, EventArgs e)
         {
             colorSeleccionadoPanel.BackColor = System.Drawing.Color.DeepPink;
-            //colorSeleccionado = "DeepPink";
+            colorSeleccionado = Properties.Resources.DeepPink;
 
         }
 
         private void PinkButton_Click(object sender, EventArgs e)
         {
             colorSeleccionadoPanel.BackColor = System.Drawing.Color.Pink;
-           // colorSeleccionado = "Pink";
+            colorSeleccionado = Properties.Resources.Pink;
         }
 
         private void PurpleButton_Click(object sender, EventArgs e)
@@ -128,16 +128,19 @@ namespace CuadernosDigitales.Forms
         private void WhiteButton_Click(object sender, EventArgs e)
         {
             colorSeleccionadoPanel.BackColor = System.Drawing.Color.White;
+            colorSeleccionado = Properties.Resources.White;
         }
 
         private void GrayButton_Click(object sender, EventArgs e)
         {
             colorSeleccionadoPanel.BackColor = System.Drawing.Color.Gray;
+            colorSeleccionado = Properties.Resources.Gray;
         }
 
         private void BlackButton_Click(object sender, EventArgs e)
         {
             colorSeleccionadoPanel.BackColor = System.Drawing.Color.Black;
+            colorSeleccionado = Properties.Resources.Black;
         }
 
         private void CrearCuadernoButton_Click(object sender, EventArgs e)

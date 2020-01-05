@@ -44,10 +44,10 @@
             // 
             // CuadernoPictureBox
             // 
-            this.CuadernoPictureBox.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.CuadernoPictureBox.Location = new System.Drawing.Point(55, 9);
+            this.CuadernoPictureBox.BackColor = System.Drawing.SystemColors.Control;
+            this.CuadernoPictureBox.Location = new System.Drawing.Point(55, 5);
             this.CuadernoPictureBox.Name = "CuadernoPictureBox";
-            this.CuadernoPictureBox.Size = new System.Drawing.Size(116, 127);
+            this.CuadernoPictureBox.Size = new System.Drawing.Size(120, 132);
             this.CuadernoPictureBox.TabIndex = 0;
             this.CuadernoPictureBox.TabStop = false;
             this.CuadernoPictureBox.Click += new System.EventHandler(this.CuadernoPictureBox_Click);
