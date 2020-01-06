@@ -147,6 +147,7 @@ namespace CuadernosDigitales.Forms
         {
             cuaderno.Nombre = nombreCuadernoTextBox.Text;
             cuaderno.Color = colorSeleccionadoPanel.BackColor;
+            cuaderno.Imagen = colorSeleccionado;
            
             for (int i = 0; i < 9; i++)
             {
@@ -157,5 +158,6 @@ namespace CuadernosDigitales.Forms
             cuadernoCreado = DialogResult.Yes;
             this.Close();
         }
+
     }
 }

@@ -33,10 +33,12 @@
             this.button1 = new System.Windows.Forms.Button();
             this.buscarCuadernoTextBox = new System.Windows.Forms.TextBox();
             this.inicioPanel = new System.Windows.Forms.Panel();
+            this.atrasButton = new System.Windows.Forms.Button();
             this.cuadernosContainer = new System.Windows.Forms.FlowLayoutPanel();
             this.buscaNotaButton = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
+            this.eliminarButton = new System.Windows.Forms.Button();
             this.inicioPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -47,7 +49,7 @@
             this.nuevoCuadernoButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.nuevoCuadernoButton.Font = new System.Drawing.Font("Dream Orphans", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nuevoCuadernoButton.ForeColor = System.Drawing.Color.LightGray;
-            this.nuevoCuadernoButton.Location = new System.Drawing.Point(22, 17);
+            this.nuevoCuadernoButton.Location = new System.Drawing.Point(34, 13);
             this.nuevoCuadernoButton.Name = "nuevoCuadernoButton";
             this.nuevoCuadernoButton.Size = new System.Drawing.Size(133, 34);
             this.nuevoCuadernoButton.TabIndex = 0;
@@ -89,22 +91,41 @@
             // 
             // inicioPanel
             // 
-            this.inicioPanel.BackColor = System.Drawing.SystemColors.Control;
+            this.inicioPanel.BackColor = System.Drawing.Color.White;
             this.inicioPanel.Controls.Add(this.cuadernosContainer);
             this.inicioPanel.Controls.Add(this.buscaNotaButton);
             this.inicioPanel.Controls.Add(this.textBox1);
             this.inicioPanel.Controls.Add(this.button2);
             this.inicioPanel.Controls.Add(this.nuevoCuadernoButton);
             this.inicioPanel.Controls.Add(this.buscarCuadernoTextBox);
+            this.inicioPanel.Controls.Add(this.eliminarButton);
+            this.inicioPanel.Controls.Add(this.atrasButton);
             this.inicioPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.inicioPanel.Location = new System.Drawing.Point(0, 0);
             this.inicioPanel.Name = "inicioPanel";
             this.inicioPanel.Size = new System.Drawing.Size(800, 545);
             this.inicioPanel.TabIndex = 5;
             // 
+            // atrasButton
+            // 
+            this.atrasButton.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.atrasButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.atrasButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.atrasButton.Font = new System.Drawing.Font("Dream Orphans", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.atrasButton.ForeColor = System.Drawing.Color.LightGray;
+            this.atrasButton.Location = new System.Drawing.Point(125, 12);
+            this.atrasButton.Name = "atrasButton";
+            this.atrasButton.Size = new System.Drawing.Size(85, 34);
+            this.atrasButton.TabIndex = 13;
+            this.atrasButton.Text = "ATRAS";
+            this.atrasButton.UseVisualStyleBackColor = false;
+            this.atrasButton.Visible = false;
+            this.atrasButton.Click += new System.EventHandler(this.AtrasButton_Click);
+            // 
             // cuadernosContainer
             // 
             this.cuadernosContainer.AutoScroll = true;
+            this.cuadernosContainer.BackColor = System.Drawing.Color.White;
             this.cuadernosContainer.Location = new System.Drawing.Point(34, 85);
             this.cuadernosContainer.Margin = new System.Windows.Forms.Padding(15);
             this.cuadernosContainer.Name = "cuadernosContainer";
@@ -129,7 +150,7 @@
             // textBox1
             // 
             this.textBox1.Font = new System.Drawing.Font("Dream Orphans", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(450, 22);
+            this.textBox1.Location = new System.Drawing.Point(447, 22);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(229, 25);
             this.textBox1.TabIndex = 8;
@@ -149,6 +170,22 @@
             this.button2.Text = "BUSCAR";
             this.button2.UseVisualStyleBackColor = false;
             // 
+            // eliminarButton
+            // 
+            this.eliminarButton.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.eliminarButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.eliminarButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.eliminarButton.Font = new System.Drawing.Font("Dream Orphans", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.eliminarButton.ForeColor = System.Drawing.Color.LightGray;
+            this.eliminarButton.Location = new System.Drawing.Point(34, 13);
+            this.eliminarButton.Name = "eliminarButton";
+            this.eliminarButton.Size = new System.Drawing.Size(85, 34);
+            this.eliminarButton.TabIndex = 12;
+            this.eliminarButton.Text = "ELIMINAR";
+            this.eliminarButton.UseVisualStyleBackColor = false;
+            this.eliminarButton.Visible = false;
+            this.eliminarButton.Click += new System.EventHandler(this.EliminarButton_Click);
+            // 
             // Inicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -161,7 +198,6 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Inicio";
             this.Text = "Inicio";
-            this.Load += new System.EventHandler(this.InicioForm_Load);
             this.inicioPanel.ResumeLayout(false);
             this.inicioPanel.PerformLayout();
             this.ResumeLayout(false);
@@ -180,5 +216,7 @@
         private System.Windows.Forms.Button buscaNotaButton;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.FlowLayoutPanel cuadernosContainer;
+        private System.Windows.Forms.Button eliminarButton;
+        private System.Windows.Forms.Button atrasButton;
     }
 }

@@ -354,7 +354,7 @@
             this.crearCuadernoButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.crearCuadernoButton.Font = new System.Drawing.Font("Dream Orphans", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.crearCuadernoButton.ForeColor = System.Drawing.Color.LightGray;
-            this.crearCuadernoButton.Location = new System.Drawing.Point(538, 413);
+            this.crearCuadernoButton.Location = new System.Drawing.Point(549, 424);
             this.crearCuadernoButton.Name = "crearCuadernoButton";
             this.crearCuadernoButton.Size = new System.Drawing.Size(133, 34);
             this.crearCuadernoButton.TabIndex = 12;

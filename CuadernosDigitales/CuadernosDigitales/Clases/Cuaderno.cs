@@ -34,7 +34,11 @@ namespace CuadernosDigitales
             get;
             set;
         }
-
+        public Bitmap Imagen
+        {
+            get;
+            set;
+        }
         public void agregarCategoria(Categoria cat)
         {
             categorias.Add(cat);
@@ -78,7 +82,10 @@ namespace CuadernosDigitales
 
             return null;
         }
-
+        public void EliminarNota(Nota nota)
+        {
+            notas.Remove(nota);
+        }
 
         public void ModificarNota(int num, Nota nota)
         {

@@ -30,13 +30,15 @@
         {
             this.nuevaNotaButton = new System.Windows.Forms.Button();
             this.notasMenuPanel = new System.Windows.Forms.Panel();
+            this.verOcultasButton = new System.Windows.Forms.Button();
             this.regresarButton = new System.Windows.Forms.Button();
             this.notasContainer = new System.Windows.Forms.FlowLayoutPanel();
             this.nombreCuadernoLabel = new System.Windows.Forms.Label();
             this.buscaNotaButton = new System.Windows.Forms.Button();
             this.buscarCuadernoTextBox = new System.Windows.Forms.TextBox();
             this.verNotasButton = new System.Windows.Forms.Button();
-            this.verOcultasButton = new System.Windows.Forms.Button();
+            this.eliminarButton = new System.Windows.Forms.Button();
+            this.cancelarButton = new System.Windows.Forms.Button();
             this.notasMenuPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -59,6 +61,7 @@
             // notasMenuPanel
             // 
             this.notasMenuPanel.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.notasMenuPanel.Controls.Add(this.cancelarButton);
             this.notasMenuPanel.Controls.Add(this.verOcultasButton);
             this.notasMenuPanel.Controls.Add(this.regresarButton);
             this.notasMenuPanel.Controls.Add(this.notasContainer);
@@ -67,11 +70,28 @@
             this.notasMenuPanel.Controls.Add(this.buscarCuadernoTextBox);
             this.notasMenuPanel.Controls.Add(this.nuevaNotaButton);
             this.notasMenuPanel.Controls.Add(this.verNotasButton);
+            this.notasMenuPanel.Controls.Add(this.eliminarButton);
             this.notasMenuPanel.ForeColor = System.Drawing.Color.Black;
             this.notasMenuPanel.Location = new System.Drawing.Point(0, 0);
             this.notasMenuPanel.Name = "notasMenuPanel";
             this.notasMenuPanel.Size = new System.Drawing.Size(800, 545);
             this.notasMenuPanel.TabIndex = 4;
+            // 
+            // verOcultasButton
+            // 
+            this.verOcultasButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.verOcultasButton.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.verOcultasButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.verOcultasButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.verOcultasButton.Font = new System.Drawing.Font("Dream Orphans", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.verOcultasButton.ForeColor = System.Drawing.Color.LightGray;
+            this.verOcultasButton.Location = new System.Drawing.Point(184, 68);
+            this.verOcultasButton.Name = "verOcultasButton";
+            this.verOcultasButton.Size = new System.Drawing.Size(133, 34);
+            this.verOcultasButton.TabIndex = 14;
+            this.verOcultasButton.Text = "VER OCULTAS";
+            this.verOcultasButton.UseVisualStyleBackColor = false;
+            this.verOcultasButton.Click += new System.EventHandler(this.VerOcultasButton_Click);
             // 
             // regresarButton
             // 
@@ -135,7 +155,7 @@
             this.verNotasButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.verNotasButton.Font = new System.Drawing.Font("Dream Orphans", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.verNotasButton.ForeColor = System.Drawing.Color.LightGray;
-            this.verNotasButton.Location = new System.Drawing.Point(28, 69);
+            this.verNotasButton.Location = new System.Drawing.Point(28, 67);
             this.verNotasButton.Name = "verNotasButton";
             this.verNotasButton.Size = new System.Drawing.Size(172, 33);
             this.verNotasButton.TabIndex = 13;
@@ -144,21 +164,39 @@
             this.verNotasButton.Visible = false;
             this.verNotasButton.Click += new System.EventHandler(this.VerNotasButton_Click);
             // 
-            // verOcultasButton
+            // eliminarButton
             // 
-            this.verOcultasButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.verOcultasButton.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.verOcultasButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
-            this.verOcultasButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.verOcultasButton.Font = new System.Drawing.Font("Dream Orphans", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.verOcultasButton.ForeColor = System.Drawing.Color.LightGray;
-            this.verOcultasButton.Location = new System.Drawing.Point(178, 68);
-            this.verOcultasButton.Name = "verOcultasButton";
-            this.verOcultasButton.Size = new System.Drawing.Size(133, 34);
-            this.verOcultasButton.TabIndex = 14;
-            this.verOcultasButton.Text = "VER OCULTAS";
-            this.verOcultasButton.UseVisualStyleBackColor = false;
-            this.verOcultasButton.Click += new System.EventHandler(this.VerOcultasButton_Click);
+            this.eliminarButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.eliminarButton.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.eliminarButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.eliminarButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.eliminarButton.Font = new System.Drawing.Font("Dream Orphans", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.eliminarButton.ForeColor = System.Drawing.Color.LightGray;
+            this.eliminarButton.Location = new System.Drawing.Point(28, 68);
+            this.eliminarButton.Name = "eliminarButton";
+            this.eliminarButton.Size = new System.Drawing.Size(84, 34);
+            this.eliminarButton.TabIndex = 15;
+            this.eliminarButton.Text = "ELIMINAR";
+            this.eliminarButton.UseVisualStyleBackColor = false;
+            this.eliminarButton.Visible = false;
+            this.eliminarButton.Click += new System.EventHandler(this.EliminarButton_Click);
+            // 
+            // cancelarButton
+            // 
+            this.cancelarButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cancelarButton.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.cancelarButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.cancelarButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cancelarButton.Font = new System.Drawing.Font("Dream Orphans", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cancelarButton.ForeColor = System.Drawing.Color.LightGray;
+            this.cancelarButton.Location = new System.Drawing.Point(152, 68);
+            this.cancelarButton.Name = "cancelarButton";
+            this.cancelarButton.Size = new System.Drawing.Size(84, 34);
+            this.cancelarButton.TabIndex = 16;
+            this.cancelarButton.Text = "CANCELAR";
+            this.cancelarButton.UseVisualStyleBackColor = false;
+            this.cancelarButton.Visible = false;
+            this.cancelarButton.Click += new System.EventHandler(this.CancelarButton_Click);
             // 
             // NotasMenu
             // 
@@ -186,5 +224,7 @@
         private System.Windows.Forms.Button regresarButton;
         private System.Windows.Forms.Button verNotasButton;
         private System.Windows.Forms.Button verOcultasButton;
+        private System.Windows.Forms.Button eliminarButton;
+        private System.Windows.Forms.Button cancelarButton;
     }
 }

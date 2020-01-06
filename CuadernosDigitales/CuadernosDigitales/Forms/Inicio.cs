@@ -14,26 +14,39 @@ namespace CuadernosDigitales.Forms
     {
         public List <Cuaderno> cuadernos;
         public static Cuaderno CuadernoSeleccionado;
-        int columasCont ;
-        int filasCont;
-        
+        private PictureBox picSelected;
+        private PictureBox picSelectedAux;
+        private bool sePuedenVerNotas;
+
         public Inicio()
         {
             InitializeComponent();
-            columasCont = 0;
-            List<PictureBox> picturesBooks = new List<PictureBox>();
             cuadernos = new List<Cuaderno>();
+            picSelectedAux = new PictureBox();
+            sePuedenVerNotas = true;
         }
 
-        private void InicioForm_Load(object sender, EventArgs e)
+        public void CuadernoPictureBox_Click(object sender, EventArgs e)
         {
-
+            getPicYCuadernoSeleccionado(sender, e);
+            if(picSelected!= picSelectedAux)
+            {
+                picSelectedAux.BorderStyle = BorderStyle.None;
+            }
+            picSelected.BorderStyle = BorderStyle.FixedSingle;
+            picSelected.BackColor = Color.DeepSkyBlue;
+            picSelectedAux = picSelected;
+            nuevoCuadernoButton.Visible = false;
+            eliminarButton.Visible = true;
+            atrasButton.Visible = true;
+            sePuedenVerNotas = false;
         }
-
-        public void CuadernoPicture_Click(object sender, EventArgs e)
+        private void getPicYCuadernoSeleccionado(object sender, EventArgs e)
         {
             PictureBox pic = sender as PictureBox;
-            foreach(Cuaderno cuaderno in cuadernos)
+            picSelected = new PictureBox();
+            picSelected = pic;
+            foreach (Cuaderno cuaderno in cuadernos)
             {
                 if (pic.Name == cuaderno.Nombre)
                 {
@@ -41,8 +54,16 @@ namespace CuadernosDigitales.Forms
                     CuadernoSeleccionado = cuaderno;
                 }
             }
-            AbrirForm<NotasMenu>();
-           
+        }
+        public void CuadernoPicture_DoubleClick(object sender, EventArgs e)
+        {
+            if (sePuedenVerNotas)
+            {
+                getPicYCuadernoSeleccionado(sender, e);
+                AbrirForm<NotasMenu>();
+            }
+            
+ 
         }
 
         private void AbrirForm<MiForm>() where MiForm : Form, new()
@@ -68,7 +89,6 @@ namespace CuadernosDigitales.Forms
         private void NuevoCuadernoButton_Click(object sender, EventArgs e)
         {
 
-           
             NuevoCuaderno nuevoCuaderno = new NuevoCuaderno();
             nuevoCuaderno.ShowDialog();
 
@@ -84,10 +104,46 @@ namespace CuadernosDigitales.Forms
         {
             UCCuadernoDigital cuadernoDigital = new UCCuadernoDigital(this);
             cuadernoDigital.nombreDeCuaderno = cuaderno.Nombre;
-            cuadernoDigital.picture = NuevoCuaderno.colorSeleccionado; 
+            cuadernoDigital.picture = cuaderno.Imagen;
             cuadernoDigital.namePicture = cuaderno.Nombre;
             cuadernosContainer.Controls.Add(cuadernoDigital);
         }
-       
+
+        private void AtrasButton_Click(object sender, EventArgs e)
+        {
+            picSelected.BorderStyle = BorderStyle.None;
+            picSelected.BackColor = Color.White;
+            nuevoCuadernoButton.Visible = true;
+            eliminarButton.Visible = false;
+            atrasButton.Visible = false;
+            picSelected = null;
+            sePuedenVerNotas = true;
+        }
+
+        private void cargarCuadernos(List<Cuaderno> listCuadernos)
+        {
+            foreach(Cuaderno item in listCuadernos)
+            {
+                MostrarCuadernoEnPantalla(item);
+            }
+        }
+
+        private void EliminarButton_Click(object sender, EventArgs e)
+        {
+
+            DialogResult resultado =  MessageBox.Show("¿Esta seguro de querer eliminar el cuaderno: "+CuadernoSeleccionado.Nombre+"?", "Alerta",MessageBoxButtons.YesNoCancel);
+            if(resultado == DialogResult.Yes)
+            {
+                cuadernos.Remove(CuadernoSeleccionado);
+                cuadernosContainer.Controls.Clear();
+                cargarCuadernos(cuadernos);
+                AtrasButton_Click(sender, e);
+            }
+        }
+
+        private void EditarButton_Click(object sender, EventArgs e)
+        {
+           
+        }
     }
 }

@@ -53,9 +53,16 @@ namespace CuadernosDigitales.Forms
             }
         }
 
-        public void CuadernoPictureBox_Click(object sender, EventArgs e)
+        private void CuadernoPictureBox_MouseClick(object sender, MouseEventArgs e)
         {
-            inicio.CuadernoPicture_Click(sender, e);
+            if(e.Button == MouseButtons.Left)
+            {
+                inicio.CuadernoPicture_DoubleClick(sender, e);
+            }
+            else
+            {
+                inicio.CuadernoPictureBox_Click(sender, e);
+            }
         }
     }
 }
