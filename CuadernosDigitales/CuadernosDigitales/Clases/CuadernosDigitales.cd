@@ -3,22 +3,29 @@
   <Class Name="CuadernosDigitales.Cuaderno">
     <Position X="1.25" Y="1" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAhAAAgAAQAQAAAAAAAAAAgAAQAAI=</HashCode>
-      <FileName>Cuaderno.cs</FileName>
+      <HashCode>BAAAAAAAAIACQAAAhAAAgAAQAQAAAJQAAAAAgAAQAAI=</HashCode>
+      <FileName>Clases\Cuaderno.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="CuadernosDigitales.Nota">
     <Position X="3.5" Y="1" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>gAAAgAAAAAAAAAAgAAQAAQAAAAAAAAAAAAAAwAAQABA=</HashCode>
-      <FileName>Nota.cs</FileName>
+      <HashCode>gAAAgAAQAAAAAAAgAAQAAQBAAAAAAAAAAAAAwAAQABA=</HashCode>
+      <FileName>Clases\Nota.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="CuadernosDigitales.Categoria">
     <Position X="5.75" Y="1" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Categoria.cs</FileName>
+      <FileName>Clases\Categoria.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CuadernosDigitales.Usuario">
+    <Position X="5.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAACAIAACAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Clases\Usuario.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />

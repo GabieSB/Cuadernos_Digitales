@@ -275,5 +275,9 @@ namespace CuadernosDigitales.Forms
             this.Close();
         }
 
+        private void Panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

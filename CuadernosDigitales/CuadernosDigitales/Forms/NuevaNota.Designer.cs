@@ -60,6 +60,7 @@
             this.fechaNotaLabel = new System.Windows.Forms.Label();
             this.fontDialog = new System.Windows.Forms.FontDialog();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.idPantallaLabel = new System.Windows.Forms.Label();
             this.propiedadesPanel.SuspendLayout();
             this.controlsPropiedadesPanel.SuspendLayout();
             this.coloresPanel.SuspendLayout();
@@ -76,7 +77,7 @@
             this.guardarNotaButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.guardarNotaButton.Font = new System.Drawing.Font("Dream Orphans", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guardarNotaButton.ForeColor = System.Drawing.Color.LightGray;
-            this.guardarNotaButton.Location = new System.Drawing.Point(430, 457);
+            this.guardarNotaButton.Location = new System.Drawing.Point(430, 491);
             this.guardarNotaButton.Name = "guardarNotaButton";
             this.guardarNotaButton.Size = new System.Drawing.Size(133, 34);
             this.guardarNotaButton.TabIndex = 12;
@@ -91,7 +92,7 @@
             this.notaTextBox.MaxLength = 1000000;
             this.notaTextBox.Multiline = true;
             this.notaTextBox.Name = "notaTextBox";
-            this.notaTextBox.Size = new System.Drawing.Size(552, 366);
+            this.notaTextBox.Size = new System.Drawing.Size(552, 395);
             this.notaTextBox.TabIndex = 17;
             this.notaTextBox.Text = "NOTA";
             // 
@@ -358,6 +359,7 @@
             // notaPanel
             // 
             this.notaPanel.BackColor = System.Drawing.Color.LightGray;
+            this.notaPanel.Controls.Add(this.idPantallaLabel);
             this.notaPanel.Controls.Add(this.atrarButton);
             this.notaPanel.Controls.Add(this.fechaNotaLabel);
             this.notaPanel.Controls.Add(this.tituloNotaTextBox);
@@ -376,7 +378,7 @@
             this.atrarButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.atrarButton.Font = new System.Drawing.Font("Dream Orphans", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.atrarButton.ForeColor = System.Drawing.Color.LightGray;
-            this.atrarButton.Location = new System.Drawing.Point(291, 457);
+            this.atrarButton.Location = new System.Drawing.Point(291, 491);
             this.atrarButton.Name = "atrarButton";
             this.atrarButton.Size = new System.Drawing.Size(133, 34);
             this.atrarButton.TabIndex = 19;
@@ -396,6 +398,16 @@
             // errorProvider
             // 
             this.errorProvider.ContainerControl = this;
+            // 
+            // idPantallaLabel
+            // 
+            this.idPantallaLabel.AutoSize = true;
+            this.idPantallaLabel.ForeColor = System.Drawing.Color.Black;
+            this.idPantallaLabel.Location = new System.Drawing.Point(9, 511);
+            this.idPantallaLabel.Name = "idPantallaLabel";
+            this.idPantallaLabel.Size = new System.Drawing.Size(100, 13);
+            this.idPantallaLabel.TabIndex = 24;
+            this.idPantallaLabel.Text = "ID PANTALLA: 004";
             // 
             // NuevaNota
             // 
@@ -452,5 +464,6 @@
         private System.Windows.Forms.ErrorProvider errorProvider;
         private System.Windows.Forms.Label fechaNotaLabel;
         private System.Windows.Forms.Button atrarButton;
+        public System.Windows.Forms.Label idPantallaLabel;
     }
 }

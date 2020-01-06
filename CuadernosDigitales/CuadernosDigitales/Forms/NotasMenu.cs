@@ -27,7 +27,6 @@ namespace CuadernosDigitales.Forms
             cargarNotas(cuadernoPadre.getListaDeNotas(),false);
             panelSeleccionadaAux = new Panel();
             sePuedeEditarNota = true;
-
         }
       
         private void NuevaNotaButton_Click(object sender, EventArgs e)
@@ -231,6 +230,27 @@ namespace CuadernosDigitales.Forms
         private void CancelarButton_Click(object sender, EventArgs e)
         {
             VerNotasButton_Click(sender, e);
+        }
+
+        private void NotasMenu_Load(object sender, EventArgs e)
+        {
+
+            foreach (Categoria c in cuadernoPadre.getListaDeCategorias())
+            {
+                Label categoriaLabel = new Label();
+                categoriaLabel.AutoSize = true;
+                categoriaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                categoriaLabel.Location = new System.Drawing.Point(10, 10);
+                categoriaLabel.Margin = new System.Windows.Forms.Padding(10);
+                categoriaLabel.Name = "ejemploLabel";
+                categoriaLabel.Size = new System.Drawing.Size(29, 20);
+                categoriaLabel.TabIndex = 0;
+                categoriaLabel.ForeColor = Color.White;
+                categoriaLabel.BackColor = Color.Green;
+                categoriaLabel.Text = "#"+c.Nombre;
+                categoriasPanel.Controls.Add(categoriaLabel);
+                //MessageBox.Show(c.Nombre);
+            }
         }
     }
 }

@@ -14,9 +14,12 @@ namespace CuadernosDigitales
 {
     public partial class CuadernosInicio : Form
     {
-        public CuadernosInicio()
+        public string nombre;
+        public CuadernosInicio(string usuario)
         {
             InitializeComponent();
+            MessageBox.Show(nombre);
+            usuarioLabel.Text = "@"+usuario;
         }
 
     
@@ -76,7 +79,8 @@ namespace CuadernosDigitales
             if (listaOpcionePanel.Width == 52)
             {
                 //cuerpoPanel.Location = new Point(189, 46);
-               // cuerpoPanel.Width = 660;
+                // cuerpoPanel.Width = 660;
+                userPictureBox.Visible = true;
                 listaOpcionePanel.Width = 188;
                 listaOpcionePanel.BorderStyle = BorderStyle.FixedSingle;
 
@@ -86,6 +90,7 @@ namespace CuadernosDigitales
                 //cuerpoPanel.Location = new Point(61, 46);
                // cuerpoPanel.Width = 796;
                 listaOpcionePanel.Width = 52;
+                userPictureBox.Visible = false;
                 listaOpcionePanel.BorderStyle = BorderStyle.None;
             }
 
@@ -150,5 +155,7 @@ namespace CuadernosDigitales
         {
 
         }
+
+      
     }
 }

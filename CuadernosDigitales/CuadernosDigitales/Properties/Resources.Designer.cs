@@ -63,6 +63,16 @@ namespace CuadernosDigitales.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap azul {
+            get {
+                object obj = ResourceManager.GetObject("azul", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap back {
             get {
                 object obj = ResourceManager.GetObject("back", resourceCulture);
@@ -133,6 +143,46 @@ namespace CuadernosDigitales.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_verified_account_64 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-verified-account-64", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap LogoBlanco {
+            get {
+                object obj = ResourceManager.GetObject("LogoBlanco", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap LogoBlanco1 {
+            get {
+                object obj = ResourceManager.GetObject("LogoBlanco1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap LogoBlanco2 {
+            get {
+                object obj = ResourceManager.GetObject("LogoBlanco2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Orange {
             get {
                 object obj = ResourceManager.GetObject("Orange", resourceCulture);
@@ -166,6 +216,36 @@ namespace CuadernosDigitales.Properties {
         internal static System.Drawing.Bitmap Red {
             get {
                 object obj = ResourceManager.GetObject("Red", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Untitled_1_511 {
+            get {
+                object obj = ResourceManager.GetObject("Untitled-1-511", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Untitled_1_512 {
+            get {
+                object obj = ResourceManager.GetObject("Untitled-1-512", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Untitled_1_5121 {
+            get {
+                object obj = ResourceManager.GetObject("Untitled-1-5121", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

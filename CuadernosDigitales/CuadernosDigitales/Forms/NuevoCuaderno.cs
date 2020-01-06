@@ -151,9 +151,12 @@ namespace CuadernosDigitales.Forms
            
             for (int i = 0; i < 9; i++)
             {
-                Categoria categoria1 = new Categoria();
-                categoria1.Nombre = categoriasTexBox[i].Text;
-                cuaderno.agregarCategoria(categoria1);
+                if (categoriasTexBox[i].Text.Length != 0)
+                {
+                    Categoria categoria1 = new Categoria();
+                    categoria1.Nombre = categoriasTexBox[i].Text;
+                    cuaderno.agregarCategoria(categoria1);
+                }
             }
             cuadernoCreado = DialogResult.Yes;
             this.Close();

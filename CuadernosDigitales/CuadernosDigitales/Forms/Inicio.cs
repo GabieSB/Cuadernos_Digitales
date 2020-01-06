@@ -17,6 +17,7 @@ namespace CuadernosDigitales.Forms
         private PictureBox picSelected;
         private PictureBox picSelectedAux;
         private bool sePuedenVerNotas;
+        private bool buscando;
 
         public Inicio()
         {
@@ -111,13 +112,26 @@ namespace CuadernosDigitales.Forms
 
         private void AtrasButton_Click(object sender, EventArgs e)
         {
-            picSelected.BorderStyle = BorderStyle.None;
-            picSelected.BackColor = Color.White;
-            nuevoCuadernoButton.Visible = true;
-            eliminarButton.Visible = false;
-            atrasButton.Visible = false;
-            picSelected = null;
-            sePuedenVerNotas = true;
+            if (buscando)
+            {
+                buscarTextBox.Text = "";
+                nuevoCuadernoButton.Visible = true;
+                eliminarButton.Visible = false;
+                atrasButton.Visible = false;
+                buscando = false;
+                cuadernosContainer.Controls.Clear();
+                cargarCuadernos(cuadernos);
+            }
+            else
+            {
+                picSelected.BorderStyle = BorderStyle.None;
+                picSelected.BackColor = Color.White;
+                nuevoCuadernoButton.Visible = true;
+                eliminarButton.Visible = false;
+                atrasButton.Visible = false;
+                picSelected = null;
+                sePuedenVerNotas = true;
+            }
         }
 
         private void cargarCuadernos(List<Cuaderno> listCuadernos)
@@ -141,9 +155,24 @@ namespace CuadernosDigitales.Forms
             }
         }
 
-        private void EditarButton_Click(object sender, EventArgs e)
+        private void BuscaNotaButton_Click(object sender, EventArgs e)
         {
-           
+            buscando = true;
+            foreach(Cuaderno c in cuadernos)
+            {
+                if(c.Nombre == buscarTextBox.Text)
+                {
+                    cuadernosContainer.Controls.Clear();
+                    MostrarCuadernoEnPantalla(c);
+                    nuevoCuadernoButton.Visible = false;
+                    atrasButton.Visible=true;
+                }
+            }
+        }
+
+        private void BuscarTextBox_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

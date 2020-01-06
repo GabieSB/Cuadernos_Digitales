@@ -57,6 +57,7 @@
             this.closeAppButton = new System.Windows.Forms.Button();
             this.crearCuadernoButton = new System.Windows.Forms.Button();
             this.colorLabel = new System.Windows.Forms.Label();
+            this.idPantallaLabel = new System.Windows.Forms.Label();
             this.nuevoCuadernoPanel.SuspendLayout();
             this.coloresPanel.SuspendLayout();
             this.cabezaPanel.SuspendLayout();
@@ -116,6 +117,7 @@
             // 
             this.nuevoCuadernoPanel.BackColor = System.Drawing.SystemColors.Control;
             this.nuevoCuadernoPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.nuevoCuadernoPanel.Controls.Add(this.idPantallaLabel);
             this.nuevoCuadernoPanel.Controls.Add(this.flowLayoutPanel1);
             this.nuevoCuadernoPanel.Controls.Add(this.colorSeleccionadoPanel);
             this.nuevoCuadernoPanel.Controls.Add(this.coloresPanel);
@@ -372,6 +374,16 @@
             this.colorLabel.TabIndex = 9;
             this.colorLabel.Text = "COLOR:";
             // 
+            // idPantallaLabel
+            // 
+            this.idPantallaLabel.AutoSize = true;
+            this.idPantallaLabel.ForeColor = System.Drawing.Color.Black;
+            this.idPantallaLabel.Location = new System.Drawing.Point(11, 448);
+            this.idPantallaLabel.Name = "idPantallaLabel";
+            this.idPantallaLabel.Size = new System.Drawing.Size(106, 13);
+            this.idPantallaLabel.TabIndex = 25;
+            this.idPantallaLabel.Text = "ID PANTALLA: 0021";
+            // 
             // NuevoCuaderno
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -421,5 +433,6 @@
         private System.Windows.Forms.Button closeNuevoCuadernoButton;
         private System.Windows.Forms.Label nuevoCuadernoLabel;
         private System.Windows.Forms.Button closeAppButton;
+        public System.Windows.Forms.Label idPantallaLabel;
     }
 }
