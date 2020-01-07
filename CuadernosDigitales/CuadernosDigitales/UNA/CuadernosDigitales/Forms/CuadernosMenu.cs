@@ -14,6 +14,7 @@ namespace CuadernosDigitales.Forms
 {
     public partial class CuadernosInicio : Form
     {
+        private readonly string rutaPorDefecto = AppDomain.CurrentDomain.BaseDirectory;
         public List<Usuario> Usuarios
         {
             get;
@@ -60,6 +61,9 @@ namespace CuadernosDigitales.Forms
             DialogResult resultado = MessageBox.Show("¿Desea cerrar la aplicación?", "Confirmacion", MessageBoxButtons.YesNoCancel);
             if (resultado == DialogResult.Yes)
             {
+                ArchivoManager archivoManager = new ArchivoManager();
+                CargarInformacionActividadUsuario(archivoManager, "Salir del sistema", $"El usuario {Usuarios[IndiceUsuario].Nombre} salio del sistema.", "Ventana", 0);
+                CrearHistorialVisitaFormulario(archivoManager);
                 Application.Exit();
             }
            
@@ -90,7 +94,10 @@ namespace CuadernosDigitales.Forms
             etiquetaHistorial.Visible = false;
             etiquetaCambiarU.Visible = false;
             tituloLabel.Text = "INICIO";
-            MostrarFormEnPanel(new Inicio());
+            Inicio inicio = new Inicio();
+            inicio.Usuarios = Usuarios;
+            inicio.IndiceUsuario = IndiceUsuario;
+            MostrarFormEnPanel(inicio);
         }
 
         private void HistorialButton_Click(object sender, EventArgs e)
@@ -110,12 +117,16 @@ namespace CuadernosDigitales.Forms
                 Usuarios = loginForm.Usuarios;
                 IndiceUsuario = loginForm.IndiceUsuario;
                 LabelNombre.Text = Usuarios[IndiceUsuario].Nombre;
+
+                ArchivoManager archivoManager = new ArchivoManager();
+                CargarInformacionActividadUsuario(archivoManager, "Ingreso al sistema", $"El usuario {Usuarios[IndiceUsuario].Nombre} ingreso al sistema.", "Cuadernos Menu", 0);
+                CrearHistorialVisitaFormulario(archivoManager);
             }
             else
             {
                 this.Close();
             }
-            etiquetaInicio.Visible = true;
+            etiquetaInicio.Visible = false;
             etiquetaHistorial.Visible = false;
             etiquetaCambiarU.Visible = false;
             
@@ -145,9 +156,28 @@ namespace CuadernosDigitales.Forms
             {
                 CuadernosInicio cuadernosInicio = new CuadernosInicio();
                 cuadernosInicio.Usuarios = Usuarios;
+                ArchivoManager archivoManager = new ArchivoManager();
+                CargarInformacionActividadUsuario(archivoManager, "Salir del sistema", $"El usuario {Usuarios[IndiceUsuario].Nombre} salio del sistema.", "Ventana", 0);
+                CrearHistorialVisitaFormulario(archivoManager);
                 this.Close();
                 cuadernosInicio.Show();
             }            
+        }
+
+        private void CargarInformacionActividadUsuario(ArchivoManager archivoManager, String accion, String informacionAdicional, string formulario, int objeto)
+        {
+            archivoManager.Historial = new Historial(DateTime.Now, Usuarios[IndiceUsuario].Nombre ,accion, informacionAdicional, formulario, objeto) ;
+        }
+        private void CrearHistorialVisitaFormulario(ArchivoManager archivoManager)
+        {
+            try
+            {
+                string nombreNuevoArchivo = archivoManager.CrearHistorialVisitaFormulario(rutaPorDefecto);
+            }
+            catch (Exception exception)
+            {
+
+            }
         }
     }
 }

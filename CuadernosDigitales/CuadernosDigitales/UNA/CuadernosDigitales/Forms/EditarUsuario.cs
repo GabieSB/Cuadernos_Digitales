@@ -12,17 +12,18 @@ namespace CuadernosDigitales.Forms
 {
     public partial class EditarUsuario : Form
     {
+        private readonly string rutaPorDefecto = AppDomain.CurrentDomain.BaseDirectory;
         public List<Usuario> Usuarios
         {
             get;
             set;
         }
-        public Usuario Usuario
+        public int IndiceUsuario
         {
             get;
             set;
         }
-        public int IndiceUsuario
+        public Usuario Usuario
         {
             get;
             set;
@@ -53,11 +54,6 @@ namespace CuadernosDigitales.Forms
             Usuario = new Usuario();
 
             List<PictureBox> picturesBooks = new List<PictureBox>();
-        }
-
-        private void InicioForm_Load(object sender, EventArgs e)
-        {
-
         }
 
         private void MostrarFormEnPanel(Object form)
@@ -106,6 +102,15 @@ namespace CuadernosDigitales.Forms
             {
                 Usuario.Contraseña = TextBoxNuevaContraseña.Text;
                 NuevaContraseñaUsuario = true;
+
+                if (Usuario.Contraseña == TextBoxRepetirNuevaContraseña.Text)
+                {
+                    RepetirNuevaContraseñaUsuario = true;
+                }
+                else
+                {
+                    RepetirNuevaContraseñaUsuario = false;
+                }
             }
         }
 
@@ -135,7 +140,57 @@ namespace CuadernosDigitales.Forms
             if (ContraseñaActualUsuario && NuevaContraseñaUsuario && RepetirNuevaContraseñaUsuario)
             {
                 Usuarios[IndiceUsuario].Contraseña = Usuario.Contraseña;
+                ArchivoManager archivoManager = new ArchivoManager();
+                CargarInformacionActividadUsuario(archivoManager, "Edición de usuario", $"El usuario {Usuarios[IndiceUsuario].Nombre} edito su contraseña", "Editar Usuario", IndiceUsuario);
+                CrearHistorialEdicionUsuario(archivoManager);
+                DialogResult dialogResult = MessageBox.Show("Se edito la contraseña correctamente");
+                LimpiarTextBoxYErroProvider();
             }
+            else{
+                DialogResult dialogResult = MessageBox.Show("Datos incorrectos");
+            }
+        }
+        private void CargarInformacionActividadUsuario(ArchivoManager archivoManager, String accion, String informacionAdicional, string formulario, int objeto)
+        {
+            archivoManager.Historial = new Historial(DateTime.Now, Usuarios[IndiceUsuario].Nombre, accion, informacionAdicional, formulario, objeto);
+        }
+        private void CrearHistorialVisitaFormulario(ArchivoManager archivoManager)
+        {
+            try
+            {
+                string nombreNuevoArchivo = archivoManager.CrearHistorialVisitaFormulario(rutaPorDefecto);
+            }
+            catch (Exception exception)
+            {
+
+            }
+        }
+        private void CrearHistorialEdicionUsuario(ArchivoManager archivoManager)
+        {
+            try
+            {
+                string nombreNuevoArchivo = archivoManager.CrearHistorialEdicionObjeto(rutaPorDefecto);
+            }
+            catch (Exception exception)
+            {
+
+            }
+        }
+        private void EditarUsuario_Load(object sender, EventArgs e)
+        {
+            ArchivoManager archivoManager = new ArchivoManager();
+            CargarInformacionActividadUsuario(archivoManager, "Presionar el boton de Editar Usuario", $"El usuario {Usuarios[IndiceUsuario].Nombre} ingreso al formulario de Editar usuario", "Editar Usuario", 0);
+            CrearHistorialVisitaFormulario(archivoManager);
+        }
+        private void LimpiarTextBoxYErroProvider()
+        {
+            TextBoxContraseña.Text = "";
+            TextBoxNuevaContraseña.Text = "";
+            TextBoxRepetirNuevaContraseña.Text = "";
+
+            ErrorProviderContraseña.SetError(TextBoxContraseña, "");
+            ErrorProviderNuevaContraseña.SetError(TextBoxNuevaContraseña, "");
+            ErrorProviderRepetirNuevaContraseña.SetError(TextBoxRepetirNuevaContraseña, "");
         }
     }
 }

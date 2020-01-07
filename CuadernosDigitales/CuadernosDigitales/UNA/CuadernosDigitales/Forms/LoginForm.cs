@@ -65,11 +65,6 @@ namespace CuadernosDigitales.Forms
             SendMessage(this.Handle, 0x112,0xf012,0);
         }
 
-        private void ButtonCancelar_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void ButtonIngresar_Click(object sender, EventArgs e)
         {
             Boolean sinErrorNombreUsuario = false;
@@ -141,5 +136,6 @@ namespace CuadernosDigitales.Forms
         {
 
         }
+
     }
 }

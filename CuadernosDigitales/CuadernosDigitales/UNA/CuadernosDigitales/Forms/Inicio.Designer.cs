@@ -43,7 +43,7 @@
             this.nuevoCuadernoButton.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.nuevoCuadernoButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
             this.nuevoCuadernoButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.nuevoCuadernoButton.Font = new System.Drawing.Font("Dream Orphans", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nuevoCuadernoButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nuevoCuadernoButton.ForeColor = System.Drawing.Color.LightGray;
             this.nuevoCuadernoButton.Location = new System.Drawing.Point(12, 13);
             this.nuevoCuadernoButton.Name = "nuevoCuadernoButton";
@@ -67,7 +67,7 @@
             this.button1.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Dream Orphans", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.LightGray;
             this.button1.Location = new System.Drawing.Point(686, 17);
             this.button1.Name = "button1";
@@ -78,10 +78,10 @@
             // 
             // buscarCuadernoTextBox
             // 
-            this.buscarCuadernoTextBox.Font = new System.Drawing.Font("Dream Orphans", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buscarCuadernoTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buscarCuadernoTextBox.Location = new System.Drawing.Point(410, 13);
             this.buscarCuadernoTextBox.Name = "buscarCuadernoTextBox";
-            this.buscarCuadernoTextBox.Size = new System.Drawing.Size(147, 25);
+            this.buscarCuadernoTextBox.Size = new System.Drawing.Size(147, 24);
             this.buscarCuadernoTextBox.TabIndex = 4;
             // 
             // inicioPanel
@@ -90,7 +90,6 @@
             this.inicioPanel.Controls.Add(this.button2);
             this.inicioPanel.Controls.Add(this.nuevoCuadernoButton);
             this.inicioPanel.Controls.Add(this.buscarCuadernoTextBox);
-            this.inicioPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.inicioPanel.Location = new System.Drawing.Point(0, 0);
             this.inicioPanel.Name = "inicioPanel";
             this.inicioPanel.Size = new System.Drawing.Size(670, 443);
@@ -102,7 +101,7 @@
             this.button2.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Dream Orphans", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.LightGray;
             this.button2.Location = new System.Drawing.Point(563, 8);
             this.button2.Name = "button2";
@@ -110,6 +109,7 @@
             this.button2.TabIndex = 5;
             this.button2.Text = "BUSCAR";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // Inicio
             // 

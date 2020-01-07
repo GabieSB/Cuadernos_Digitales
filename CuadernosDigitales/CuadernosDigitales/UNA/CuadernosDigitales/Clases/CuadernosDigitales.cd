@@ -28,11 +28,11 @@
       <FileName>UNA\CuadernosDigitales\Clases\Usuario.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="CuadernosDigitales.Bitacora">
+  <Class Name="CuadernosDigitales.Historial">
     <Position X="6.75" Y="3" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Bitacora.cs</FileName>
+      <HashCode>AAAAAAAAgAAAAAAAAAAAAABAAAAAAAAAAAAEAAABAAQ=</HashCode>
+      <FileName>UNA\CuadernosDigitales\Clases\Historial.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />

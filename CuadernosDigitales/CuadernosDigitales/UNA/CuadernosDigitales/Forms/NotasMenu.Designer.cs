@@ -31,10 +31,10 @@
             this.categoriasGridView = new System.Windows.Forms.DataGridView();
             this.nuevaNotaButton = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.nombreCuadernoLabel = new System.Windows.Forms.Label();
             this.closeNotasCuadernoButton = new System.Windows.Forms.Button();
             this.buscaNotaButton = new System.Windows.Forms.Button();
             this.buscarCuadernoTextBox = new System.Windows.Forms.TextBox();
-            this.nombreCuadernoLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.categoriasGridView)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -53,7 +53,7 @@
             this.nuevaNotaButton.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.nuevaNotaButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
             this.nuevaNotaButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.nuevaNotaButton.Font = new System.Drawing.Font("Dream Orphans", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nuevaNotaButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nuevaNotaButton.ForeColor = System.Drawing.Color.LightGray;
             this.nuevaNotaButton.Location = new System.Drawing.Point(12, 62);
             this.nuevaNotaButton.Name = "nuevaNotaButton";
@@ -77,6 +77,17 @@
             this.panel1.Size = new System.Drawing.Size(704, 465);
             this.panel1.TabIndex = 4;
             // 
+            // nombreCuadernoLabel
+            // 
+            this.nombreCuadernoLabel.AutoSize = true;
+            this.nombreCuadernoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nombreCuadernoLabel.Location = new System.Drawing.Point(243, 15);
+            this.nombreCuadernoLabel.Name = "nombreCuadernoLabel";
+            this.nombreCuadernoLabel.Size = new System.Drawing.Size(211, 20);
+            this.nombreCuadernoLabel.TabIndex = 8;
+            this.nombreCuadernoLabel.Text = "NOMBRE DEL CUADERNO";
+            this.nombreCuadernoLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // closeNotasCuadernoButton
             // 
             this.closeNotasCuadernoButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -99,7 +110,7 @@
             this.buscaNotaButton.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.buscaNotaButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
             this.buscaNotaButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buscaNotaButton.Font = new System.Drawing.Font("Dream Orphans", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buscaNotaButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buscaNotaButton.ForeColor = System.Drawing.Color.LightGray;
             this.buscaNotaButton.Location = new System.Drawing.Point(588, 46);
             this.buscaNotaButton.Name = "buscaNotaButton";
@@ -110,22 +121,11 @@
             // 
             // buscarCuadernoTextBox
             // 
-            this.buscarCuadernoTextBox.Font = new System.Drawing.Font("Dream Orphans", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buscarCuadernoTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buscarCuadernoTextBox.Location = new System.Drawing.Point(423, 51);
             this.buscarCuadernoTextBox.Name = "buscarCuadernoTextBox";
-            this.buscarCuadernoTextBox.Size = new System.Drawing.Size(147, 25);
+            this.buscarCuadernoTextBox.Size = new System.Drawing.Size(147, 24);
             this.buscarCuadernoTextBox.TabIndex = 6;
-            // 
-            // nombreCuadernoLabel
-            // 
-            this.nombreCuadernoLabel.AutoSize = true;
-            this.nombreCuadernoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nombreCuadernoLabel.Location = new System.Drawing.Point(243, 15);
-            this.nombreCuadernoLabel.Name = "nombreCuadernoLabel";
-            this.nombreCuadernoLabel.Size = new System.Drawing.Size(211, 20);
-            this.nombreCuadernoLabel.TabIndex = 8;
-            this.nombreCuadernoLabel.Text = "NOMBRE DEL CUADERNO";
-            this.nombreCuadernoLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // NotasMenu
             // 
@@ -137,6 +137,7 @@
             this.Name = "NotasMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CuadernoAbierto";
+            this.Load += new System.EventHandler(this.NotasMenu_Load);
             ((System.ComponentModel.ISupportInitialize)(this.categoriasGridView)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

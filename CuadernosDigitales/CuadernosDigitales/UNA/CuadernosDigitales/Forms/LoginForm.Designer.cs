@@ -37,7 +37,6 @@
             this.TextBoxUsuario = new System.Windows.Forms.TextBox();
             this.LabelContraseña = new System.Windows.Forms.Label();
             this.LabelUsuario = new System.Windows.Forms.Label();
-            this.ButtonCancelar = new System.Windows.Forms.Button();
             this.LinkLabelRegistrarce = new System.Windows.Forms.LinkLabel();
             this.errorProviderLogin = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProviderContraseña = new System.Windows.Forms.ErrorProvider(this.components);
@@ -135,18 +134,6 @@
             this.LabelUsuario.TabIndex = 5;
             this.LabelUsuario.Text = "Usuario:";
             // 
-            // ButtonCancelar
-            // 
-            this.ButtonCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.ButtonCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ButtonCancelar.Location = new System.Drawing.Point(67, 247);
-            this.ButtonCancelar.Name = "ButtonCancelar";
-            this.ButtonCancelar.Size = new System.Drawing.Size(94, 33);
-            this.ButtonCancelar.TabIndex = 10;
-            this.ButtonCancelar.Text = "Cancelar";
-            this.ButtonCancelar.UseVisualStyleBackColor = true;
-            this.ButtonCancelar.Click += new System.EventHandler(this.ButtonCancelar_Click);
-            // 
             // LinkLabelRegistrarce
             // 
             this.LinkLabelRegistrarce.AutoSize = true;
@@ -172,10 +159,8 @@
             this.AcceptButton = this.ButtonIngresar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.CancelButton = this.ButtonCancelar;
             this.ClientSize = new System.Drawing.Size(600, 300);
             this.Controls.Add(this.LinkLabelRegistrarce);
-            this.Controls.Add(this.ButtonCancelar);
             this.Controls.Add(this.ButtonIngresar);
             this.Controls.Add(this.TextBoxContraseña);
             this.Controls.Add(this.TextBoxUsuario);
@@ -205,7 +190,6 @@
         private System.Windows.Forms.TextBox TextBoxUsuario;
         private System.Windows.Forms.Label LabelContraseña;
         private System.Windows.Forms.Label LabelUsuario;
-        private System.Windows.Forms.Button ButtonCancelar;
         private System.Windows.Forms.LinkLabel LinkLabelRegistrarce;
         private System.Windows.Forms.Label LabelTitulo;
         private System.Windows.Forms.ErrorProvider errorProviderLogin;

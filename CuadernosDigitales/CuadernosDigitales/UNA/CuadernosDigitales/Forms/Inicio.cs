@@ -12,6 +12,18 @@ namespace CuadernosDigitales.Forms
 {
     public partial class Inicio : Form
     {
+        private readonly string rutaPorDefecto = AppDomain.CurrentDomain.BaseDirectory;
+        public List<Usuario> Usuarios
+        {
+            get;
+            set;
+        }
+        public int IndiceUsuario
+        {
+            get;
+            set;
+        }
+
         public List <Cuaderno> cuadernos;
         public static Cuaderno CuadernoSeleccionado;
         int columasCont ;
@@ -27,7 +39,9 @@ namespace CuadernosDigitales.Forms
 
         private void InicioForm_Load(object sender, EventArgs e)
         {
-
+            ArchivoManager archivoManager = new ArchivoManager();
+            CargarInformacionActividadUsuario(archivoManager, "Presionar el boton de Inicio", $"El usuario {Usuarios[IndiceUsuario].Nombre} ingreso al formulario de Inicio", "Inicio", 0);
+            CrearHistorialVisitaFormulario(archivoManager);
         }
 
         private void MostrarFormEnPanel(Object form)
@@ -57,12 +71,18 @@ namespace CuadernosDigitales.Forms
                 }
             }
             NotasMenu notasMenu = new NotasMenu();
+            notasMenu.Usuarios = Usuarios;
+            notasMenu.IndiceUsuario = IndiceUsuario;
+
             notasMenu.ShowDialog();
         }
 
         private void NuevoCuadernoButton_Click(object sender, EventArgs e)
         {
             NuevoCuaderno nuevoCuaderno = new NuevoCuaderno();
+            nuevoCuaderno.Usuarios = Usuarios;
+            nuevoCuaderno.IndiceUsuario = IndiceUsuario;
+
             nuevoCuaderno.ShowDialog();
 
             if (nuevoCuaderno.cuadernoCreado == DialogResult.Yes)
@@ -94,6 +114,39 @@ namespace CuadernosDigitales.Forms
         private void DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             
+        }
+        private void CargarInformacionActividadUsuario(ArchivoManager archivoManager, String accion, String informacionAdicional, string formulario, int objeto)
+        {
+            archivoManager.Historial = new Historial(DateTime.Now, Usuarios[IndiceUsuario].Nombre, accion, informacionAdicional, formulario, objeto);
+        }
+        private void CrearHistorialVisitaFormulario(ArchivoManager archivoManager)
+        {
+            try
+            {
+                string nombreNuevoArchivo = archivoManager.CrearHistorialVisitaFormulario(rutaPorDefecto);
+            }
+            catch (Exception exception)
+            {
+
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            ArchivoManager archivoManager = new ArchivoManager();
+            CargarInformacionActividadUsuario(archivoManager, "Se hizo una búsqueda", $"El usuario {Usuarios[IndiceUsuario].Nombre} hizo una búsqueda de una o varias notas.", "Inicio", 0);
+            CrearHistorialBusqueda(archivoManager);
+        }
+        private void CrearHistorialBusqueda(ArchivoManager archivoManager)
+        {
+            try
+            {
+                string nombreNuevoArchivo = archivoManager.CrearHistorialBusquedaObjeto(rutaPorDefecto);
+            }
+            catch (Exception exception)
+            {
+
+            }
         }
     }
 }

@@ -64,7 +64,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Bitacora.cs" />
+    <Compile Include="UNA\CuadernosDigitales\Clases\ArchivoManager.cs" />
+    <Compile Include="UNA\CuadernosDigitales\Clases\Historial.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

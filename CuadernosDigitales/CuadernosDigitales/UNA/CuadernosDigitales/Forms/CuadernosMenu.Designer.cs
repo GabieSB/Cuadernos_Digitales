@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.listaOpcionePanel = new System.Windows.Forms.Panel();
+            this.ButtonCerrarSecion = new System.Windows.Forms.Button();
             this.etiquetaCambiarU = new System.Windows.Forms.Panel();
             this.etiquetaHistorial = new System.Windows.Forms.Panel();
             this.etiquetaInicio = new System.Windows.Forms.Panel();
@@ -45,7 +46,6 @@
             this.tituloLabel = new System.Windows.Forms.Label();
             this.closeAppButton = new System.Windows.Forms.Button();
             this.cuerpoPanel = new System.Windows.Forms.Panel();
-            this.ButtonCerrarSecion = new System.Windows.Forms.Button();
             this.listaOpcionePanel.SuspendLayout();
             this.panel1.SuspendLayout();
             this.logoPanel.SuspendLayout();
@@ -70,6 +70,21 @@
             this.listaOpcionePanel.Name = "listaOpcionePanel";
             this.listaOpcionePanel.Size = new System.Drawing.Size(188, 626);
             this.listaOpcionePanel.TabIndex = 0;
+            // 
+            // ButtonCerrarSecion
+            // 
+            this.ButtonCerrarSecion.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DeepSkyBlue;
+            this.ButtonCerrarSecion.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.ButtonCerrarSecion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ButtonCerrarSecion.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ButtonCerrarSecion.ForeColor = System.Drawing.SystemColors.Control;
+            this.ButtonCerrarSecion.Location = new System.Drawing.Point(16, 432);
+            this.ButtonCerrarSecion.Name = "ButtonCerrarSecion";
+            this.ButtonCerrarSecion.Size = new System.Drawing.Size(163, 63);
+            this.ButtonCerrarSecion.TabIndex = 6;
+            this.ButtonCerrarSecion.Text = "CERRAR SECION";
+            this.ButtonCerrarSecion.UseVisualStyleBackColor = true;
+            this.ButtonCerrarSecion.Click += new System.EventHandler(this.ButtonCerrarSecion_Click);
             // 
             // etiquetaCambiarU
             // 
@@ -223,9 +238,9 @@
             this.tituloLabel.ForeColor = System.Drawing.Color.White;
             this.tituloLabel.Location = new System.Drawing.Point(19, 6);
             this.tituloLabel.Name = "tituloLabel";
-            this.tituloLabel.Size = new System.Drawing.Size(104, 32);
+            this.tituloLabel.Size = new System.Drawing.Size(246, 32);
             this.tituloLabel.TabIndex = 1;
-            this.tituloLabel.Text = "INICIO";
+            this.tituloLabel.Text = "Cuadernos Menu";
             // 
             // closeAppButton
             // 
@@ -253,21 +268,6 @@
             this.cuerpoPanel.Name = "cuerpoPanel";
             this.cuerpoPanel.Size = new System.Drawing.Size(688, 580);
             this.cuerpoPanel.TabIndex = 2;
-            // 
-            // ButtonCerrarSecion
-            // 
-            this.ButtonCerrarSecion.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DeepSkyBlue;
-            this.ButtonCerrarSecion.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
-            this.ButtonCerrarSecion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ButtonCerrarSecion.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ButtonCerrarSecion.ForeColor = System.Drawing.SystemColors.Control;
-            this.ButtonCerrarSecion.Location = new System.Drawing.Point(16, 432);
-            this.ButtonCerrarSecion.Name = "ButtonCerrarSecion";
-            this.ButtonCerrarSecion.Size = new System.Drawing.Size(163, 63);
-            this.ButtonCerrarSecion.TabIndex = 6;
-            this.ButtonCerrarSecion.Text = "CERRAR SECION";
-            this.ButtonCerrarSecion.UseVisualStyleBackColor = true;
-            this.ButtonCerrarSecion.Click += new System.EventHandler(this.ButtonCerrarSecion_Click);
             // 
             // CuadernosInicio
             // 

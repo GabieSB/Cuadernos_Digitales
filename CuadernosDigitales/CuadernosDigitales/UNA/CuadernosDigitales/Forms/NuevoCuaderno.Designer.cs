@@ -64,40 +64,40 @@
             // 
             // nombreCuadernoTextBox
             // 
-            this.nombreCuadernoTextBox.Font = new System.Drawing.Font("NewsGoth BT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nombreCuadernoTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nombreCuadernoTextBox.Location = new System.Drawing.Point(177, 122);
             this.nombreCuadernoTextBox.MaxLength = 50;
             this.nombreCuadernoTextBox.Name = "nombreCuadernoTextBox";
-            this.nombreCuadernoTextBox.Size = new System.Drawing.Size(244, 27);
+            this.nombreCuadernoTextBox.Size = new System.Drawing.Size(244, 26);
             this.nombreCuadernoTextBox.TabIndex = 0;
             // 
             // nuevoCuadernoLabel
             // 
             this.nuevoCuadernoLabel.AutoSize = true;
-            this.nuevoCuadernoLabel.Font = new System.Drawing.Font("Dream Orphans", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nuevoCuadernoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nuevoCuadernoLabel.Location = new System.Drawing.Point(265, 9);
             this.nuevoCuadernoLabel.Name = "nuevoCuadernoLabel";
-            this.nuevoCuadernoLabel.Size = new System.Drawing.Size(205, 32);
+            this.nuevoCuadernoLabel.Size = new System.Drawing.Size(275, 31);
             this.nuevoCuadernoLabel.TabIndex = 1;
             this.nuevoCuadernoLabel.Text = "NUEVO CUADERNO";
             // 
             // nombreCuadernoLabel
             // 
             this.nombreCuadernoLabel.AutoSize = true;
-            this.nombreCuadernoLabel.Font = new System.Drawing.Font("NewsGoth BT", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nombreCuadernoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nombreCuadernoLabel.Location = new System.Drawing.Point(40, 129);
             this.nombreCuadernoLabel.Name = "nombreCuadernoLabel";
-            this.nombreCuadernoLabel.Size = new System.Drawing.Size(83, 20);
+            this.nombreCuadernoLabel.Size = new System.Drawing.Size(88, 20);
             this.nombreCuadernoLabel.TabIndex = 2;
             this.nombreCuadernoLabel.Text = "NOMBRE:";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("NewsGoth BT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(21, 175);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(108, 19);
+            this.label1.Size = new System.Drawing.Size(119, 20);
             this.label1.TabIndex = 3;
             this.label1.Text = "CATEGORIAS:";
             // 
@@ -352,7 +352,7 @@
             this.crearCuadernoButton.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.crearCuadernoButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
             this.crearCuadernoButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.crearCuadernoButton.Font = new System.Drawing.Font("Dream Orphans", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.crearCuadernoButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.crearCuadernoButton.ForeColor = System.Drawing.Color.LightGray;
             this.crearCuadernoButton.Location = new System.Drawing.Point(538, 413);
             this.crearCuadernoButton.Name = "crearCuadernoButton";
@@ -365,10 +365,10 @@
             // colorLabel
             // 
             this.colorLabel.AutoSize = true;
-            this.colorLabel.Font = new System.Drawing.Font("NewsGoth BT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.colorLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.colorLabel.Location = new System.Drawing.Point(65, 307);
             this.colorLabel.Name = "colorLabel";
-            this.colorLabel.Size = new System.Drawing.Size(64, 19);
+            this.colorLabel.Size = new System.Drawing.Size(69, 20);
             this.colorLabel.TabIndex = 9;
             this.colorLabel.Text = "COLOR:";
             // 
@@ -382,6 +382,7 @@
             this.Name = "NuevoCuaderno";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Nuevo Cuaderno";
+            this.Load += new System.EventHandler(this.NuevoCuaderno_Load);
             this.nuevoCuadernoPanel.ResumeLayout(false);
             this.nuevoCuadernoPanel.PerformLayout();
             this.coloresPanel.ResumeLayout(false);
