@@ -15,11 +15,15 @@ namespace CuadernosDigitales
     public partial class CuadernosInicio : Form
     {
         public string nombre;
-        public CuadernosInicio(string usuario)
+        public static Usuario usuarioActual;
+        public CuadernosInicio()
         {
+            this.Hide();
             InitializeComponent();
-            MessageBox.Show(nombre);
-            usuarioLabel.Text = "@"+usuario;
+            Ingresar ingresar = new Ingresar();
+            ingresar.ShowDialog();
+            this.Show();
+            usuarioLabel.Text = "@"+usuarioActual.nombre;
         }
 
     
@@ -136,7 +140,10 @@ namespace CuadernosDigitales
             etiquetaInicio.Visible = false;
             etiquetaHistorial.Visible = false;
             etiquetaCambiarU.Visible = true;
-           
+            this.Hide();
+            CuadernosInicio iniciar = new CuadernosInicio();
+            iniciar.Show();
+
         }
 
         private void CuadernosInicio_Load(object sender, EventArgs e)
@@ -144,6 +151,8 @@ namespace CuadernosDigitales
             etiquetaInicio.Visible = true;
             etiquetaHistorial.Visible = false;
             etiquetaCambiarU.Visible = false;
+
+
         }
 
         private void CabezaPanel_Paint(object sender, PaintEventArgs e)

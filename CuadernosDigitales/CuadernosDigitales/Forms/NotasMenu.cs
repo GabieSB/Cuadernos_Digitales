@@ -18,6 +18,9 @@ namespace CuadernosDigitales.Forms
         public static Nota notaSeleccionada;
         private Panel panelSeleccionadaAux;
         private bool sePuedeEditarNota;
+       // private List<Nota> ActualListaEnPantalla;
+        private bool buscandoOcultas;
+        ErrorProvider error;
 
         public NotasMenu()
         {
@@ -27,6 +30,7 @@ namespace CuadernosDigitales.Forms
             cargarNotas(cuadernoPadre.getListaDeNotas(),false);
             panelSeleccionadaAux = new Panel();
             sePuedeEditarNota = true;
+            error = new ErrorProvider();
         }
       
         private void NuevaNotaButton_Click(object sender, EventArgs e)
@@ -45,6 +49,7 @@ namespace CuadernosDigitales.Forms
          public  void NuevaNotaGuardada()
         {
             notaNueva = NuevaNota.nota;
+            notaNueva.Orden = Inicio.CuadernoSeleccionado.getListaDeNotas().Count;
             Inicio.CuadernoSeleccionado.agregarNota(notaNueva);
             if(!notaNueva.Privacidad) MostrarNotaEnPantalla(notaNueva);
 
@@ -79,7 +84,7 @@ namespace CuadernosDigitales.Forms
         }
 
         private void MostrarNotaEnPantalla(Nota nota)
-        {  
+        {
             Panel panel = new Panel();
             Label nombre = new Label();
             panel.BackColor = nota.Color;
@@ -103,6 +108,7 @@ namespace CuadernosDigitales.Forms
         {
             if (notas!=null)
             {
+               // ActualListaEnPantalla = notas;
                 foreach(Nota item in notas)
                 {
                     if (!item.Privacidad)
@@ -122,8 +128,7 @@ namespace CuadernosDigitales.Forms
         {
             
             Panel notaSelect = sender as Panel;
-            
-
+ 
             foreach (Nota nota in cuadernoPadre.getListaDeNotas())
             {
                 if (notaSelect.Name == nota.Titulo)
@@ -175,26 +180,80 @@ namespace CuadernosDigitales.Forms
 
         private void BuscaNotaButton_Click(object sender, EventArgs e)
         {
-            if (buscarCuadernoTextBox.Text.Length != 0)
+            error.SetError(filtroComboBox, "");
+            if (buscarCuadernoTextBox.Text.Length != 0 && filtroComboBox.SelectedItem!=null)
             {
-                Nota note = new Nota();
-                note = cuadernoPadre.BuscarNota(buscarCuadernoTextBox.Text,true);
-                if (note != null)
+                verOcultasButton.Visible = false;
+                List<Nota> notasBusqueda = new List<Nota>();
+                List<Nota> notasDondeBuscar = new List<Nota>();
+
+
+                if (buscandoOcultas)
+                {
+                    notasDondeBuscar = cuadernoPadre.getNotasOcultas();
+                }
+                else
+                {
+                    notasDondeBuscar = cuadernoPadre.getListaDeNotas();
+                }
+
+                foreach (Nota nota in cuadernoPadre.getListaDeNotas())
+                {
+                    if (filtroComboBox.SelectedItem.ToString() == "NOMBRE")
+                    {
+                        if (nota.Titulo.Contains(buscarCuadernoTextBox.Text))
+                        {
+                            if (nota.Titulo == buscarCuadernoTextBox.Text)
+                            {
+                                notasBusqueda.Insert(0, nota);
+                            }
+                            else
+                            {
+                                notasBusqueda.Add(nota);
+                            }
+                        }
+                    }
+                    else if (filtroComboBox.SelectedItem.ToString() == "CATEGORIA")
+                    {
+                        if(nota.Categoria == buscarCuadernoTextBox.Text)
+                        {
+                            notasBusqueda.Add(nota);
+                        }
+                    }
+
+                }
+                if (notasBusqueda != null)
                 {
                     notasContainer.Controls.Clear();
-                    MostrarNotaEnPantalla(note);
+                    cargarNotas(notasBusqueda, buscandoOcultas);
                     nuevaNotaButton.Visible = false;
                     verNotasButton.Visible = false;
                     verNotasButton.Visible = true;
                 }
- 
+                else
+                {
+                    MessageBox.Show("No hay resultados de su busqueda", "Informacion");
+                }
+
+
             }
-           
-            
+            else if (filtroComboBox.SelectedItem == null)
+            {
+                
+                error.SetError(filtroComboBox, "Debe seleccionar un filtro");
+            }
+            else if (buscarCuadernoTextBox.Text.Length == 0)
+            {
+                
+                error.SetError(filtroComboBox, "Debe ingresar lo que desea buscar");
+            }
+
+
         }
 
         private void VerNotasButton_Click(object sender, EventArgs e)
         {
+            buscandoOcultas = false;
             notasContainer.Controls.Clear();
             verNotasButton.Visible = false;
             cancelarButton.Visible = false;
@@ -208,16 +267,24 @@ namespace CuadernosDigitales.Forms
         private void VerOcultasButton_Click(object sender, EventArgs e)
         {
             List<Nota> notasOcultas = new List<Nota>();
+            buscandoOcultas = true;
             notasOcultas = cuadernoPadre.getNotasOcultas();
+
             if (notasOcultas != null)
             {
-                notasContainer.Controls.Clear();
-                nuevaNotaButton.Visible = false;
-                verOcultasButton.Visible = false;
-                verNotasButton.Visible = true;
-                cargarNotas(notasOcultas,true);
+                Ingresar ingresar = new Ingresar();
+                ingresar.usuarioActual = CuadernosInicio.usuarioActual;
+                ingresar.ShowDialog();
+                if (ingresar.resultado == DialogResult.Yes)
+                {
+                    notasContainer.Controls.Clear();
+                    nuevaNotaButton.Visible = false;
+                    verOcultasButton.Visible = false;
+                    verNotasButton.Visible = true;
+                    cargarNotas(notasOcultas, true);
+                }
+                
             }
-            
 
         }
 
@@ -249,7 +316,6 @@ namespace CuadernosDigitales.Forms
                 categoriaLabel.BackColor = Color.Green;
                 categoriaLabel.Text = "#"+c.Nombre;
                 categoriasPanel.Controls.Add(categoriaLabel);
-                //MessageBox.Show(c.Nombre);
             }
         }
     }

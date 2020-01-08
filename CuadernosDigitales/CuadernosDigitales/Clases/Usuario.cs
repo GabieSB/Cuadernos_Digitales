@@ -14,15 +14,26 @@ namespace CuadernosDigitales
           
         }
 
+        public Usuario()
+        {
+            cuadernos = new List<Cuaderno>();
+        }
+
         public string contrasena
         {
             get;
             set;
            
         }
-        public void ValidarUsuario(string user, string contrasena)
-        {
 
+        public List<Cuaderno> cuadernos
+        {
+            get;
+            set;
+        }
+        public void AgregarCuaderno (Cuaderno cuaderno)
+        {
+            cuadernos.Add(cuaderno);
         }
     }
 }

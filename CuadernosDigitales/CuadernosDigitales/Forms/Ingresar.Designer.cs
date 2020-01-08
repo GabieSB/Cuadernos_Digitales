@@ -38,9 +38,11 @@
             this.closeAppButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.noTieneCuentaLinkLabel = new System.Windows.Forms.LinkLabel();
             this.registrarButton = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.yaTienesCuenta = new System.Windows.Forms.LinkLabel();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -103,9 +105,10 @@
             this.panel1.BackColor = System.Drawing.Color.Black;
             this.panel1.Controls.Add(this.closeAppButton);
             this.panel1.Controls.Add(this.label1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(347, 147);
+            this.panel1.Size = new System.Drawing.Size(346, 147);
             this.panel1.TabIndex = 6;
             // 
             // closeAppButton
@@ -116,7 +119,7 @@
             this.closeAppButton.FlatAppearance.BorderSize = 2;
             this.closeAppButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.closeAppButton.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.closeAppButton.Location = new System.Drawing.Point(312, 3);
+            this.closeAppButton.Location = new System.Drawing.Point(311, 3);
             this.closeAppButton.Name = "closeAppButton";
             this.closeAppButton.Size = new System.Drawing.Size(32, 23);
             this.closeAppButton.TabIndex = 7;
@@ -138,16 +141,6 @@
             // errorProvider
             // 
             this.errorProvider.ContainerControl = this;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Black;
-            this.pictureBox1.Image = global::CuadernosDigitales.Properties.Resources.azul;
-            this.pictureBox1.Location = new System.Drawing.Point(111, 6);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(100, 100);
-            this.pictureBox1.TabIndex = 5;
-            this.pictureBox1.TabStop = false;
             // 
             // noTieneCuentaLinkLabel
             // 
@@ -176,6 +169,37 @@
             this.registrarButton.Visible = false;
             this.registrarButton.Click += new System.EventHandler(this.RegistrarButton_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Black;
+            this.pictureBox1.Image = global::CuadernosDigitales.Properties.Resources.azul;
+            this.pictureBox1.Location = new System.Drawing.Point(111, 6);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(100, 100);
+            this.pictureBox1.TabIndex = 5;
+            this.pictureBox1.TabStop = false;
+            // 
+            // yaTienesCuenta
+            // 
+            this.yaTienesCuenta.AutoSize = true;
+            this.yaTienesCuenta.Location = new System.Drawing.Point(101, 405);
+            this.yaTienesCuenta.Name = "yaTienesCuenta";
+            this.yaTienesCuenta.Size = new System.Drawing.Size(120, 13);
+            this.yaTienesCuenta.TabIndex = 10;
+            this.yaTienesCuenta.TabStop = true;
+            this.yaTienesCuenta.Text = "¿Ya tienes una cuenta?";
+            this.yaTienesCuenta.Visible = false;
+            this.yaTienesCuenta.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.YaTienesUnaCuentaLinkLabel_LinkClicked);
+            // 
+            // panel2
+            // 
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(346, 427);
+            this.panel2.TabIndex = 11;
+            // 
             // Ingresar
             // 
             this.AcceptButton = this.ingresarButton;
@@ -192,10 +216,13 @@
             this.Controls.Add(this.usuarioLabel);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.registrarButton);
+            this.Controls.Add(this.yaTienesCuenta);
+            this.Controls.Add(this.panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Ingresar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ingresar";
+            this.Load += new System.EventHandler(this.Ingresar_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
@@ -219,5 +246,7 @@
         private System.Windows.Forms.ErrorProvider errorProvider;
         private System.Windows.Forms.LinkLabel noTieneCuentaLinkLabel;
         private System.Windows.Forms.Button registrarButton;
+        private System.Windows.Forms.LinkLabel yaTienesCuenta;
+        private System.Windows.Forms.Panel panel2;
     }
 }

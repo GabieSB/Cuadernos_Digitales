@@ -30,19 +30,21 @@
         {
             this.nuevaNotaButton = new System.Windows.Forms.Button();
             this.notasMenuPanel = new System.Windows.Forms.Panel();
+            this.filtroComboBox = new System.Windows.Forms.ComboBox();
+            this.idPantallaLabel = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.categoriasPanel = new System.Windows.Forms.FlowLayoutPanel();
-            this.cancelarButton = new System.Windows.Forms.Button();
             this.verOcultasButton = new System.Windows.Forms.Button();
             this.notasContainer = new System.Windows.Forms.FlowLayoutPanel();
-            this.nombreCuadernoLabel = new System.Windows.Forms.Label();
             this.buscaNotaButton = new System.Windows.Forms.Button();
             this.buscarCuadernoTextBox = new System.Windows.Forms.TextBox();
             this.verNotasButton = new System.Windows.Forms.Button();
             this.eliminarButton = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.idPantallaLabel = new System.Windows.Forms.Label();
             this.regresarButton = new System.Windows.Forms.Button();
+            this.nombreCuadernoLabel = new System.Windows.Forms.Label();
+            this.cancelarButton = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
             this.notasMenuPanel.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -55,7 +57,7 @@
             this.nuevaNotaButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.nuevaNotaButton.Font = new System.Drawing.Font("Dream Orphans", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nuevaNotaButton.ForeColor = System.Drawing.Color.LightGray;
-            this.nuevaNotaButton.Location = new System.Drawing.Point(13, 49);
+            this.nuevaNotaButton.Location = new System.Drawing.Point(12, 49);
             this.nuevaNotaButton.Name = "nuevaNotaButton";
             this.nuevaNotaButton.Size = new System.Drawing.Size(96, 29);
             this.nuevaNotaButton.TabIndex = 3;
@@ -66,6 +68,7 @@
             // notasMenuPanel
             // 
             this.notasMenuPanel.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.notasMenuPanel.Controls.Add(this.filtroComboBox);
             this.notasMenuPanel.Controls.Add(this.idPantallaLabel);
             this.notasMenuPanel.Controls.Add(this.label1);
             this.notasMenuPanel.Controls.Add(this.categoriasPanel);
@@ -78,11 +81,43 @@
             this.notasMenuPanel.Controls.Add(this.eliminarButton);
             this.notasMenuPanel.Controls.Add(this.panel1);
             this.notasMenuPanel.Controls.Add(this.cancelarButton);
+            this.notasMenuPanel.Controls.Add(this.label2);
             this.notasMenuPanel.ForeColor = System.Drawing.Color.Black;
             this.notasMenuPanel.Location = new System.Drawing.Point(0, 0);
             this.notasMenuPanel.Name = "notasMenuPanel";
             this.notasMenuPanel.Size = new System.Drawing.Size(800, 533);
             this.notasMenuPanel.TabIndex = 4;
+            // 
+            // filtroComboBox
+            // 
+            this.filtroComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.filtroComboBox.Font = new System.Drawing.Font("NewsGoth BT", 12F);
+            this.filtroComboBox.Items.AddRange(new object[] {
+            "NOMBRE",
+            "CATEGORIA"});
+            this.filtroComboBox.Location = new System.Drawing.Point(339, 49);
+            this.filtroComboBox.Name = "filtroComboBox";
+            this.filtroComboBox.Size = new System.Drawing.Size(132, 27);
+            this.filtroComboBox.TabIndex = 26;
+            // 
+            // idPantallaLabel
+            // 
+            this.idPantallaLabel.AutoSize = true;
+            this.idPantallaLabel.ForeColor = System.Drawing.Color.Black;
+            this.idPantallaLabel.Location = new System.Drawing.Point(17, 517);
+            this.idPantallaLabel.Name = "idPantallaLabel";
+            this.idPantallaLabel.Size = new System.Drawing.Size(100, 13);
+            this.idPantallaLabel.TabIndex = 23;
+            this.idPantallaLabel.Text = "ID PANTALLA: 003";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(29, 91);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(79, 13);
+            this.label1.TabIndex = 19;
+            this.label1.Text = "CATEGORIAS:";
             // 
             // categoriasPanel
             // 
@@ -93,23 +128,6 @@
             this.categoriasPanel.Size = new System.Drawing.Size(775, 40);
             this.categoriasPanel.TabIndex = 17;
             // 
-            // cancelarButton
-            // 
-            this.cancelarButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cancelarButton.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.cancelarButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
-            this.cancelarButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cancelarButton.Font = new System.Drawing.Font("Dream Orphans", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cancelarButton.ForeColor = System.Drawing.Color.LightGray;
-            this.cancelarButton.Location = new System.Drawing.Point(87, 49);
-            this.cancelarButton.Name = "cancelarButton";
-            this.cancelarButton.Size = new System.Drawing.Size(84, 29);
-            this.cancelarButton.TabIndex = 16;
-            this.cancelarButton.Text = "CANCELAR";
-            this.cancelarButton.UseVisualStyleBackColor = false;
-            this.cancelarButton.Visible = false;
-            this.cancelarButton.Click += new System.EventHandler(this.CancelarButton_Click);
-            // 
             // verOcultasButton
             // 
             this.verOcultasButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -118,7 +136,7 @@
             this.verOcultasButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.verOcultasButton.Font = new System.Drawing.Font("Dream Orphans", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.verOcultasButton.ForeColor = System.Drawing.Color.LightGray;
-            this.verOcultasButton.Location = new System.Drawing.Point(129, 49);
+            this.verOcultasButton.Location = new System.Drawing.Point(128, 48);
             this.verOcultasButton.Name = "verOcultasButton";
             this.verOcultasButton.Size = new System.Drawing.Size(94, 29);
             this.verOcultasButton.TabIndex = 14;
@@ -134,18 +152,6 @@
             this.notasContainer.Size = new System.Drawing.Size(776, 360);
             this.notasContainer.TabIndex = 11;
             // 
-            // nombreCuadernoLabel
-            // 
-            this.nombreCuadernoLabel.AutoSize = true;
-            this.nombreCuadernoLabel.BackColor = System.Drawing.Color.Silver;
-            this.nombreCuadernoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nombreCuadernoLabel.Location = new System.Drawing.Point(298, 5);
-            this.nombreCuadernoLabel.Name = "nombreCuadernoLabel";
-            this.nombreCuadernoLabel.Size = new System.Drawing.Size(276, 25);
-            this.nombreCuadernoLabel.TabIndex = 8;
-            this.nombreCuadernoLabel.Text = "NOMBRE DEL CUADERNO";
-            this.nombreCuadernoLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // buscaNotaButton
             // 
             this.buscaNotaButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -154,7 +160,7 @@
             this.buscaNotaButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buscaNotaButton.Font = new System.Drawing.Font("Dream Orphans", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buscaNotaButton.ForeColor = System.Drawing.Color.LightGray;
-            this.buscaNotaButton.Location = new System.Drawing.Point(688, 49);
+            this.buscaNotaButton.Location = new System.Drawing.Point(722, 49);
             this.buscaNotaButton.Name = "buscaNotaButton";
             this.buscaNotaButton.Size = new System.Drawing.Size(66, 27);
             this.buscaNotaButton.TabIndex = 7;
@@ -165,9 +171,9 @@
             // buscarCuadernoTextBox
             // 
             this.buscarCuadernoTextBox.Font = new System.Drawing.Font("NewsGoth BT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buscarCuadernoTextBox.Location = new System.Drawing.Point(449, 49);
+            this.buscarCuadernoTextBox.Location = new System.Drawing.Point(488, 50);
             this.buscarCuadernoTextBox.Name = "buscarCuadernoTextBox";
-            this.buscarCuadernoTextBox.Size = new System.Drawing.Size(229, 27);
+            this.buscarCuadernoTextBox.Size = new System.Drawing.Size(228, 27);
             this.buscarCuadernoTextBox.TabIndex = 6;
             // 
             // verNotasButton
@@ -214,25 +220,6 @@
             this.panel1.Size = new System.Drawing.Size(800, 33);
             this.panel1.TabIndex = 18;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(29, 91);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(79, 13);
-            this.label1.TabIndex = 19;
-            this.label1.Text = "CATEGORIAS:";
-            // 
-            // idPantallaLabel
-            // 
-            this.idPantallaLabel.AutoSize = true;
-            this.idPantallaLabel.ForeColor = System.Drawing.Color.Black;
-            this.idPantallaLabel.Location = new System.Drawing.Point(17, 517);
-            this.idPantallaLabel.Name = "idPantallaLabel";
-            this.idPantallaLabel.Size = new System.Drawing.Size(100, 13);
-            this.idPantallaLabel.TabIndex = 23;
-            this.idPantallaLabel.Text = "ID PANTALLA: 003";
-            // 
             // regresarButton
             // 
             this.regresarButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -244,6 +231,45 @@
             this.regresarButton.Text = "Regresar";
             this.regresarButton.UseVisualStyleBackColor = true;
             this.regresarButton.Click += new System.EventHandler(this.RegresarButton_Click);
+            // 
+            // nombreCuadernoLabel
+            // 
+            this.nombreCuadernoLabel.AutoSize = true;
+            this.nombreCuadernoLabel.BackColor = System.Drawing.Color.Silver;
+            this.nombreCuadernoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nombreCuadernoLabel.Location = new System.Drawing.Point(298, 5);
+            this.nombreCuadernoLabel.Name = "nombreCuadernoLabel";
+            this.nombreCuadernoLabel.Size = new System.Drawing.Size(276, 25);
+            this.nombreCuadernoLabel.TabIndex = 8;
+            this.nombreCuadernoLabel.Text = "NOMBRE DEL CUADERNO";
+            this.nombreCuadernoLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // cancelarButton
+            // 
+            this.cancelarButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cancelarButton.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.cancelarButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.cancelarButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cancelarButton.Font = new System.Drawing.Font("Dream Orphans", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cancelarButton.ForeColor = System.Drawing.Color.LightGray;
+            this.cancelarButton.Location = new System.Drawing.Point(87, 49);
+            this.cancelarButton.Name = "cancelarButton";
+            this.cancelarButton.Size = new System.Drawing.Size(84, 29);
+            this.cancelarButton.TabIndex = 16;
+            this.cancelarButton.Text = "CANCELAR";
+            this.cancelarButton.UseVisualStyleBackColor = false;
+            this.cancelarButton.Visible = false;
+            this.cancelarButton.Click += new System.EventHandler(this.CancelarButton_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(272, 52);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(70, 20);
+            this.label2.TabIndex = 27;
+            this.label2.Text = "FILTRO:";
             // 
             // NotasMenu
             // 
@@ -280,5 +306,7 @@
         private System.Windows.Forms.Button regresarButton;
         private System.Windows.Forms.Label label1;
         public System.Windows.Forms.Label idPantallaLabel;
+        private System.Windows.Forms.ComboBox filtroComboBox;
+        private System.Windows.Forms.Label label2;
     }
 }

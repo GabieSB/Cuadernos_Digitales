@@ -17,47 +17,72 @@ namespace CuadernosDigitales.Forms
         public static string nombreUser;
         private readonly string rutaPorDefecto = AppDomain.CurrentDomain.BaseDirectory;
         private AdministradorArchivos administrador;
-        public Usuario usuario;
+        public  Usuario usuarioActual;
+        public  DialogResult resultado;
         public Ingresar()
         {
             InitializeComponent();
             administrador = new AdministradorArchivos();
-        }
 
+           
+           
+        }
+        
+        private void ComprobarUsuario()
+        {
+            yaTienesCuenta.Visible = false;
+            noTieneCuentaLinkLabel.Visible = false;
+            usuarioTextBox.Text = usuarioActual.nombre;
+            usuarioTextBox.Enabled = false;
+        }
         private void IngresarButton_Click(object sender, EventArgs e)
         {
-            
             bool usuarioEncontrado = false ;
             errorProvider.SetError(usuarioTextBox, "");
             errorProvider.SetError(contrasenaTextBox, "");
+            string passDecencriptada;
 
-
-            foreach (Usuario usuario in administrador.getUsuariosRegistrados())
+            if (usuarioActual != null)
             {
-                string passDecencriptada = Encriptacion.DesencriptarString(usuario.contrasena, userPassword);
-                if (contrasenaTextBox.Text == passDecencriptada && usuarioTextBox.Text == usuario.nombre)
+                passDecencriptada = Encriptacion.DesencriptarString(usuarioActual.contrasena, userPassword);
+                if (contrasenaTextBox.Text == passDecencriptada && usuarioTextBox.Text == usuarioActual.nombre)
                 {
-                    CuadernosInicio cuadernosInicio = new CuadernosInicio(usuario);
-                    this.Hide();
-                    cuadernosInicio.Show();
-                    usuarioEncontrado = true;
-
+                    resultado = new DialogResult();
+                    resultado = DialogResult.Yes;
+                    this.Close();
                 }
-                else if (usuarioTextBox.Text == usuario.nombre && contrasenaTextBox.Text != usuario.contrasena)
+                else
                 {
-                    usuarioEncontrado = true;
                     errorProvider.SetError(contrasenaTextBox, "Contraseña Incorrecta");
                 }
-
             }
-
-            if (!usuarioEncontrado)
+            else
             {
-                errorProvider.SetError(usuarioTextBox, "Usuario no registrado");
+                foreach (Usuario usuario in administrador.getUsuariosRegistrados())
+                {
+                    passDecencriptada = Encriptacion.DesencriptarString(usuario.contrasena, userPassword);
+                    if (contrasenaTextBox.Text == passDecencriptada && usuarioTextBox.Text == usuario.nombre)
+                    {
+                        CuadernosInicio.usuarioActual = new Usuario();
+                        CuadernosInicio.usuarioActual = usuario;
+                        this.Close();
+                        usuarioEncontrado = true;
+
+                    }
+                    else if (usuarioTextBox.Text == usuario.nombre && contrasenaTextBox.Text != usuario.contrasena)
+                    {
+                        usuarioEncontrado = true;
+                        errorProvider.SetError(contrasenaTextBox, "Contraseña Incorrecta");
+                    }
+
+                }
+
+                if (!usuarioEncontrado)
+                {
+                    errorProvider.SetError(usuarioTextBox, "Usuario no registrado");
+                }
+
             }
-
-
-
         }
 
         private void CloseAppButton_Click(object sender, EventArgs e)
@@ -69,6 +94,7 @@ namespace CuadernosDigitales.Forms
         {
             ingresarButton.Visible = false;
             registrarButton.Visible = true;
+            yaTienesCuenta.Visible = true;
             noTieneCuentaLinkLabel.Visible = false;
             errorProvider.SetError(usuarioTextBox, "");
             errorProvider.SetError(contrasenaTextBox, "");
@@ -111,6 +137,23 @@ namespace CuadernosDigitales.Forms
             }
             
         }
-        
+
+        private void YaTienesUnaCuentaLinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            ingresarButton.Visible = true;
+            registrarButton.Visible = false;
+            noTieneCuentaLinkLabel.Visible = true;
+            yaTienesCuenta.Visible = false;
+            errorProvider.SetError(usuarioTextBox, "");
+            errorProvider.SetError(contrasenaTextBox, "");
+        }
+
+        private void Ingresar_Load(object sender, EventArgs e)
+        {
+            if (usuarioActual != null)
+            {
+                ComprobarUsuario();
+            }
+        }
     }
 }

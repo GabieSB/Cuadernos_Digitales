@@ -18,6 +18,7 @@ namespace CuadernosDigitales.Forms
         private PictureBox picSelectedAux;
         private bool sePuedenVerNotas;
         private bool buscando;
+        ErrorProvider error ;
 
         public Inicio()
         {
@@ -25,6 +26,7 @@ namespace CuadernosDigitales.Forms
             cuadernos = new List<Cuaderno>();
             picSelectedAux = new PictureBox();
             sePuedenVerNotas = true;
+            error = new ErrorProvider();
         }
 
         public void CuadernoPictureBox_Click(object sender, EventArgs e)
@@ -96,7 +98,9 @@ namespace CuadernosDigitales.Forms
             if (nuevoCuaderno.cuadernoCreado == DialogResult.Yes)
             {
                 MostrarCuadernoEnPantalla(NuevoCuaderno.cuaderno);
+                NuevoCuaderno.cuaderno.Orden = CuadernosInicio.usuarioActual.cuadernos.Count;
                 cuadernos.Add(NuevoCuaderno.cuaderno);
+                CuadernosInicio.usuarioActual.AgregarCuaderno(NuevoCuaderno.cuaderno);
             }
            
         }
@@ -157,22 +161,58 @@ namespace CuadernosDigitales.Forms
 
         private void BuscaNotaButton_Click(object sender, EventArgs e)
         {
-            buscando = true;
-            foreach(Cuaderno c in cuadernos)
+            error.SetError(filtroComboBox, "");
+            if (buscarTextBox.Text.Length != 0 && !(filtroComboBox.SelectedItem==null))
             {
-                if(c.Nombre == buscarTextBox.Text)
+                buscando = true;
+                List<Cuaderno> cuadernos1 = new List<Cuaderno>();
+                foreach (Cuaderno c in cuadernos)
+                {
+                    if (c.Nombre.Contains(buscarTextBox.Text) && filtroComboBox.SelectedItem.ToString() == "NOMBRE")
+                    {
+                        if (c.Nombre == buscarTextBox.Text)
+                        {
+                            cuadernos1.Insert(0, c);
+                        }
+                        else
+                        {
+                            cuadernos1.Add(c);
+                        }
+                    }
+                    else if (filtroComboBox.SelectedItem.ToString() == "CATEGORIA")
+                    {
+                        foreach (Categoria categoria in c.getListaDeCategorias())
+                        {
+                            if (categoria.Nombre == buscarTextBox.Text)
+                            {
+                                cuadernos1.Add(c);
+                            }
+                        }
+                    }
+
+                }
+
+                if (cuadernos1.Count!=0)
                 {
                     cuadernosContainer.Controls.Clear();
-                    MostrarCuadernoEnPantalla(c);
+                    cargarCuadernos(cuadernos1);
                     nuevoCuadernoButton.Visible = false;
-                    atrasButton.Visible=true;
+                    atrasButton.Visible = true;
+                }
+                else 
+                {
+                    MessageBox.Show("No hay resultados de su busqueda", "Informacion");
                 }
             }
+            else if(filtroComboBox.SelectedItem == null)
+            {
+                error.SetError(filtroComboBox, "Debe seleccionar un filtro");
+            }else if (buscarCuadernoTextBox.Text.Length == 0)
+            {
+                error.SetError(filtroComboBox, "Debe ingresar lo que desea buscar");
+            }
+               
         }
 
-        private void BuscarTextBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }
