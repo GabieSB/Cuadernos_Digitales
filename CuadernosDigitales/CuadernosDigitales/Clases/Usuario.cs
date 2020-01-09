@@ -9,7 +9,7 @@ namespace CuadernosDigitales
     {
         public Usuario()
         {
-
+            cuadernos = new List<Cuaderno>();
         }
 
         public string Nombre
@@ -28,6 +28,15 @@ namespace CuadernosDigitales
         {
             get;
             set;
+        }
+        public List<Cuaderno> cuadernos
+        {
+            get;
+            set;
+        }
+        public void AgregarCuaderno(Cuaderno cuaderno)
+        {
+            cuadernos.Add(cuaderno);
         }
     }
 }

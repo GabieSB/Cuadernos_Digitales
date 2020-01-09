@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.nuevoCuadernoButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
@@ -40,7 +41,11 @@
             this.button2 = new System.Windows.Forms.Button();
             this.eliminarButton = new System.Windows.Forms.Button();
             this.atrasButton = new System.Windows.Forms.Button();
+            this.LabelFiltro = new System.Windows.Forms.Label();
+            this.FiltroComboBox = new System.Windows.Forms.ComboBox();
+            this.ErrorProviderFiltro = new System.Windows.Forms.ErrorProvider(this.components);
             this.inicioPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ErrorProviderFiltro)).BeginInit();
             this.SuspendLayout();
             // 
             // nuevoCuadernoButton
@@ -50,9 +55,9 @@
             this.nuevoCuadernoButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.nuevoCuadernoButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nuevoCuadernoButton.ForeColor = System.Drawing.Color.LightGray;
-            this.nuevoCuadernoButton.Location = new System.Drawing.Point(21, 13);
+            this.nuevoCuadernoButton.Location = new System.Drawing.Point(15, 13);
             this.nuevoCuadernoButton.Name = "nuevoCuadernoButton";
-            this.nuevoCuadernoButton.Size = new System.Drawing.Size(202, 34);
+            this.nuevoCuadernoButton.Size = new System.Drawing.Size(165, 34);
             this.nuevoCuadernoButton.TabIndex = 0;
             this.nuevoCuadernoButton.Text = "NUEVO CUADERNO";
             this.nuevoCuadernoButton.UseVisualStyleBackColor = false;
@@ -93,6 +98,8 @@
             // inicioPanel
             // 
             this.inicioPanel.BackColor = System.Drawing.Color.White;
+            this.inicioPanel.Controls.Add(this.FiltroComboBox);
+            this.inicioPanel.Controls.Add(this.LabelFiltro);
             this.inicioPanel.Controls.Add(this.nuevoCuadernoButton);
             this.inicioPanel.Controls.Add(this.idPantallaLabel);
             this.inicioPanel.Controls.Add(this.cuadernosContainer);
@@ -136,7 +143,7 @@
             this.buscaNotaButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buscaNotaButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buscaNotaButton.ForeColor = System.Drawing.Color.LightGray;
-            this.buscaNotaButton.Location = new System.Drawing.Point(684, 17);
+            this.buscaNotaButton.Location = new System.Drawing.Point(697, 12);
             this.buscaNotaButton.Name = "buscaNotaButton";
             this.buscaNotaButton.Size = new System.Drawing.Size(88, 34);
             this.buscaNotaButton.TabIndex = 9;
@@ -147,9 +154,9 @@
             // buscarTextBox
             // 
             this.buscarTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buscarTextBox.Location = new System.Drawing.Point(448, 22);
+            this.buscarTextBox.Location = new System.Drawing.Point(523, 22);
             this.buscarTextBox.Name = "buscarTextBox";
-            this.buscarTextBox.Size = new System.Drawing.Size(229, 24);
+            this.buscarTextBox.Size = new System.Drawing.Size(168, 24);
             this.buscarTextBox.TabIndex = 8;
             this.buscarTextBox.TextChanged += new System.EventHandler(this.BuscarTextBox_TextChanged);
             // 
@@ -175,9 +182,9 @@
             this.eliminarButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.eliminarButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.eliminarButton.ForeColor = System.Drawing.Color.LightGray;
-            this.eliminarButton.Location = new System.Drawing.Point(266, 13);
+            this.eliminarButton.Location = new System.Drawing.Point(186, 13);
             this.eliminarButton.Name = "eliminarButton";
-            this.eliminarButton.Size = new System.Drawing.Size(119, 34);
+            this.eliminarButton.Size = new System.Drawing.Size(92, 34);
             this.eliminarButton.TabIndex = 12;
             this.eliminarButton.Text = "ELIMINAR";
             this.eliminarButton.UseVisualStyleBackColor = false;
@@ -200,6 +207,32 @@
             this.atrasButton.Visible = false;
             this.atrasButton.Click += new System.EventHandler(this.AtrasButton_Click);
             // 
+            // LabelFiltro
+            // 
+            this.LabelFiltro.AutoSize = true;
+            this.LabelFiltro.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelFiltro.Location = new System.Drawing.Point(284, 22);
+            this.LabelFiltro.Name = "LabelFiltro";
+            this.LabelFiltro.Size = new System.Drawing.Size(70, 20);
+            this.LabelFiltro.TabIndex = 27;
+            this.LabelFiltro.Text = "FILTRO:";
+            // 
+            // FiltroComboBox
+            // 
+            this.FiltroComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.FiltroComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.FiltroComboBox.Items.AddRange(new object[] {
+            "NOMBRE",
+            "CATEGORIA"});
+            this.FiltroComboBox.Location = new System.Drawing.Point(351, 18);
+            this.FiltroComboBox.Name = "FiltroComboBox";
+            this.FiltroComboBox.Size = new System.Drawing.Size(132, 28);
+            this.FiltroComboBox.TabIndex = 28;
+            // 
+            // ErrorProviderFiltro
+            // 
+            this.ErrorProviderFiltro.ContainerControl = this;
+            // 
             // Cuadernos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -215,6 +248,7 @@
             this.Load += new System.EventHandler(this.Cuadernos_Load);
             this.inicioPanel.ResumeLayout(false);
             this.inicioPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ErrorProviderFiltro)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -234,5 +268,8 @@
         private System.Windows.Forms.Button eliminarButton;
         private System.Windows.Forms.Button atrasButton;
         public System.Windows.Forms.Label idPantallaLabel;
+        private System.Windows.Forms.ComboBox FiltroComboBox;
+        private System.Windows.Forms.Label LabelFiltro;
+        private System.Windows.Forms.ErrorProvider ErrorProviderFiltro;
     }
 }

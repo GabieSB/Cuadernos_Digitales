@@ -182,17 +182,58 @@ namespace CuadernosDigitales.Forms
 
         private void BuscaNotaButton_Click(object sender, EventArgs e)
         {
-            buscando = true;
-            foreach(Cuaderno c in cuadernos)
+            ErrorProviderFiltro.SetError(FiltroComboBox, "");
+            if (buscarTextBox.Text.Length != 0 && !(FiltroComboBox.SelectedItem == null))
             {
-                if(c.Nombre == buscarTextBox.Text)
+                buscando = true;
+                List<Cuaderno> cuadernos1 = new List<Cuaderno>();
+                foreach (Cuaderno c in cuadernos)
+                {
+                    if (c.Nombre.Contains(buscarTextBox.Text) && FiltroComboBox.SelectedItem.ToString() == "NOMBRE")
+                    {
+                        if (c.Nombre == buscarTextBox.Text)
+                        {
+                            cuadernos1.Insert(0, c);
+                        }
+                        else
+                        {
+                            cuadernos1.Add(c);
+                        }
+                    }
+                    else if (FiltroComboBox.SelectedItem.ToString() == "CATEGORIA")
+                    {
+                        foreach (Categoria categoria in c.getListaDeCategorias())
+                        {
+                            if (categoria.Nombre == buscarTextBox.Text)
+                            {
+                                cuadernos1.Add(c);
+                            }
+                        }
+                    }
+
+                }
+
+                if (cuadernos1.Count != 0)
                 {
                     cuadernosContainer.Controls.Clear();
-                    MostrarCuadernoEnPantalla(c);
+                    cargarCuadernos(cuadernos1);
                     nuevoCuadernoButton.Visible = false;
-                    atrasButton.Visible=true;
+                    atrasButton.Visible = true;
+                }
+                else
+                {
+                    MessageBox.Show("No hay resultados de su busqueda", "Informacion");
                 }
             }
+            else if (FiltroComboBox.SelectedItem == null)
+            {
+                ErrorProviderFiltro.SetError(FiltroComboBox, "Debe seleccionar un filtro");
+            }
+            else if (buscarCuadernoTextBox.Text.Length == 0)
+            {
+                ErrorProviderFiltro.SetError(FiltroComboBox, "Debe ingresar lo que desea buscar");
+            }
+
             ArchivoManager archivoManager = new ArchivoManager();
             CargarInformacionActividadUsuario(archivoManager, "Se hizo una búsqueda", $"El usuario {CuadernosInicio.UsuariosEstaticos[CuadernosInicio.IndiceUsuarioEstatico].Nombre} hizo una búsqueda de uno o varios Cuadernos.", "Cuadernos", 0);
             CrearHistorialBusqueda(archivoManager);

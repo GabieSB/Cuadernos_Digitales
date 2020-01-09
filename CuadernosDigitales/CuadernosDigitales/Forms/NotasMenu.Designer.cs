@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.nuevaNotaButton = new System.Windows.Forms.Button();
             this.notasMenuPanel = new System.Windows.Forms.Panel();
             this.idPantallaLabel = new System.Windows.Forms.Label();
@@ -43,8 +44,12 @@
             this.regresarButton = new System.Windows.Forms.Button();
             this.nombreCuadernoLabel = new System.Windows.Forms.Label();
             this.cancelarButton = new System.Windows.Forms.Button();
+            this.LabelFiltro = new System.Windows.Forms.Label();
+            this.FiltroComboBox = new System.Windows.Forms.ComboBox();
+            this.ErrorProviderFiltro = new System.Windows.Forms.ErrorProvider(this.components);
             this.notasMenuPanel.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ErrorProviderFiltro)).BeginInit();
             this.SuspendLayout();
             // 
             // nuevaNotaButton
@@ -66,6 +71,8 @@
             // notasMenuPanel
             // 
             this.notasMenuPanel.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.notasMenuPanel.Controls.Add(this.FiltroComboBox);
+            this.notasMenuPanel.Controls.Add(this.LabelFiltro);
             this.notasMenuPanel.Controls.Add(this.idPantallaLabel);
             this.notasMenuPanel.Controls.Add(this.label1);
             this.notasMenuPanel.Controls.Add(this.categoriasPanel);
@@ -155,9 +162,9 @@
             // buscarCuadernoTextBox
             // 
             this.buscarCuadernoTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buscarCuadernoTextBox.Location = new System.Drawing.Point(449, 49);
+            this.buscarCuadernoTextBox.Location = new System.Drawing.Point(497, 51);
             this.buscarCuadernoTextBox.Name = "buscarCuadernoTextBox";
-            this.buscarCuadernoTextBox.Size = new System.Drawing.Size(229, 26);
+            this.buscarCuadernoTextBox.Size = new System.Drawing.Size(185, 26);
             this.buscarCuadernoTextBox.TabIndex = 6;
             // 
             // verNotasButton
@@ -245,6 +252,32 @@
             this.cancelarButton.Visible = false;
             this.cancelarButton.Click += new System.EventHandler(this.CancelarButton_Click);
             // 
+            // LabelFiltro
+            // 
+            this.LabelFiltro.AutoSize = true;
+            this.LabelFiltro.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelFiltro.Location = new System.Drawing.Point(245, 57);
+            this.LabelFiltro.Name = "LabelFiltro";
+            this.LabelFiltro.Size = new System.Drawing.Size(70, 20);
+            this.LabelFiltro.TabIndex = 28;
+            this.LabelFiltro.Text = "FILTRO:";
+            // 
+            // FiltroComboBox
+            // 
+            this.FiltroComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.FiltroComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.FiltroComboBox.Items.AddRange(new object[] {
+            "NOMBRE",
+            "CATEGORIA"});
+            this.FiltroComboBox.Location = new System.Drawing.Point(321, 50);
+            this.FiltroComboBox.Name = "FiltroComboBox";
+            this.FiltroComboBox.Size = new System.Drawing.Size(132, 28);
+            this.FiltroComboBox.TabIndex = 29;
+            // 
+            // ErrorProviderFiltro
+            // 
+            this.ErrorProviderFiltro.ContainerControl = this;
+            // 
             // NotasMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -260,6 +293,7 @@
             this.notasMenuPanel.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ErrorProviderFiltro)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -280,5 +314,8 @@
         private System.Windows.Forms.Button regresarButton;
         private System.Windows.Forms.Label label1;
         public System.Windows.Forms.Label idPantallaLabel;
+        private System.Windows.Forms.ComboBox FiltroComboBox;
+        private System.Windows.Forms.Label LabelFiltro;
+        private System.Windows.Forms.ErrorProvider ErrorProviderFiltro;
     }
 }

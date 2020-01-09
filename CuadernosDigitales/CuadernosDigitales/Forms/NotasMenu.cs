@@ -19,6 +19,7 @@ namespace CuadernosDigitales.Forms
         public static Nota notaSeleccionada;
         private Panel panelSeleccionadaAux;
         private bool sePuedeEditarNota;
+        private bool buscandoOcultas;
 
         public int IndiceNota
         {
@@ -200,19 +201,72 @@ namespace CuadernosDigitales.Forms
 
         private void BuscaNotaButton_Click(object sender, EventArgs e)
         {
-            if (buscarCuadernoTextBox.Text.Length != 0)
+            ErrorProviderFiltro.SetError(FiltroComboBox, "");
+            if (buscarCuadernoTextBox.Text.Length != 0 && FiltroComboBox.SelectedItem != null)
             {
-                Nota note = new Nota();
-                note = cuadernoPadre.BuscarNota(buscarCuadernoTextBox.Text,true);
-                if (note != null)
+                verOcultasButton.Visible = false;
+                List<Nota> notasBusqueda = new List<Nota>();
+                List<Nota> notasDondeBuscar = new List<Nota>();
+
+
+                if (buscandoOcultas)
+                {
+                    notasDondeBuscar = cuadernoPadre.getNotasOcultas();
+                }
+                else
+                {
+                    notasDondeBuscar = cuadernoPadre.getListaDeNotas();
+                }
+
+                foreach (Nota nota in cuadernoPadre.getListaDeNotas())
+                {
+                    if (FiltroComboBox.SelectedItem.ToString() == "NOMBRE")
+                    {
+                        if (nota.Titulo.Contains(buscarCuadernoTextBox.Text))
+                        {
+                            if (nota.Titulo == buscarCuadernoTextBox.Text)
+                            {
+                                notasBusqueda.Insert(0, nota);
+                            }
+                            else
+                            {
+                                notasBusqueda.Add(nota);
+                            }
+                        }
+                    }
+                    else if (FiltroComboBox.SelectedItem.ToString() == "CATEGORIA")
+                    {
+                        if (nota.Categoria == buscarCuadernoTextBox.Text)
+                        {
+                            notasBusqueda.Add(nota);
+                        }
+                    }
+
+                }
+                if (notasBusqueda != null)
                 {
                     notasContainer.Controls.Clear();
-                    MostrarNotaEnPantalla(note);
+                    cargarNotas(notasBusqueda, buscandoOcultas);
                     nuevaNotaButton.Visible = false;
                     verNotasButton.Visible = false;
                     verNotasButton.Visible = true;
                 }
- 
+                else
+                {
+                    MessageBox.Show("No hay resultados de su busqueda", "Informacion");
+                }
+
+
+            }
+            else if (FiltroComboBox.SelectedItem == null)
+            {
+
+                ErrorProviderFiltro.SetError(FiltroComboBox, "Debe seleccionar un filtro");
+            }
+            else if (buscarCuadernoTextBox.Text.Length == 0)
+            {
+
+                ErrorProviderFiltro.SetError(FiltroComboBox, "Debe ingresar lo que desea buscar");
             }
             ArchivoManager archivoManager = new ArchivoManager();
             CargarInformacionActividadUsuario(archivoManager, "Se hizo una búsqueda", $"El usuario {CuadernosInicio.UsuariosEstaticos[CuadernosInicio.IndiceUsuarioEstatico].Nombre} hizo una búsqueda de una o varias notas.", "Notas Menu", 0);
