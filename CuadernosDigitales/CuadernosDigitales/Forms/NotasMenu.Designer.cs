@@ -30,19 +30,19 @@
         {
             this.nuevaNotaButton = new System.Windows.Forms.Button();
             this.notasMenuPanel = new System.Windows.Forms.Panel();
+            this.idPantallaLabel = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.categoriasPanel = new System.Windows.Forms.FlowLayoutPanel();
-            this.cancelarButton = new System.Windows.Forms.Button();
             this.verOcultasButton = new System.Windows.Forms.Button();
             this.notasContainer = new System.Windows.Forms.FlowLayoutPanel();
-            this.nombreCuadernoLabel = new System.Windows.Forms.Label();
             this.buscaNotaButton = new System.Windows.Forms.Button();
             this.buscarCuadernoTextBox = new System.Windows.Forms.TextBox();
             this.verNotasButton = new System.Windows.Forms.Button();
             this.eliminarButton = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.idPantallaLabel = new System.Windows.Forms.Label();
             this.regresarButton = new System.Windows.Forms.Button();
+            this.nombreCuadernoLabel = new System.Windows.Forms.Label();
+            this.cancelarButton = new System.Windows.Forms.Button();
             this.notasMenuPanel.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -53,7 +53,7 @@
             this.nuevaNotaButton.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.nuevaNotaButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
             this.nuevaNotaButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.nuevaNotaButton.Font = new System.Drawing.Font("Dream Orphans", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nuevaNotaButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nuevaNotaButton.ForeColor = System.Drawing.Color.LightGray;
             this.nuevaNotaButton.Location = new System.Drawing.Point(13, 49);
             this.nuevaNotaButton.Name = "nuevaNotaButton";
@@ -84,6 +84,25 @@
             this.notasMenuPanel.Size = new System.Drawing.Size(800, 533);
             this.notasMenuPanel.TabIndex = 4;
             // 
+            // idPantallaLabel
+            // 
+            this.idPantallaLabel.AutoSize = true;
+            this.idPantallaLabel.ForeColor = System.Drawing.Color.Black;
+            this.idPantallaLabel.Location = new System.Drawing.Point(17, 517);
+            this.idPantallaLabel.Name = "idPantallaLabel";
+            this.idPantallaLabel.Size = new System.Drawing.Size(100, 13);
+            this.idPantallaLabel.TabIndex = 23;
+            this.idPantallaLabel.Text = "ID PANTALLA: 003";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(29, 91);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(79, 13);
+            this.label1.TabIndex = 19;
+            this.label1.Text = "CATEGORIAS:";
+            // 
             // categoriasPanel
             // 
             this.categoriasPanel.BackColor = System.Drawing.Color.White;
@@ -93,30 +112,13 @@
             this.categoriasPanel.Size = new System.Drawing.Size(775, 40);
             this.categoriasPanel.TabIndex = 17;
             // 
-            // cancelarButton
-            // 
-            this.cancelarButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cancelarButton.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.cancelarButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
-            this.cancelarButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cancelarButton.Font = new System.Drawing.Font("Dream Orphans", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cancelarButton.ForeColor = System.Drawing.Color.LightGray;
-            this.cancelarButton.Location = new System.Drawing.Point(87, 49);
-            this.cancelarButton.Name = "cancelarButton";
-            this.cancelarButton.Size = new System.Drawing.Size(84, 29);
-            this.cancelarButton.TabIndex = 16;
-            this.cancelarButton.Text = "CANCELAR";
-            this.cancelarButton.UseVisualStyleBackColor = false;
-            this.cancelarButton.Visible = false;
-            this.cancelarButton.Click += new System.EventHandler(this.CancelarButton_Click);
-            // 
             // verOcultasButton
             // 
             this.verOcultasButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.verOcultasButton.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.verOcultasButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
             this.verOcultasButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.verOcultasButton.Font = new System.Drawing.Font("Dream Orphans", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.verOcultasButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.verOcultasButton.ForeColor = System.Drawing.Color.LightGray;
             this.verOcultasButton.Location = new System.Drawing.Point(129, 49);
             this.verOcultasButton.Name = "verOcultasButton";
@@ -134,25 +136,13 @@
             this.notasContainer.Size = new System.Drawing.Size(776, 360);
             this.notasContainer.TabIndex = 11;
             // 
-            // nombreCuadernoLabel
-            // 
-            this.nombreCuadernoLabel.AutoSize = true;
-            this.nombreCuadernoLabel.BackColor = System.Drawing.Color.Silver;
-            this.nombreCuadernoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nombreCuadernoLabel.Location = new System.Drawing.Point(298, 5);
-            this.nombreCuadernoLabel.Name = "nombreCuadernoLabel";
-            this.nombreCuadernoLabel.Size = new System.Drawing.Size(276, 25);
-            this.nombreCuadernoLabel.TabIndex = 8;
-            this.nombreCuadernoLabel.Text = "NOMBRE DEL CUADERNO";
-            this.nombreCuadernoLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // buscaNotaButton
             // 
             this.buscaNotaButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.buscaNotaButton.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.buscaNotaButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
             this.buscaNotaButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buscaNotaButton.Font = new System.Drawing.Font("Dream Orphans", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buscaNotaButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buscaNotaButton.ForeColor = System.Drawing.Color.LightGray;
             this.buscaNotaButton.Location = new System.Drawing.Point(688, 49);
             this.buscaNotaButton.Name = "buscaNotaButton";
@@ -164,10 +154,10 @@
             // 
             // buscarCuadernoTextBox
             // 
-            this.buscarCuadernoTextBox.Font = new System.Drawing.Font("NewsGoth BT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buscarCuadernoTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buscarCuadernoTextBox.Location = new System.Drawing.Point(449, 49);
             this.buscarCuadernoTextBox.Name = "buscarCuadernoTextBox";
-            this.buscarCuadernoTextBox.Size = new System.Drawing.Size(229, 27);
+            this.buscarCuadernoTextBox.Size = new System.Drawing.Size(229, 26);
             this.buscarCuadernoTextBox.TabIndex = 6;
             // 
             // verNotasButton
@@ -176,7 +166,7 @@
             this.verNotasButton.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.verNotasButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
             this.verNotasButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.verNotasButton.Font = new System.Drawing.Font("Dream Orphans", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.verNotasButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.verNotasButton.ForeColor = System.Drawing.Color.LightGray;
             this.verNotasButton.Location = new System.Drawing.Point(13, 49);
             this.verNotasButton.Name = "verNotasButton";
@@ -193,7 +183,7 @@
             this.eliminarButton.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.eliminarButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
             this.eliminarButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.eliminarButton.Font = new System.Drawing.Font("Dream Orphans", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.eliminarButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.eliminarButton.ForeColor = System.Drawing.Color.LightGray;
             this.eliminarButton.Location = new System.Drawing.Point(13, 48);
             this.eliminarButton.Name = "eliminarButton";
@@ -214,25 +204,6 @@
             this.panel1.Size = new System.Drawing.Size(800, 33);
             this.panel1.TabIndex = 18;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(29, 91);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(79, 13);
-            this.label1.TabIndex = 19;
-            this.label1.Text = "CATEGORIAS:";
-            // 
-            // idPantallaLabel
-            // 
-            this.idPantallaLabel.AutoSize = true;
-            this.idPantallaLabel.ForeColor = System.Drawing.Color.Black;
-            this.idPantallaLabel.Location = new System.Drawing.Point(17, 517);
-            this.idPantallaLabel.Name = "idPantallaLabel";
-            this.idPantallaLabel.Size = new System.Drawing.Size(100, 13);
-            this.idPantallaLabel.TabIndex = 23;
-            this.idPantallaLabel.Text = "ID PANTALLA: 003";
-            // 
             // regresarButton
             // 
             this.regresarButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -244,6 +215,35 @@
             this.regresarButton.Text = "Regresar";
             this.regresarButton.UseVisualStyleBackColor = true;
             this.regresarButton.Click += new System.EventHandler(this.RegresarButton_Click);
+            // 
+            // nombreCuadernoLabel
+            // 
+            this.nombreCuadernoLabel.AutoSize = true;
+            this.nombreCuadernoLabel.BackColor = System.Drawing.Color.Silver;
+            this.nombreCuadernoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nombreCuadernoLabel.Location = new System.Drawing.Point(298, 5);
+            this.nombreCuadernoLabel.Name = "nombreCuadernoLabel";
+            this.nombreCuadernoLabel.Size = new System.Drawing.Size(276, 25);
+            this.nombreCuadernoLabel.TabIndex = 8;
+            this.nombreCuadernoLabel.Text = "NOMBRE DEL CUADERNO";
+            this.nombreCuadernoLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // cancelarButton
+            // 
+            this.cancelarButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cancelarButton.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.cancelarButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.cancelarButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cancelarButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cancelarButton.ForeColor = System.Drawing.Color.LightGray;
+            this.cancelarButton.Location = new System.Drawing.Point(87, 49);
+            this.cancelarButton.Name = "cancelarButton";
+            this.cancelarButton.Size = new System.Drawing.Size(84, 29);
+            this.cancelarButton.TabIndex = 16;
+            this.cancelarButton.Text = "CANCELAR";
+            this.cancelarButton.UseVisualStyleBackColor = false;
+            this.cancelarButton.Visible = false;
+            this.cancelarButton.Click += new System.EventHandler(this.CancelarButton_Click);
             // 
             // NotasMenu
             // 

@@ -56,11 +56,11 @@
             this.tituloNotaTextBox = new System.Windows.Forms.TextBox();
             this.notaYpropiedadesPanel = new System.Windows.Forms.Panel();
             this.notaPanel = new System.Windows.Forms.Panel();
+            this.idPantallaLabel = new System.Windows.Forms.Label();
             this.atrarButton = new System.Windows.Forms.Button();
             this.fechaNotaLabel = new System.Windows.Forms.Label();
             this.fontDialog = new System.Windows.Forms.FontDialog();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
-            this.idPantallaLabel = new System.Windows.Forms.Label();
             this.propiedadesPanel.SuspendLayout();
             this.controlsPropiedadesPanel.SuspendLayout();
             this.coloresPanel.SuspendLayout();
@@ -75,7 +75,7 @@
             this.guardarNotaButton.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.guardarNotaButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
             this.guardarNotaButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.guardarNotaButton.Font = new System.Drawing.Font("Dream Orphans", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guardarNotaButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guardarNotaButton.ForeColor = System.Drawing.Color.LightGray;
             this.guardarNotaButton.Location = new System.Drawing.Point(430, 491);
             this.guardarNotaButton.Name = "guardarNotaButton";
@@ -87,7 +87,7 @@
             // 
             // notaTextBox
             // 
-            this.notaTextBox.Font = new System.Drawing.Font("NewsGoth BT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.notaTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.notaTextBox.Location = new System.Drawing.Point(12, 85);
             this.notaTextBox.MaxLength = 1000000;
             this.notaTextBox.Multiline = true;
@@ -124,20 +124,20 @@
             // categoriaLabel
             // 
             this.categoriaLabel.AutoSize = true;
-            this.categoriaLabel.Font = new System.Drawing.Font("NewsGoth BT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.categoriaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.categoriaLabel.Location = new System.Drawing.Point(52, 234);
             this.categoriaLabel.Name = "categoriaLabel";
-            this.categoriaLabel.Size = new System.Drawing.Size(99, 19);
+            this.categoriaLabel.Size = new System.Drawing.Size(108, 20);
             this.categoriaLabel.TabIndex = 20;
             this.categoriaLabel.Text = "CATEGORIA:";
             // 
             // categoriaTextBox
             // 
-            this.categoriaTextBox.Font = new System.Drawing.Font("NewsGoth BT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.categoriaTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.categoriaTextBox.Location = new System.Drawing.Point(2, 256);
             this.categoriaTextBox.MaxLength = 50;
             this.categoriaTextBox.Name = "categoriaTextBox";
-            this.categoriaTextBox.Size = new System.Drawing.Size(203, 27);
+            this.categoriaTextBox.Size = new System.Drawing.Size(203, 26);
             this.categoriaTextBox.TabIndex = 19;
             // 
             // cambiarFuenteButton
@@ -153,10 +153,10 @@
             // ocultarCheckBox
             // 
             this.ocultarCheckBox.AutoSize = true;
-            this.ocultarCheckBox.Font = new System.Drawing.Font("NewsGoth BT", 12F);
+            this.ocultarCheckBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.ocultarCheckBox.Location = new System.Drawing.Point(54, 298);
             this.ocultarCheckBox.Name = "ocultarCheckBox";
-            this.ocultarCheckBox.Size = new System.Drawing.Size(97, 23);
+            this.ocultarCheckBox.Size = new System.Drawing.Size(104, 24);
             this.ocultarCheckBox.TabIndex = 18;
             this.ocultarCheckBox.Text = "OCULTAR";
             this.ocultarCheckBox.UseVisualStyleBackColor = true;
@@ -306,10 +306,10 @@
             // colorNotaLabel
             // 
             this.colorNotaLabel.AutoSize = true;
-            this.colorNotaLabel.Font = new System.Drawing.Font("NewsGoth BT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.colorNotaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.colorNotaLabel.Location = new System.Drawing.Point(52, 70);
             this.colorNotaLabel.Name = "colorNotaLabel";
-            this.colorNotaLabel.Size = new System.Drawing.Size(64, 19);
+            this.colorNotaLabel.Size = new System.Drawing.Size(69, 20);
             this.colorNotaLabel.TabIndex = 3;
             this.colorNotaLabel.Text = "COLOR:";
             // 
@@ -334,11 +334,11 @@
             // 
             // tituloNotaTextBox
             // 
-            this.tituloNotaTextBox.Font = new System.Drawing.Font("NewsGoth BT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tituloNotaTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tituloNotaTextBox.Location = new System.Drawing.Point(12, 38);
             this.tituloNotaTextBox.MaxLength = 1000;
             this.tituloNotaTextBox.Name = "tituloNotaTextBox";
-            this.tituloNotaTextBox.Size = new System.Drawing.Size(552, 27);
+            this.tituloNotaTextBox.Size = new System.Drawing.Size(552, 26);
             this.tituloNotaTextBox.TabIndex = 0;
             this.tituloNotaTextBox.Text = "TÍTULO";
             this.tituloNotaTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TituloNotaTextBox_KeyPress);
@@ -365,10 +365,21 @@
             this.notaPanel.Controls.Add(this.tituloNotaTextBox);
             this.notaPanel.Controls.Add(this.notaTextBox);
             this.notaPanel.Controls.Add(this.guardarNotaButton);
+            this.notaPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.notaPanel.Location = new System.Drawing.Point(220, 0);
             this.notaPanel.Name = "notaPanel";
             this.notaPanel.Size = new System.Drawing.Size(578, 543);
             this.notaPanel.TabIndex = 19;
+            // 
+            // idPantallaLabel
+            // 
+            this.idPantallaLabel.AutoSize = true;
+            this.idPantallaLabel.ForeColor = System.Drawing.Color.Black;
+            this.idPantallaLabel.Location = new System.Drawing.Point(9, 511);
+            this.idPantallaLabel.Name = "idPantallaLabel";
+            this.idPantallaLabel.Size = new System.Drawing.Size(100, 13);
+            this.idPantallaLabel.TabIndex = 24;
+            this.idPantallaLabel.Text = "ID PANTALLA: 004";
             // 
             // atrarButton
             // 
@@ -376,7 +387,7 @@
             this.atrarButton.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.atrarButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
             this.atrarButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.atrarButton.Font = new System.Drawing.Font("Dream Orphans", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.atrarButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.atrarButton.ForeColor = System.Drawing.Color.LightGray;
             this.atrarButton.Location = new System.Drawing.Point(291, 491);
             this.atrarButton.Name = "atrarButton";
@@ -389,25 +400,15 @@
             // fechaNotaLabel
             // 
             this.fechaNotaLabel.AutoSize = true;
-            this.fechaNotaLabel.Font = new System.Drawing.Font("NewsGoth BT", 12F);
+            this.fechaNotaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.fechaNotaLabel.Location = new System.Drawing.Point(14, 10);
             this.fechaNotaLabel.Name = "fechaNotaLabel";
-            this.fechaNotaLabel.Size = new System.Drawing.Size(0, 19);
+            this.fechaNotaLabel.Size = new System.Drawing.Size(0, 20);
             this.fechaNotaLabel.TabIndex = 18;
             // 
             // errorProvider
             // 
             this.errorProvider.ContainerControl = this;
-            // 
-            // idPantallaLabel
-            // 
-            this.idPantallaLabel.AutoSize = true;
-            this.idPantallaLabel.ForeColor = System.Drawing.Color.Black;
-            this.idPantallaLabel.Location = new System.Drawing.Point(9, 511);
-            this.idPantallaLabel.Name = "idPantallaLabel";
-            this.idPantallaLabel.Size = new System.Drawing.Size(100, 13);
-            this.idPantallaLabel.TabIndex = 24;
-            this.idPantallaLabel.Text = "ID PANTALLA: 004";
             // 
             // NuevaNota
             // 
@@ -420,6 +421,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "NuevaNota";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.NuevaNota_FormClosed);
+            this.Load += new System.EventHandler(this.NuevaNota_Load);
             this.propiedadesPanel.ResumeLayout(false);
             this.controlsPropiedadesPanel.ResumeLayout(false);
             this.controlsPropiedadesPanel.PerformLayout();

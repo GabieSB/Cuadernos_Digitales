@@ -10,8 +10,25 @@ using System.Windows.Forms;
 
 namespace CuadernosDigitales.Forms
 {
-    public partial class Inicio : Form
+    public partial class Cuadernos : Form
     {
+        private readonly string rutaPorDefecto = AppDomain.CurrentDomain.BaseDirectory;
+        public List<Usuario> Usuarios
+        {
+            get;
+            set;
+        }
+        public int IndiceUsuario
+        {
+            get;
+            set;
+        }
+        public int IndiceCuaderno
+        {
+            get;
+            set;
+        }
+
         public List <Cuaderno> cuadernos;
         public static Cuaderno CuadernoSeleccionado;
         private PictureBox picSelected;
@@ -19,7 +36,7 @@ namespace CuadernosDigitales.Forms
         private bool sePuedenVerNotas;
         private bool buscando;
 
-        public Inicio()
+        public Cuadernos()
         {
             InitializeComponent();
             cuadernos = new List<Cuaderno>();
@@ -47,14 +64,24 @@ namespace CuadernosDigitales.Forms
             PictureBox pic = sender as PictureBox;
             picSelected = new PictureBox();
             picSelected = pic;
-            foreach (Cuaderno cuaderno in cuadernos)
+            for (int i = 0; i < cuadernos.Count; i++)
+            {
+                Cuaderno cuaderno = cuadernos[i];
+                if (pic.Name == cuaderno.Nombre)
+                {
+                    CuadernoSeleccionado = new Cuaderno();
+                    CuadernoSeleccionado = cuaderno;
+                    IndiceCuaderno = i;
+                }
+            }
+/*            foreach (Cuaderno cuaderno in cuadernos)
             {
                 if (pic.Name == cuaderno.Nombre)
                 {
                     CuadernoSeleccionado = new Cuaderno();
                     CuadernoSeleccionado = cuaderno;
                 }
-            }
+            }*/
         }
         public void CuadernoPicture_DoubleClick(object sender, EventArgs e)
         {
@@ -91,11 +118,18 @@ namespace CuadernosDigitales.Forms
         {
 
             NuevoCuaderno nuevoCuaderno = new NuevoCuaderno();
+            nuevoCuaderno.Usuarios = Usuarios;
+            nuevoCuaderno.IndiceUsuario = IndiceUsuario;
+
             nuevoCuaderno.ShowDialog();
 
             if (nuevoCuaderno.cuadernoCreado == DialogResult.Yes)
             {
                 MostrarCuadernoEnPantalla(NuevoCuaderno.cuaderno);
+                ArchivoManager archivoManager = new ArchivoManager();
+                CargarInformacionActividadUsuario(archivoManager, "Presionar el boton de crear nuevo cuaderno", $"El usuario {Usuarios[IndiceUsuario].Nombre} creo un nuevo cuaderno", "Nuevo Cuaderno", cuadernos.Count);
+                CrearHistorialCreacionCuaderno(archivoManager);
+
                 cuadernos.Add(NuevoCuaderno.cuaderno);
             }
            
@@ -144,10 +178,13 @@ namespace CuadernosDigitales.Forms
 
         private void EliminarButton_Click(object sender, EventArgs e)
         {
-
             DialogResult resultado =  MessageBox.Show("¿Esta seguro de querer eliminar el cuaderno: "+CuadernoSeleccionado.Nombre+"?", "Alerta",MessageBoxButtons.YesNoCancel);
             if(resultado == DialogResult.Yes)
             {
+                ArchivoManager archivoManager = new ArchivoManager();
+                CargarInformacionActividadUsuario(archivoManager, "Presionar el boton de Eliminar Cuaderno", $"El usuario {Usuarios[IndiceUsuario].Nombre} elimino un cuaderno.", "Cuaderno", IndiceCuaderno);
+                CrearHistorialVisitaFormulario(archivoManager);
+
                 cuadernos.Remove(CuadernoSeleccionado);
                 cuadernosContainer.Controls.Clear();
                 cargarCuadernos(cuadernos);
@@ -168,11 +205,57 @@ namespace CuadernosDigitales.Forms
                     atrasButton.Visible=true;
                 }
             }
+            ArchivoManager archivoManager = new ArchivoManager();
+            CargarInformacionActividadUsuario(archivoManager, "Se hizo una búsqueda", $"El usuario {Usuarios[IndiceUsuario].Nombre} hizo una búsqueda de una o varias notas.", "Inicio", 0);
+            CrearHistorialBusqueda(archivoManager);
         }
 
         private void BuscarTextBox_TextChanged(object sender, EventArgs e)
         {
 
+        }
+        private void CrearHistorialBusqueda(ArchivoManager archivoManager)
+        {
+            try
+            {
+                string nombreNuevoArchivo = archivoManager.CrearHistorialBusquedaObjeto(rutaPorDefecto);
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show($"Se produjo el siguiente error: {exception}");
+            }
+        }
+        private void CargarInformacionActividadUsuario(ArchivoManager archivoManager, String accion, String informacionAdicional, string formulario, int objeto)
+        {
+            archivoManager.Historial = new Historial(DateTime.Now, Usuarios[IndiceUsuario].Nombre, accion, informacionAdicional, formulario, objeto);
+        }
+        private void CrearHistorialVisitaFormulario(ArchivoManager archivoManager)
+        {
+            try
+            {
+                string nombreNuevoArchivo = archivoManager.CrearHistorialVisitaFormulario(rutaPorDefecto);
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show($"Se produjo el siguiente error: {exception}");
+            }
+        }
+        private void CrearHistorialCreacionCuaderno(ArchivoManager archivoManager)
+        {
+            try
+            {
+                string nombreNuevoArchivo = archivoManager.CrearHistorialEdicionObjeto(rutaPorDefecto);
+            }
+            catch (Exception exception)
+            {
+
+            }
+        }
+        private void Cuadernos_Load(object sender, EventArgs e)
+        {
+            ArchivoManager archivoManager = new ArchivoManager();
+            CargarInformacionActividadUsuario(archivoManager, "Presionar el boton de Inicio", $"El usuario {Usuarios[IndiceUsuario].Nombre} ingreso al formulario de Inicio", "Inicio", 0);
+            CrearHistorialVisitaFormulario(archivoManager);
         }
     }
 }

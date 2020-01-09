@@ -13,6 +13,22 @@ namespace CuadernosDigitales.Forms
 {
     public partial class Ingresar : Form
     {
+        public List<Usuario> Usuarios
+        {
+            get;
+            set;
+        }
+        public Usuario Usuario
+        {
+            get;
+            set;
+        }
+        public int IndiceUsuario
+        {
+            get;
+            set;
+        }
+
         private readonly string userPassword = "El20Examen20Estaba20Faci20";
         public static string nombreUser;
         private readonly string rutaPorDefecto = AppDomain.CurrentDomain.BaseDirectory;
@@ -24,7 +40,7 @@ namespace CuadernosDigitales.Forms
             administrador = new AdministradorArchivos();
         }
 
-        private void IngresarButton_Click(object sender, EventArgs e)
+    /*    private void IngresarButton_Click(object sender, EventArgs e)
         {
             
             bool usuarioEncontrado = false ;
@@ -37,7 +53,7 @@ namespace CuadernosDigitales.Forms
                 string passDecencriptada = Encriptacion.DesencriptarString(usuario.contrasena, userPassword);
                 if (contrasenaTextBox.Text == passDecencriptada && usuarioTextBox.Text == usuario.nombre)
                 {
-                    CuadernosInicio cuadernosInicio = new CuadernosInicio(usuario);
+                    CuadernosInicio cuadernosInicio = new CuadernosInicio(usuario.nombre);
                     this.Hide();
                     cuadernosInicio.Show();
                     usuarioEncontrado = true;
@@ -58,7 +74,7 @@ namespace CuadernosDigitales.Forms
 
 
 
-        }
+        }*/
 
         private void CloseAppButton_Click(object sender, EventArgs e)
         {
@@ -75,7 +91,7 @@ namespace CuadernosDigitales.Forms
 
         }
 
-        private void RegistrarButton_Click(object sender, EventArgs e)
+    /*    private void RegistrarButton_Click(object sender, EventArgs e)
         {
             errorProvider.SetError(usuarioTextBox, "");
            
@@ -110,7 +126,11 @@ namespace CuadernosDigitales.Forms
                 }
             }
             
+        }*/
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
         }
-        
     }
 }

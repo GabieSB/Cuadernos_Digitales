@@ -36,10 +36,10 @@
             // nombreCuaderno
             // 
             this.nombreCuaderno.AutoSize = true;
-            this.nombreCuaderno.Font = new System.Drawing.Font("NewsGoth BT", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nombreCuaderno.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nombreCuaderno.Location = new System.Drawing.Point(71, 140);
             this.nombreCuaderno.Name = "nombreCuaderno";
-            this.nombreCuaderno.Size = new System.Drawing.Size(0, 14);
+            this.nombreCuaderno.Size = new System.Drawing.Size(0, 13);
             this.nombreCuaderno.TabIndex = 1;
             // 
             // CuadernoPictureBox

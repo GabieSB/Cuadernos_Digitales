@@ -1,6 +1,6 @@
 ﻿namespace CuadernosDigitales.Forms
 {
-    partial class Inicio
+    partial class Cuadernos
     {
         /// <summary>
         /// Required designer variable.
@@ -33,13 +33,13 @@
             this.button1 = new System.Windows.Forms.Button();
             this.buscarCuadernoTextBox = new System.Windows.Forms.TextBox();
             this.inicioPanel = new System.Windows.Forms.Panel();
+            this.idPantallaLabel = new System.Windows.Forms.Label();
             this.cuadernosContainer = new System.Windows.Forms.FlowLayoutPanel();
             this.buscaNotaButton = new System.Windows.Forms.Button();
             this.buscarTextBox = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
             this.eliminarButton = new System.Windows.Forms.Button();
             this.atrasButton = new System.Windows.Forms.Button();
-            this.idPantallaLabel = new System.Windows.Forms.Label();
             this.inicioPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -48,11 +48,11 @@
             this.nuevoCuadernoButton.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.nuevoCuadernoButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
             this.nuevoCuadernoButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.nuevoCuadernoButton.Font = new System.Drawing.Font("Dream Orphans", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nuevoCuadernoButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nuevoCuadernoButton.ForeColor = System.Drawing.Color.LightGray;
             this.nuevoCuadernoButton.Location = new System.Drawing.Point(21, 13);
             this.nuevoCuadernoButton.Name = "nuevoCuadernoButton";
-            this.nuevoCuadernoButton.Size = new System.Drawing.Size(133, 34);
+            this.nuevoCuadernoButton.Size = new System.Drawing.Size(202, 34);
             this.nuevoCuadernoButton.TabIndex = 0;
             this.nuevoCuadernoButton.Text = "NUEVO CUADERNO";
             this.nuevoCuadernoButton.UseVisualStyleBackColor = false;
@@ -72,7 +72,7 @@
             this.button1.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Dream Orphans", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.LightGray;
             this.button1.Location = new System.Drawing.Point(816, 17);
             this.button1.Name = "button1";
@@ -84,10 +84,10 @@
             // buscarCuadernoTextBox
             // 
             this.buscarCuadernoTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buscarCuadernoTextBox.Font = new System.Drawing.Font("Dream Orphans", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buscarCuadernoTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buscarCuadernoTextBox.Location = new System.Drawing.Point(965, 18);
             this.buscarCuadernoTextBox.Name = "buscarCuadernoTextBox";
-            this.buscarCuadernoTextBox.Size = new System.Drawing.Size(202, 25);
+            this.buscarCuadernoTextBox.Size = new System.Drawing.Size(202, 24);
             this.buscarCuadernoTextBox.TabIndex = 4;
             // 
             // inicioPanel
@@ -108,6 +108,16 @@
             this.inicioPanel.Size = new System.Drawing.Size(800, 545);
             this.inicioPanel.TabIndex = 5;
             // 
+            // idPantallaLabel
+            // 
+            this.idPantallaLabel.AutoSize = true;
+            this.idPantallaLabel.ForeColor = System.Drawing.Color.Black;
+            this.idPantallaLabel.Location = new System.Drawing.Point(18, 518);
+            this.idPantallaLabel.Name = "idPantallaLabel";
+            this.idPantallaLabel.Size = new System.Drawing.Size(100, 13);
+            this.idPantallaLabel.TabIndex = 22;
+            this.idPantallaLabel.Text = "ID PANTALLA: 002";
+            // 
             // cuadernosContainer
             // 
             this.cuadernosContainer.AutoScroll = true;
@@ -124,7 +134,7 @@
             this.buscaNotaButton.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.buscaNotaButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
             this.buscaNotaButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buscaNotaButton.Font = new System.Drawing.Font("Dream Orphans", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buscaNotaButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buscaNotaButton.ForeColor = System.Drawing.Color.LightGray;
             this.buscaNotaButton.Location = new System.Drawing.Point(684, 17);
             this.buscaNotaButton.Name = "buscaNotaButton";
@@ -136,10 +146,10 @@
             // 
             // buscarTextBox
             // 
-            this.buscarTextBox.Font = new System.Drawing.Font("Dream Orphans", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buscarTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buscarTextBox.Location = new System.Drawing.Point(448, 22);
             this.buscarTextBox.Name = "buscarTextBox";
-            this.buscarTextBox.Size = new System.Drawing.Size(229, 25);
+            this.buscarTextBox.Size = new System.Drawing.Size(229, 24);
             this.buscarTextBox.TabIndex = 8;
             this.buscarTextBox.TextChanged += new System.EventHandler(this.BuscarTextBox_TextChanged);
             // 
@@ -149,7 +159,7 @@
             this.button2.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Dream Orphans", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.LightGray;
             this.button2.Location = new System.Drawing.Point(1173, 13);
             this.button2.Name = "button2";
@@ -163,11 +173,11 @@
             this.eliminarButton.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.eliminarButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
             this.eliminarButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.eliminarButton.Font = new System.Drawing.Font("Dream Orphans", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.eliminarButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.eliminarButton.ForeColor = System.Drawing.Color.LightGray;
-            this.eliminarButton.Location = new System.Drawing.Point(123, 13);
+            this.eliminarButton.Location = new System.Drawing.Point(266, 13);
             this.eliminarButton.Name = "eliminarButton";
-            this.eliminarButton.Size = new System.Drawing.Size(85, 34);
+            this.eliminarButton.Size = new System.Drawing.Size(119, 34);
             this.eliminarButton.TabIndex = 12;
             this.eliminarButton.Text = "ELIMINAR";
             this.eliminarButton.UseVisualStyleBackColor = false;
@@ -179,7 +189,7 @@
             this.atrasButton.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.atrasButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
             this.atrasButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.atrasButton.Font = new System.Drawing.Font("Dream Orphans", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.atrasButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.atrasButton.ForeColor = System.Drawing.Color.LightGray;
             this.atrasButton.Location = new System.Drawing.Point(21, 13);
             this.atrasButton.Name = "atrasButton";
@@ -190,17 +200,7 @@
             this.atrasButton.Visible = false;
             this.atrasButton.Click += new System.EventHandler(this.AtrasButton_Click);
             // 
-            // idPantallaLabel
-            // 
-            this.idPantallaLabel.AutoSize = true;
-            this.idPantallaLabel.ForeColor = System.Drawing.Color.Black;
-            this.idPantallaLabel.Location = new System.Drawing.Point(18, 518);
-            this.idPantallaLabel.Name = "idPantallaLabel";
-            this.idPantallaLabel.Size = new System.Drawing.Size(100, 13);
-            this.idPantallaLabel.TabIndex = 22;
-            this.idPantallaLabel.Text = "ID PANTALLA: 002";
-            // 
-            // Inicio
+            // Cuadernos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -210,8 +210,9 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Inicio";
+            this.Name = "Cuadernos";
             this.Text = "Inicio";
+            this.Load += new System.EventHandler(this.Cuadernos_Load);
             this.inicioPanel.ResumeLayout(false);
             this.inicioPanel.PerformLayout();
             this.ResumeLayout(false);

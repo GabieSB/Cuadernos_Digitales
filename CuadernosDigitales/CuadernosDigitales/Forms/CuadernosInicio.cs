@@ -14,12 +14,22 @@ namespace CuadernosDigitales
 {
     public partial class CuadernosInicio : Form
     {
-        public string nombre;
-        public CuadernosInicio(string usuario)
+        private readonly string rutaPorDefecto = AppDomain.CurrentDomain.BaseDirectory;
+        public List<Usuario> Usuarios
+        {
+            get;
+            set;
+        }
+        public int IndiceUsuario
+        {
+            get;
+            set;
+        }
+
+        public CuadernosInicio()
         {
             InitializeComponent();
-            MessageBox.Show(nombre);
-            usuarioLabel.Text = "@"+usuario;
+            Usuarios = new List<Usuario>();
         }
 
     
@@ -69,9 +79,12 @@ namespace CuadernosDigitales
             DialogResult resultado = MessageBox.Show("¿Desea cerrar la aplicación?", "Confirmacion", MessageBoxButtons.YesNoCancel);
             if (resultado == DialogResult.Yes)
             {
+                ArchivoManager archivoManager = new ArchivoManager();
+                CargarInformacionActividadUsuario(archivoManager, "Salir del sistema", $"El usuario {Usuarios[IndiceUsuario].Nombre} salio del sistema.", "Ventana", 0);
+                CrearHistorialVisitaFormulario(archivoManager);
                 Application.Exit();
             }
-           
+
         }
 
         private void ComprimirButton_Click(object sender, EventArgs e)
@@ -108,25 +121,28 @@ namespace CuadernosDigitales
         {
             etiquetaInicio.Visible = true;
             etiquetaHistorial.Visible = false;
-            etiquetaCambiarU.Visible = false;
-            tituloLabel.Text = "INICIO";
-            AbrirForm<Inicio>(); 
+            PanelEtiquetaEditarUsuario.Visible = false;
+            tituloLabel.Text = "CUADERNOS";
+            Cuadernos cuadernos = new Cuadernos();
+            cuadernos.Usuarios = Usuarios;
+            cuadernos.IndiceUsuario = IndiceUsuario;
+            MostrarFormEnPanel(cuadernos);
         }
        
         private void InicioButtonAlternative_Click(object sender, EventArgs e)
         {
             etiquetaInicio.Visible = true;
             etiquetaHistorial.Visible = false;
-            etiquetaCambiarU.Visible = false;
+            PanelEtiquetaEditarUsuario.Visible = false;
             tituloLabel.Text = "INICIO";
-            MostrarFormEnPanel(new Inicio());
+            MostrarFormEnPanel(new Cuadernos());
         }
 
         private void HistorialButton_Click(object sender, EventArgs e)
         {
             etiquetaInicio.Visible = false;
             etiquetaHistorial.Visible = true;
-            etiquetaCambiarU.Visible = false;
+            PanelEtiquetaEditarUsuario.Visible = false;
             tituloLabel.Text = "HISTORIAL";
            // AbrirForm<NuevaNota>();
         }
@@ -135,15 +151,31 @@ namespace CuadernosDigitales
         {
             etiquetaInicio.Visible = false;
             etiquetaHistorial.Visible = false;
-            etiquetaCambiarU.Visible = true;
-           
+            PanelEtiquetaEditarUsuario.Visible = true;
+            
         }
 
         private void CuadernosInicio_Load(object sender, EventArgs e)
         {
+            LoginForm loginForm = new LoginForm();
+            loginForm.Usuarios = Usuarios;
+            if (loginForm.ShowDialog() == DialogResult.OK)
+            {
+                Usuarios = loginForm.Usuarios;
+                IndiceUsuario = loginForm.IndiceUsuario;
+                usuarioLabel.Text = Usuarios[IndiceUsuario].Nombre;
+
+                ArchivoManager archivoManager = new ArchivoManager();
+                CargarInformacionActividadUsuario(archivoManager, "Ingreso al sistema", $"El usuario {Usuarios[IndiceUsuario].Nombre} ingreso al sistema.", "Cuadernos Menu", 0);
+                CrearHistorialVisitaFormulario(archivoManager);
+            }
+            else
+            {
+                this.Close();
+            }
             etiquetaInicio.Visible = true;
             etiquetaHistorial.Visible = false;
-            etiquetaCambiarU.Visible = false;
+            PanelEtiquetaEditarUsuario.Visible = false;
         }
 
         private void CabezaPanel_Paint(object sender, PaintEventArgs e)
@@ -155,7 +187,47 @@ namespace CuadernosDigitales
         {
 
         }
+        private void CargarInformacionActividadUsuario(ArchivoManager archivoManager, String accion, String informacionAdicional, string formulario, int objeto)
+        {
+            archivoManager.Historial = new Historial(DateTime.Now, Usuarios[IndiceUsuario].Nombre, accion, informacionAdicional, formulario, objeto);
+        }
+        private void CrearHistorialVisitaFormulario(ArchivoManager archivoManager)
+        {
+            try
+            {
+                string nombreNuevoArchivo = archivoManager.CrearHistorialVisitaFormulario(rutaPorDefecto);
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show($"Se produjo el siguiente error: {exception}");
+            }
+        }
 
-      
+        private void ButtonCerrarSecion_Click(object sender, EventArgs e)
+        {
+            DialogResult resultado = MessageBox.Show("¿Desea cerrar la seción?", "Confirmacion", MessageBoxButtons.YesNoCancel);
+            if (resultado == DialogResult.Yes)
+            {
+                CuadernosInicio cuadernosInicio = new CuadernosInicio();
+                cuadernosInicio.Usuarios = Usuarios;
+                ArchivoManager archivoManager = new ArchivoManager();
+                CargarInformacionActividadUsuario(archivoManager, "Salir del sistema", $"El usuario {Usuarios[IndiceUsuario].Nombre} salio del sistema.", "Ventana", 0);
+                CrearHistorialVisitaFormulario(archivoManager);
+                this.Close();
+                cuadernosInicio.Show();
+            }
+        }
+
+        private void ButtonEditarUsuario_Click(object sender, EventArgs e)
+        {
+            etiquetaInicio.Visible = false;
+            etiquetaHistorial.Visible = false;
+            PanelEtiquetaEditarUsuario.Visible = true;
+            tituloLabel.Text = "EDITAR USUARIO";
+            EditarUsuario editarUsuario = new EditarUsuario();
+            editarUsuario.Usuarios = Usuarios;
+            editarUsuario.IndiceUsuario = IndiceUsuario;
+            MostrarFormEnPanel(editarUsuario);
+        }
     }
 }

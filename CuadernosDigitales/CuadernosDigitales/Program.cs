@@ -17,7 +17,9 @@ namespace CuadernosDigitales
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Ingresar());
+            CuadernosInicio cuadernosInicio = new CuadernosInicio();
+            cuadernosInicio.Show();
+            Application.Run();
         }
     }
 }

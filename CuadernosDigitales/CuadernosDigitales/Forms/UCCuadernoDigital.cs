@@ -12,8 +12,8 @@ namespace CuadernosDigitales.Forms
 {
     public partial class UCCuadernoDigital : UserControl
     {
-        private Inicio inicio;
-        public UCCuadernoDigital(Inicio inicio)
+        private Cuadernos inicio;
+        public UCCuadernoDigital(Cuadernos inicio)
         {
             InitializeComponent();
             this.inicio = inicio;

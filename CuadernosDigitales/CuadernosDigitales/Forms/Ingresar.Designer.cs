@@ -38,9 +38,9 @@
             this.closeAppButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.noTieneCuentaLinkLabel = new System.Windows.Forms.LinkLabel();
             this.registrarButton = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -49,38 +49,38 @@
             // usuarioLabel
             // 
             this.usuarioLabel.AutoSize = true;
-            this.usuarioLabel.Font = new System.Drawing.Font("NewsGoth BT", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.usuarioLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.usuarioLabel.Location = new System.Drawing.Point(113, 166);
             this.usuarioLabel.Name = "usuarioLabel";
-            this.usuarioLabel.Size = new System.Drawing.Size(96, 22);
+            this.usuarioLabel.Size = new System.Drawing.Size(98, 24);
             this.usuarioLabel.TabIndex = 0;
             this.usuarioLabel.Text = "USUARIO:";
             // 
             // usuarioTextBox
             // 
-            this.usuarioTextBox.Font = new System.Drawing.Font("NewsGoth BT", 14.25F);
+            this.usuarioTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
             this.usuarioTextBox.Location = new System.Drawing.Point(50, 206);
             this.usuarioTextBox.Name = "usuarioTextBox";
-            this.usuarioTextBox.Size = new System.Drawing.Size(223, 30);
+            this.usuarioTextBox.Size = new System.Drawing.Size(223, 29);
             this.usuarioTextBox.TabIndex = 1;
             // 
             // contrasenaLabel
             // 
             this.contrasenaLabel.AutoSize = true;
-            this.contrasenaLabel.Font = new System.Drawing.Font("NewsGoth BT", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.contrasenaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.contrasenaLabel.Location = new System.Drawing.Point(94, 260);
             this.contrasenaLabel.Name = "contrasenaLabel";
-            this.contrasenaLabel.Size = new System.Drawing.Size(134, 22);
+            this.contrasenaLabel.Size = new System.Drawing.Size(147, 24);
             this.contrasenaLabel.TabIndex = 2;
             this.contrasenaLabel.Text = "CONTRASEÑA:";
             // 
             // contrasenaTextBox
             // 
-            this.contrasenaTextBox.Font = new System.Drawing.Font("NewsGoth BT", 14.25F);
+            this.contrasenaTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
             this.contrasenaTextBox.Location = new System.Drawing.Point(50, 297);
             this.contrasenaTextBox.Name = "contrasenaTextBox";
             this.contrasenaTextBox.PasswordChar = '*';
-            this.contrasenaTextBox.Size = new System.Drawing.Size(223, 30);
+            this.contrasenaTextBox.Size = new System.Drawing.Size(223, 29);
             this.contrasenaTextBox.TabIndex = 3;
             // 
             // ingresarButton
@@ -88,7 +88,7 @@
             this.ingresarButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DeepSkyBlue;
             this.ingresarButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
             this.ingresarButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ingresarButton.Font = new System.Drawing.Font("NewsGoth BT", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ingresarButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ingresarButton.ForeColor = System.Drawing.Color.DeepSkyBlue;
             this.ingresarButton.Location = new System.Drawing.Point(98, 345);
             this.ingresarButton.Name = "ingresarButton";
@@ -96,7 +96,6 @@
             this.ingresarButton.TabIndex = 4;
             this.ingresarButton.Text = "INGRESAR";
             this.ingresarButton.UseVisualStyleBackColor = true;
-            this.ingresarButton.Click += new System.EventHandler(this.IngresarButton_Click);
             // 
             // panel1
             // 
@@ -127,27 +126,17 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Bebas Neue Regular", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.label1.Location = new System.Drawing.Point(100, 104);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(128, 38);
+            this.label1.Size = new System.Drawing.Size(220, 37);
             this.label1.TabIndex = 0;
             this.label1.Text = "NOTEBOOKS";
             // 
             // errorProvider
             // 
             this.errorProvider.ContainerControl = this;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Black;
-            this.pictureBox1.Image = global::CuadernosDigitales.Properties.Resources.azul;
-            this.pictureBox1.Location = new System.Drawing.Point(111, 6);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(100, 100);
-            this.pictureBox1.TabIndex = 5;
-            this.pictureBox1.TabStop = false;
             // 
             // noTieneCuentaLinkLabel
             // 
@@ -165,7 +154,7 @@
             this.registrarButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DeepSkyBlue;
             this.registrarButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
             this.registrarButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.registrarButton.Font = new System.Drawing.Font("NewsGoth BT", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.registrarButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.registrarButton.ForeColor = System.Drawing.Color.DeepSkyBlue;
             this.registrarButton.Location = new System.Drawing.Point(87, 345);
             this.registrarButton.Name = "registrarButton";
@@ -174,7 +163,17 @@
             this.registrarButton.Text = "REGISTRAR";
             this.registrarButton.UseVisualStyleBackColor = true;
             this.registrarButton.Visible = false;
-            this.registrarButton.Click += new System.EventHandler(this.RegistrarButton_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Black;
+            this.pictureBox1.Image = global::CuadernosDigitales.Properties.Resources.azul;
+            this.pictureBox1.Location = new System.Drawing.Point(111, 6);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(100, 100);
+            this.pictureBox1.TabIndex = 5;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // Ingresar
             // 

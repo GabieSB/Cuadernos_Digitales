@@ -11,8 +11,19 @@ using System.Windows.Forms;
 namespace CuadernosDigitales.Forms
 {
     public partial class NotasMenu : Form
-
     {
+        private readonly string rutaPorDefecto = AppDomain.CurrentDomain.BaseDirectory;
+        public List<Usuario> Usuarios
+        {
+            get;
+            set;
+        }
+        public int IndiceUsuario
+        {
+            get;
+            set;
+        }
+
         private Cuaderno cuadernoPadre;
         public static Nota notaNueva;
         public static Nota notaSeleccionada;
@@ -22,7 +33,7 @@ namespace CuadernosDigitales.Forms
         public NotasMenu()
         {
             InitializeComponent();
-            cuadernoPadre = Inicio.CuadernoSeleccionado;
+            cuadernoPadre = Cuadernos.CuadernoSeleccionado;
             nombreCuadernoLabel.Text = cuadernoPadre.Nombre;
             cargarNotas(cuadernoPadre.getListaDeNotas(),false);
             panelSeleccionadaAux = new Panel();
@@ -31,7 +42,6 @@ namespace CuadernosDigitales.Forms
       
         private void NuevaNotaButton_Click(object sender, EventArgs e)
         {
-
             NuevaNota nuevaNota = new NuevaNota(this, true);
             AddOwnedForm(nuevaNota);
             nuevaNota.TopLevel = false;
@@ -45,21 +55,21 @@ namespace CuadernosDigitales.Forms
          public  void NuevaNotaGuardada()
         {
             notaNueva = NuevaNota.nota;
-            Inicio.CuadernoSeleccionado.agregarNota(notaNueva);
+            Cuadernos.CuadernoSeleccionado.agregarNota(notaNueva);
             if(!notaNueva.Privacidad) MostrarNotaEnPantalla(notaNueva);
 
 
         }
         public void NotaEditada()
         {
-            int numeroNota = Inicio.CuadernoSeleccionado.BuscarNota(notaSeleccionada.Titulo);
+            int numeroNota = Cuadernos.CuadernoSeleccionado.BuscarNota(notaSeleccionada.Titulo);
             
             if (numeroNota!=-1)
             {
                 foreach(Control item in notasContainer.Controls)
                 {
 
-                    if(item.Name == Inicio.CuadernoSeleccionado.ObtenerNombre(numeroNota)&&item is Panel)
+                    if(item.Name == Cuadernos.CuadernoSeleccionado.ObtenerNombre(numeroNota)&&item is Panel)
                     {
                         ((Panel)item).BackColor = notaNueva.Color;
                         ((Panel)item).Name = notaNueva.Titulo;
@@ -74,7 +84,7 @@ namespace CuadernosDigitales.Forms
                     }
                 }
 
-                Inicio.CuadernoSeleccionado.ModificarNota(numeroNota, notaNueva);
+                Cuadernos.CuadernoSeleccionado.ModificarNota(numeroNota, notaNueva);
             }
         }
 
@@ -135,10 +145,10 @@ namespace CuadernosDigitales.Forms
             }
             if(e.Button == MouseButtons.Right)
             {
-                int numeroNota = Inicio.CuadernoSeleccionado.BuscarNota(notaSeleccionada.Titulo);
+                int numeroNota = Cuadernos.CuadernoSeleccionado.BuscarNota(notaSeleccionada.Titulo);
                 foreach (Control item in notasContainer.Controls)
                 {
-                    if (item.Name == Inicio.CuadernoSeleccionado.ObtenerNombre(numeroNota) && item is Panel)
+                    if (item.Name == Cuadernos.CuadernoSeleccionado.ObtenerNombre(numeroNota) && item is Panel)
                     {
                         if(((Panel)item)!= panelSeleccionadaAux){
                             panelSeleccionadaAux.BorderStyle = BorderStyle.None;
@@ -250,6 +260,36 @@ namespace CuadernosDigitales.Forms
                 categoriaLabel.Text = "#"+c.Nombre;
                 categoriasPanel.Controls.Add(categoriaLabel);
                 //MessageBox.Show(c.Nombre);
+            }
+
+            ArchivoManager archivoManager = new ArchivoManager();
+            CargarInformacionActividadUsuario(archivoManager, "Presionar un cuaderno", $"El usuario {Usuarios[IndiceUsuario].Nombre} ingreso al formulario de Notas Menu", "Notas Menu", 0);
+            CrearHistorialVisitaFormulario(archivoManager);
+        }
+        private void CrearHistorialCreacionNota(ArchivoManager archivoManager)
+        {
+            try
+            {
+                string nombreNuevoArchivo = archivoManager.CrearHistorialEdicionObjeto(rutaPorDefecto);
+            }
+            catch (Exception exception)
+            {
+
+            }
+        }
+        private void CargarInformacionActividadUsuario(ArchivoManager archivoManager, String accion, String informacionAdicional, string formulario, int objeto)
+        {
+            archivoManager.Historial = new Historial(DateTime.Now, Usuarios[IndiceUsuario].Nombre, accion, informacionAdicional, formulario, objeto);
+        }
+        private void CrearHistorialVisitaFormulario(ArchivoManager archivoManager)
+        {
+            try
+            {
+                string nombreNuevoArchivo = archivoManager.CrearHistorialVisitaFormulario(rutaPorDefecto);
+            }
+            catch (Exception exception)
+            {
+
             }
         }
     }

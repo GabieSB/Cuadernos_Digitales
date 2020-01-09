@@ -7,22 +7,27 @@ namespace CuadernosDigitales
 {
     public class Usuario
     {
-        public string nombre
+        public Usuario()
         {
-            get ;
-            set;
-          
+
         }
 
-        public string contrasena
+        public string Nombre
         {
             get;
             set;
-           
         }
-        public void ValidarUsuario(string user, string contrasena)
-        {
 
+        public string Contraseña
+        {
+            get;
+            set;
+        }
+
+        public int Identificador
+        {
+            get;
+            set;
         }
     }
 }

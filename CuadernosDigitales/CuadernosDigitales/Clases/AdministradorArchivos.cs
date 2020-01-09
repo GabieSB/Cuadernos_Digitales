@@ -16,7 +16,7 @@ namespace CuadernosDigitales.Clases
             usuarios = new List<Usuario>();
             pathUsuarios = "usuarios.csv";
         }
-        public void GuardarUsuario(string rutaBase, Usuario usuario)
+    /*    public void GuardarUsuario(string rutaBase, Usuario usuario)
         {
            
             StreamWriter writer = File.AppendText(@pathUsuarios);
@@ -56,6 +56,6 @@ namespace CuadernosDigitales.Clases
                 usuarios.Add(usuario);
             }
             return usuarios;
-        }
+        }*/
     }
 }
