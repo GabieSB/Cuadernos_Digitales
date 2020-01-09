@@ -40,12 +40,11 @@ namespace CuadernosDigitales.Forms
             bool usuarioEncontrado = false ;
             errorProvider.SetError(usuarioTextBox, "");
             errorProvider.SetError(contrasenaTextBox, "");
-            string passDecencriptada;
 
             if (usuarioActual != null)
             {
-                passDecencriptada = Encriptacion.DesencriptarString(usuarioActual.contrasena, userPassword);
-                if (contrasenaTextBox.Text == passDecencriptada && usuarioTextBox.Text == usuarioActual.nombre)
+               // passDecencriptada = Encriptacion.DesencriptarString(usuarioActual.contrasena, userPassword);
+                if (contrasenaTextBox.Text == usuarioActual.nombre && usuarioTextBox.Text == usuarioActual.nombre)
                 {
                     resultado = new DialogResult();
                     resultado = DialogResult.Yes;
@@ -60,8 +59,8 @@ namespace CuadernosDigitales.Forms
             {
                 foreach (Usuario usuario in administrador.getUsuariosRegistrados())
                 {
-                    passDecencriptada = Encriptacion.DesencriptarString(usuario.contrasena, userPassword);
-                    if (contrasenaTextBox.Text == passDecencriptada && usuarioTextBox.Text == usuario.nombre)
+                   // passDecencriptada = Encriptacion.DesencriptarString(usuario.contrasena, userPassword);
+                    if (contrasenaTextBox.Text == usuario.contrasena && usuarioTextBox.Text == usuario.nombre)
                     {
                         CuadernosInicio.usuarioActual = new Usuario();
                         CuadernosInicio.usuarioActual = usuario;

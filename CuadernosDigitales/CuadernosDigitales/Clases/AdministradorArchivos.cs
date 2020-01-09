@@ -11,6 +11,7 @@ namespace CuadernosDigitales.Clases
     {
         public List<Usuario> usuarios { get; set; }
         string pathUsuarios;
+        private readonly string userPassword = "El20Examen20Estaba20Faci20";
         public AdministradorArchivos()
         {
             usuarios = new List<Usuario>();
@@ -52,7 +53,7 @@ namespace CuadernosDigitales.Clases
             {
                 Usuario usuario = new Usuario();
                 usuario.nombre = user[0];
-                usuario.contrasena = user[1];
+                usuario.contrasena = Encriptacion.DesencriptarString(user[1], userPassword) ;
                 usuarios.Add(usuario);
             }
             return usuarios;
