@@ -14,16 +14,6 @@ namespace CuadernosDigitales.Forms
     public partial class NuevoCuaderno : Form
     {
         private readonly string rutaPorDefecto = AppDomain.CurrentDomain.BaseDirectory;
-        public List<Usuario> Usuarios
-        {
-            get;
-            set;
-        }
-        public int IndiceUsuario
-        {
-            get;
-            set;
-        }
 
         private int cantidadCategorias;
         public static Cuaderno cuaderno;
@@ -176,7 +166,7 @@ namespace CuadernosDigitales.Forms
         }
         private void CargarInformacionActividadUsuario(ArchivoManager archivoManager, String accion, String informacionAdicional, string formulario, int objeto)
         {
-            archivoManager.Historial = new Historial(DateTime.Now, Usuarios[IndiceUsuario].Nombre, accion, informacionAdicional, formulario, objeto);
+            archivoManager.Historial = new Historial(DateTime.Now, CuadernosInicio.UsuariosEstaticos[CuadernosInicio.IndiceUsuarioEstatico].Nombre, accion, informacionAdicional, formulario, objeto);
         }
         private void CrearHistorialVisitaFormulario(ArchivoManager archivoManager)
         {
@@ -204,7 +194,7 @@ namespace CuadernosDigitales.Forms
         private void NuevoCuaderno_Load(object sender, EventArgs e)
         {
             ArchivoManager archivoManager = new ArchivoManager();
-            CargarInformacionActividadUsuario(archivoManager, "Presionar el boton de nuevo cuaderno", $"El usuario {Usuarios[IndiceUsuario].Nombre} ingreso al formulario de nuevo cuaderno", "Nuevo cuaderno", 0);
+            CargarInformacionActividadUsuario(archivoManager, "Presionar el boton de Nuevo Cuaderno", $"El usuario {CuadernosInicio.UsuariosEstaticos[CuadernosInicio.IndiceUsuarioEstatico].Nombre} ingreso al formulario de Nuevo Cuaderno", "Nuevo Cuaderno", 0);
             CrearHistorialVisitaFormulario(archivoManager);
         }
     }

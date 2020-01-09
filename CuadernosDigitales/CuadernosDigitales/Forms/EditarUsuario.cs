@@ -13,16 +13,6 @@ namespace CuadernosDigitales.Forms
     public partial class EditarUsuario : Form
     {
         private readonly string rutaPorDefecto = AppDomain.CurrentDomain.BaseDirectory;
-        public List<Usuario> Usuarios
-        {
-            get;
-            set;
-        }
-        public int IndiceUsuario
-        {
-            get;
-            set;
-        }
         public Usuario Usuario
         {
             get;
@@ -79,7 +69,7 @@ namespace CuadernosDigitales.Forms
             }
             else
             {
-                if (Usuarios[IndiceUsuario].Contraseña == TextBoxContraseña.Text)
+                if (CuadernosInicio.UsuariosEstaticos[CuadernosInicio.IndiceUsuarioEstatico].Contraseña == TextBoxContraseña.Text)
                 {
                     ContraseñaActualUsuario = true;
                 }
@@ -139,9 +129,9 @@ namespace CuadernosDigitales.Forms
         {
             if (ContraseñaActualUsuario && NuevaContraseñaUsuario && RepetirNuevaContraseñaUsuario)
             {
-                Usuarios[IndiceUsuario].Contraseña = Usuario.Contraseña;
+                CuadernosInicio.UsuariosEstaticos[CuadernosInicio.IndiceUsuarioEstatico].Contraseña = Usuario.Contraseña;
                 ArchivoManager archivoManager = new ArchivoManager();
-                CargarInformacionActividadUsuario(archivoManager, "Edición de usuario", $"El usuario {Usuarios[IndiceUsuario].Nombre} edito su contraseña", "Editar Usuario", IndiceUsuario);
+                CargarInformacionActividadUsuario(archivoManager, "Edición de usuario", $"El usuario {CuadernosInicio.UsuariosEstaticos[CuadernosInicio.IndiceUsuarioEstatico].Nombre} edito su contraseña", "Editar Usuario", CuadernosInicio.IndiceUsuarioEstatico);
                 CrearHistorialEdicionUsuario(archivoManager);
                 DialogResult dialogResult = MessageBox.Show("Se edito la contraseña correctamente");
                 LimpiarTextBoxYErroProvider();
@@ -152,7 +142,7 @@ namespace CuadernosDigitales.Forms
         }
         private void CargarInformacionActividadUsuario(ArchivoManager archivoManager, String accion, String informacionAdicional, string formulario, int objeto)
         {
-            archivoManager.Historial = new Historial(DateTime.Now, Usuarios[IndiceUsuario].Nombre, accion, informacionAdicional, formulario, objeto);
+            archivoManager.Historial = new Historial(DateTime.Now, CuadernosInicio.UsuariosEstaticos[CuadernosInicio.IndiceUsuarioEstatico].Nombre, accion, informacionAdicional, formulario, objeto);
         }
         private void CrearHistorialVisitaFormulario(ArchivoManager archivoManager)
         {
@@ -178,9 +168,7 @@ namespace CuadernosDigitales.Forms
         }
         private void EditarUsuario_Load(object sender, EventArgs e)
         {
-            ArchivoManager archivoManager = new ArchivoManager();
-            CargarInformacionActividadUsuario(archivoManager, "Presionar el boton de Editar Usuario", $"El usuario {Usuarios[IndiceUsuario].Nombre} ingreso al formulario de Editar usuario", "Editar Usuario", 0);
-            CrearHistorialVisitaFormulario(archivoManager);
+
         }
         private void LimpiarTextBoxYErroProvider()
         {

@@ -13,16 +13,6 @@ namespace CuadernosDigitales.Forms
     public partial class NuevaNota : Form
     {
         private readonly string rutaPorDefecto = AppDomain.CurrentDomain.BaseDirectory;
-        public List<Usuario> Usuarios
-        {
-            get;
-            set;
-        }
-        public int IndiceUsuario
-        {
-            get;
-            set;
-        }
 
         public Bitmap colorSeleccionado;
         public  static Nota nota;
@@ -137,7 +127,6 @@ namespace CuadernosDigitales.Forms
                 nota.FechaDeCreacion = DateTime.Now;
                // nota.FechaDeModificacion = null;
                 nota.Privacidad = ocultarCheckBox.Checked;
-                nota.Orden = 1;  // porque el orden en 1?
                 informacionCompleta = true;
 
             }
@@ -293,7 +282,7 @@ namespace CuadernosDigitales.Forms
         }
         private void CargarInformacionActividadUsuario(ArchivoManager archivoManager, String accion, String informacionAdicional, string formulario, int objeto)
         {
-            archivoManager.Historial = new Historial(DateTime.Now, Usuarios[IndiceUsuario].Nombre, accion, informacionAdicional, formulario, objeto);
+            archivoManager.Historial = new Historial(DateTime.Now, CuadernosInicio.UsuariosEstaticos[CuadernosInicio.IndiceUsuarioEstatico].Nombre, accion, informacionAdicional, formulario, objeto);
         }
         private void CrearHistorialVisitaFormulario(ArchivoManager archivoManager)
         {
@@ -303,9 +292,7 @@ namespace CuadernosDigitales.Forms
             }
             catch (Exception exception)
             {
-                ArchivoManager archivoManagerHistorial = new ArchivoManager();
-                CargarInformacionActividadUsuario(archivoManager, "Presionar el boton de Nueva Nota", $"El usuario {Usuarios[IndiceUsuario].Nombre} ingreso al formulario de Nueva Nota", "Nueva Nota", 0);
-                CrearHistorialVisitaFormulario(archivoManager);
+
             }
         }
 

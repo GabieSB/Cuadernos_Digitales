@@ -13,16 +13,6 @@ namespace CuadernosDigitales.Forms
     public partial class Cuadernos : Form
     {
         private readonly string rutaPorDefecto = AppDomain.CurrentDomain.BaseDirectory;
-        public List<Usuario> Usuarios
-        {
-            get;
-            set;
-        }
-        public int IndiceUsuario
-        {
-            get;
-            set;
-        }
         public int IndiceCuaderno
         {
             get;
@@ -118,8 +108,6 @@ namespace CuadernosDigitales.Forms
         {
 
             NuevoCuaderno nuevoCuaderno = new NuevoCuaderno();
-            nuevoCuaderno.Usuarios = Usuarios;
-            nuevoCuaderno.IndiceUsuario = IndiceUsuario;
 
             nuevoCuaderno.ShowDialog();
 
@@ -127,7 +115,7 @@ namespace CuadernosDigitales.Forms
             {
                 MostrarCuadernoEnPantalla(NuevoCuaderno.cuaderno);
                 ArchivoManager archivoManager = new ArchivoManager();
-                CargarInformacionActividadUsuario(archivoManager, "Presionar el boton de crear nuevo cuaderno", $"El usuario {Usuarios[IndiceUsuario].Nombre} creo un nuevo cuaderno", "Nuevo Cuaderno", cuadernos.Count);
+                CargarInformacionActividadUsuario(archivoManager, "Presionar el boton de crear nuevo cuaderno", $"El usuario {CuadernosInicio.UsuariosEstaticos[CuadernosInicio.IndiceUsuarioEstatico].Nombre} creo un nuevo cuaderno", "Nuevo Cuaderno", cuadernos.Count);
                 CrearHistorialCreacionCuaderno(archivoManager);
 
                 cuadernos.Add(NuevoCuaderno.cuaderno);
@@ -182,7 +170,7 @@ namespace CuadernosDigitales.Forms
             if(resultado == DialogResult.Yes)
             {
                 ArchivoManager archivoManager = new ArchivoManager();
-                CargarInformacionActividadUsuario(archivoManager, "Presionar el boton de Eliminar Cuaderno", $"El usuario {Usuarios[IndiceUsuario].Nombre} elimino un cuaderno.", "Cuaderno", IndiceCuaderno);
+                CargarInformacionActividadUsuario(archivoManager, "Presionar el boton de Eliminar Cuaderno", $"El usuario {CuadernosInicio.UsuariosEstaticos[CuadernosInicio.IndiceUsuarioEstatico].Nombre} elimino un cuaderno.", "Cuaderno", IndiceCuaderno);
                 CrearHistorialVisitaFormulario(archivoManager);
 
                 cuadernos.Remove(CuadernoSeleccionado);
@@ -206,7 +194,7 @@ namespace CuadernosDigitales.Forms
                 }
             }
             ArchivoManager archivoManager = new ArchivoManager();
-            CargarInformacionActividadUsuario(archivoManager, "Se hizo una búsqueda", $"El usuario {Usuarios[IndiceUsuario].Nombre} hizo una búsqueda de una o varias notas.", "Inicio", 0);
+            CargarInformacionActividadUsuario(archivoManager, "Se hizo una búsqueda", $"El usuario {CuadernosInicio.UsuariosEstaticos[CuadernosInicio.IndiceUsuarioEstatico].Nombre} hizo una búsqueda de uno o varios Cuadernos.", "Cuadernos", 0);
             CrearHistorialBusqueda(archivoManager);
         }
 
@@ -227,7 +215,7 @@ namespace CuadernosDigitales.Forms
         }
         private void CargarInformacionActividadUsuario(ArchivoManager archivoManager, String accion, String informacionAdicional, string formulario, int objeto)
         {
-            archivoManager.Historial = new Historial(DateTime.Now, Usuarios[IndiceUsuario].Nombre, accion, informacionAdicional, formulario, objeto);
+            archivoManager.Historial = new Historial(DateTime.Now, CuadernosInicio.UsuariosEstaticos[CuadernosInicio.IndiceUsuarioEstatico].Nombre, accion, informacionAdicional, formulario, objeto);
         }
         private void CrearHistorialVisitaFormulario(ArchivoManager archivoManager)
         {
@@ -253,9 +241,7 @@ namespace CuadernosDigitales.Forms
         }
         private void Cuadernos_Load(object sender, EventArgs e)
         {
-            ArchivoManager archivoManager = new ArchivoManager();
-            CargarInformacionActividadUsuario(archivoManager, "Presionar el boton de Inicio", $"El usuario {Usuarios[IndiceUsuario].Nombre} ingreso al formulario de Inicio", "Inicio", 0);
-            CrearHistorialVisitaFormulario(archivoManager);
+
         }
     }
 }

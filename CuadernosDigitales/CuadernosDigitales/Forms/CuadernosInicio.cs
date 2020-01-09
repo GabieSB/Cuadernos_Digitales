@@ -25,11 +25,21 @@ namespace CuadernosDigitales
             get;
             set;
         }
-
+        public static List<Usuario> UsuariosEstaticos
+        {
+            get;
+            set;
+        }
+        public static int IndiceUsuarioEstatico
+        {
+            get;
+            set;
+        }
         public CuadernosInicio()
         {
             InitializeComponent();
             Usuarios = new List<Usuario>();
+            UsuariosEstaticos = new List<Usuario>();
         }
 
     
@@ -66,7 +76,6 @@ namespace CuadernosDigitales
                 cuerpoPanel.Controls.Add(formulario);
                 formulario.Show();
                 formulario.BringToFront();
-
             }
             else
             {
@@ -123,10 +132,12 @@ namespace CuadernosDigitales
             etiquetaHistorial.Visible = false;
             PanelEtiquetaEditarUsuario.Visible = false;
             tituloLabel.Text = "CUADERNOS";
-            Cuadernos cuadernos = new Cuadernos();
-            cuadernos.Usuarios = Usuarios;
-            cuadernos.IndiceUsuario = IndiceUsuario;
-            MostrarFormEnPanel(cuadernos);
+            //        Cuadernos cuadernos = new Cuadernos();
+            //        MostrarFormEnPanel(cuadernos);
+            ArchivoManager archivoManager = new ArchivoManager();
+            CargarInformacionActividadUsuario(archivoManager, "Presionar el boton de Cuadernos", $"El usuario {CuadernosInicio.UsuariosEstaticos[CuadernosInicio.IndiceUsuarioEstatico].Nombre} ingreso al formulario de Cuadernos", "Cuadernos", 0);
+            CrearHistorialVisitaFormulario(archivoManager);
+            AbrirForm<Cuadernos>();
         }
        
         private void InicioButtonAlternative_Click(object sender, EventArgs e)
@@ -163,6 +174,8 @@ namespace CuadernosDigitales
             {
                 Usuarios = loginForm.Usuarios;
                 IndiceUsuario = loginForm.IndiceUsuario;
+                UsuariosEstaticos = Usuarios;
+                IndiceUsuarioEstatico = IndiceUsuario;
                 usuarioLabel.Text = Usuarios[IndiceUsuario].Nombre;
 
                 ArchivoManager archivoManager = new ArchivoManager();
@@ -224,10 +237,12 @@ namespace CuadernosDigitales
             etiquetaHistorial.Visible = false;
             PanelEtiquetaEditarUsuario.Visible = true;
             tituloLabel.Text = "EDITAR USUARIO";
-            EditarUsuario editarUsuario = new EditarUsuario();
-            editarUsuario.Usuarios = Usuarios;
-            editarUsuario.IndiceUsuario = IndiceUsuario;
-            MostrarFormEnPanel(editarUsuario);
+            //        EditarUsuario editarUsuario = new EditarUsuario();
+            //        MostrarFormEnPanel(editarUsuario);
+            ArchivoManager archivoManager = new ArchivoManager();
+            CargarInformacionActividadUsuario(archivoManager, "Presionar el boton de Editar Usuario", $"El usuario {CuadernosInicio.UsuariosEstaticos[CuadernosInicio.IndiceUsuarioEstatico].Nombre} ingreso al formulario de Editar usuario", "Editar Usuario", 0);
+            CrearHistorialVisitaFormulario(archivoManager);
+            AbrirForm<EditarUsuario>();
         }
     }
 }
