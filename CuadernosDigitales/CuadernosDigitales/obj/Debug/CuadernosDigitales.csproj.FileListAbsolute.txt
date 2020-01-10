@@ -19,7 +19,6 @@ C:\Users\dgcha\Documents\GitHub\Cuadernos_Digitales\CuadernosDigitales\Cuadernos
 C:\Users\dgcha\Documents\GitHub\Cuadernos_Digitales\CuadernosDigitales\CuadernosDigitales\bin\Debug\CuadernosDigitales.pdb
 C:\Users\dgcha\Documents\GitHub\Cuadernos_Digitales\CuadernosDigitales\CuadernosDigitales\obj\Debug\CuadernosDigitales.csprojAssemblyReference.cache
 C:\Users\dgcha\Documents\GitHub\Cuadernos_Digitales\CuadernosDigitales\CuadernosDigitales\obj\Debug\CuadernosDigitales.Forms.EditarUsuario.resources
-C:\Users\dgcha\Documents\GitHub\Cuadernos_Digitales\CuadernosDigitales\CuadernosDigitales\obj\Debug\CuadernosDigitales.Forms.Ingresar.resources
 C:\Users\dgcha\Documents\GitHub\Cuadernos_Digitales\CuadernosDigitales\CuadernosDigitales\obj\Debug\CuadernosDigitales.Forms.LoginForm.resources
 C:\Users\dgcha\Documents\GitHub\Cuadernos_Digitales\CuadernosDigitales\CuadernosDigitales\obj\Debug\CuadernosDigitales.Forms.LoginRegistrarse.resources
 C:\Users\dgcha\Documents\GitHub\Cuadernos_Digitales\CuadernosDigitales\CuadernosDigitales\obj\Debug\CuadernosDigitales.Forms.UCCuadernoDigital.resources
@@ -32,3 +31,4 @@ C:\Users\dgcha\Documents\GitHub\Cuadernos_Digitales\CuadernosDigitales\Cuadernos
 C:\Users\dgcha\Documents\GitHub\Cuadernos_Digitales\CuadernosDigitales\CuadernosDigitales\obj\Debug\CuadernosDigitales.exe
 C:\Users\dgcha\Documents\GitHub\Cuadernos_Digitales\CuadernosDigitales\CuadernosDigitales\obj\Debug\CuadernosDigitales.pdb
 C:\Users\dgcha\Documents\GitHub\Cuadernos_Digitales\CuadernosDigitales\CuadernosDigitales\obj\Debug\CuadernosDigitales.Forms.Cuadernos.resources
+C:\Users\dgcha\Documents\GitHub\Cuadernos_Digitales\CuadernosDigitales\CuadernosDigitales\obj\Debug\CuadernosDigitales.Forms.NotasOcultas.resources

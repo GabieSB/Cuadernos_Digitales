@@ -275,30 +275,41 @@ namespace CuadernosDigitales.Forms
 
         private void VerNotasButton_Click(object sender, EventArgs e)
         {
+            buscandoOcultas = false;
             notasContainer.Controls.Clear();
             verNotasButton.Visible = false;
             cancelarButton.Visible = false;
             nuevaNotaButton.Visible = true;
             verOcultasButton.Visible = true;
             buscarCuadernoTextBox.Text = "";
-            cargarNotas(cuadernoPadre.getListaDeNotas(),false);
+            cargarNotas(cuadernoPadre.getListaDeNotas(), false);
             sePuedeEditarNota = true;
         }
 
         private void VerOcultasButton_Click(object sender, EventArgs e)
         {
+            ArchivoManager archivoManagerHistorial = new ArchivoManager();
+            CargarInformacionActividadUsuario(archivoManagerHistorial, "Presionar el boton de Ver Ocultas", $"El usuario {CuadernosInicio.UsuariosEstaticos[CuadernosInicio.IndiceUsuarioEstatico].Nombre} ingreso al formulario de Notas Ocultas", "Notas Ocultas", 0);
+            CrearHistorialVisitaFormulario(archivoManagerHistorial);
+
             List<Nota> notasOcultas = new List<Nota>();
+            buscandoOcultas = true;
             notasOcultas = cuadernoPadre.getNotasOcultas();
+
             if (notasOcultas != null)
             {
-                notasContainer.Controls.Clear();
-                nuevaNotaButton.Visible = false;
-                verOcultasButton.Visible = false;
-                verNotasButton.Visible = true;
-                cargarNotas(notasOcultas,true);
-            }
-            
+                NotasOcultas notasOcultasForm = new NotasOcultas();
 
+                if (notasOcultasForm.ShowDialog() == DialogResult.OK)
+                {
+                    notasContainer.Controls.Clear();
+                    nuevaNotaButton.Visible = false;
+                    verOcultasButton.Visible = false;
+                    verNotasButton.Visible = true;
+                    cargarNotas(notasOcultas, true);
+                }
+
+            }
         }
 
         private void EliminarButton_Click(object sender, EventArgs e)
@@ -388,5 +399,6 @@ namespace CuadernosDigitales.Forms
 
             }
         }
+
     }
 }

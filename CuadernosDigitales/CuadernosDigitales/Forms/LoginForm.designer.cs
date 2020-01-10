@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.closeAppButton = new System.Windows.Forms.Button();
             this.cabezaPanel = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.LabelTitulo = new System.Windows.Forms.Label();
             this.ButtonIngresar = new System.Windows.Forms.Button();
             this.TextBoxContraseña = new System.Windows.Forms.TextBox();
@@ -40,11 +41,10 @@
             this.LinkLabelRegistrarce = new System.Windows.Forms.LinkLabel();
             this.errorProviderLogin = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProviderContraseña = new System.Windows.Forms.ErrorProvider(this.components);
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.cabezaPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderLogin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderContraseña)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // closeAppButton
@@ -76,6 +76,16 @@
             this.cabezaPanel.TabIndex = 1;
             this.cabezaPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.cabezaPanel_Paint);
             this.cabezaPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.CabezaPanel_MouseDown);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Black;
+            this.pictureBox1.Image = global::CuadernosDigitales.Properties.Resources.azul;
+            this.pictureBox1.Location = new System.Drawing.Point(170, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(100, 100);
+            this.pictureBox1.TabIndex = 14;
+            this.pictureBox1.TabStop = false;
             // 
             // LabelTitulo
             // 
@@ -158,16 +168,6 @@
             // 
             this.errorProviderContraseña.ContainerControl = this;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Black;
-            this.pictureBox1.Image = global::CuadernosDigitales.Properties.Resources.azul;
-            this.pictureBox1.Location = new System.Drawing.Point(170, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(100, 100);
-            this.pictureBox1.TabIndex = 14;
-            this.pictureBox1.TabStop = false;
-            // 
             // LoginForm
             // 
             this.AcceptButton = this.ButtonIngresar;
@@ -188,9 +188,9 @@
             this.Load += new System.EventHandler(this.LoginForm_Load);
             this.cabezaPanel.ResumeLayout(false);
             this.cabezaPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderLogin)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderContraseña)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

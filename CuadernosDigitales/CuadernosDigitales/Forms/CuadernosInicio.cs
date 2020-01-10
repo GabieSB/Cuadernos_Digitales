@@ -222,7 +222,7 @@ namespace CuadernosDigitales
             if (resultado == DialogResult.Yes)
             {
                 CuadernosInicio cuadernosInicio = new CuadernosInicio();
-                cuadernosInicio.Usuarios = Usuarios;
+                cuadernosInicio.Usuarios = UsuariosEstaticos;
                 ArchivoManager archivoManager = new ArchivoManager();
                 CargarInformacionActividadUsuario(archivoManager, "Salir del sistema", $"El usuario {Usuarios[IndiceUsuario].Nombre} salio del sistema.", "Ventana", 0);
                 CrearHistorialVisitaFormulario(archivoManager);

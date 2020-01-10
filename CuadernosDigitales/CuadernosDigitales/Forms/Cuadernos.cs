@@ -113,12 +113,14 @@ namespace CuadernosDigitales.Forms
 
             if (nuevoCuaderno.cuadernoCreado == DialogResult.Yes)
             {
-                MostrarCuadernoEnPantalla(NuevoCuaderno.cuaderno);
                 ArchivoManager archivoManager = new ArchivoManager();
                 CargarInformacionActividadUsuario(archivoManager, "Presionar el boton de crear nuevo cuaderno", $"El usuario {CuadernosInicio.UsuariosEstaticos[CuadernosInicio.IndiceUsuarioEstatico].Nombre} creo un nuevo cuaderno", "Nuevo Cuaderno", cuadernos.Count);
                 CrearHistorialCreacionCuaderno(archivoManager);
 
+                MostrarCuadernoEnPantalla(NuevoCuaderno.cuaderno);
+                NuevoCuaderno.cuaderno.Orden = CuadernosInicio.UsuariosEstaticos[CuadernosInicio.IndiceUsuarioEstatico].cuadernos.Count;
                 cuadernos.Add(NuevoCuaderno.cuaderno);
+                CuadernosInicio.UsuariosEstaticos[CuadernosInicio.IndiceUsuarioEstatico].AgregarCuaderno(NuevoCuaderno.cuaderno);
             }
            
         }

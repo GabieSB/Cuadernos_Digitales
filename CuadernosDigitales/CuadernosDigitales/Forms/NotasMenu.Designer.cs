@@ -31,6 +31,8 @@
             this.components = new System.ComponentModel.Container();
             this.nuevaNotaButton = new System.Windows.Forms.Button();
             this.notasMenuPanel = new System.Windows.Forms.Panel();
+            this.FiltroComboBox = new System.Windows.Forms.ComboBox();
+            this.LabelFiltro = new System.Windows.Forms.Label();
             this.idPantallaLabel = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.categoriasPanel = new System.Windows.Forms.FlowLayoutPanel();
@@ -44,8 +46,6 @@
             this.regresarButton = new System.Windows.Forms.Button();
             this.nombreCuadernoLabel = new System.Windows.Forms.Label();
             this.cancelarButton = new System.Windows.Forms.Button();
-            this.LabelFiltro = new System.Windows.Forms.Label();
-            this.FiltroComboBox = new System.Windows.Forms.ComboBox();
             this.ErrorProviderFiltro = new System.Windows.Forms.ErrorProvider(this.components);
             this.notasMenuPanel.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -91,6 +91,28 @@
             this.notasMenuPanel.Size = new System.Drawing.Size(800, 533);
             this.notasMenuPanel.TabIndex = 4;
             // 
+            // FiltroComboBox
+            // 
+            this.FiltroComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.FiltroComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.FiltroComboBox.Items.AddRange(new object[] {
+            "NOMBRE",
+            "CATEGORIA"});
+            this.FiltroComboBox.Location = new System.Drawing.Point(348, 50);
+            this.FiltroComboBox.Name = "FiltroComboBox";
+            this.FiltroComboBox.Size = new System.Drawing.Size(132, 28);
+            this.FiltroComboBox.TabIndex = 29;
+            // 
+            // LabelFiltro
+            // 
+            this.LabelFiltro.AutoSize = true;
+            this.LabelFiltro.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelFiltro.Location = new System.Drawing.Point(272, 58);
+            this.LabelFiltro.Name = "LabelFiltro";
+            this.LabelFiltro.Size = new System.Drawing.Size(70, 20);
+            this.LabelFiltro.TabIndex = 28;
+            this.LabelFiltro.Text = "FILTRO:";
+            // 
             // idPantallaLabel
             // 
             this.idPantallaLabel.AutoSize = true;
@@ -129,7 +151,7 @@
             this.verOcultasButton.ForeColor = System.Drawing.Color.LightGray;
             this.verOcultasButton.Location = new System.Drawing.Point(129, 49);
             this.verOcultasButton.Name = "verOcultasButton";
-            this.verOcultasButton.Size = new System.Drawing.Size(94, 29);
+            this.verOcultasButton.Size = new System.Drawing.Size(137, 29);
             this.verOcultasButton.TabIndex = 14;
             this.verOcultasButton.Text = "VER OCULTAS";
             this.verOcultasButton.UseVisualStyleBackColor = false;
@@ -251,28 +273,6 @@
             this.cancelarButton.UseVisualStyleBackColor = false;
             this.cancelarButton.Visible = false;
             this.cancelarButton.Click += new System.EventHandler(this.CancelarButton_Click);
-            // 
-            // LabelFiltro
-            // 
-            this.LabelFiltro.AutoSize = true;
-            this.LabelFiltro.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelFiltro.Location = new System.Drawing.Point(245, 57);
-            this.LabelFiltro.Name = "LabelFiltro";
-            this.LabelFiltro.Size = new System.Drawing.Size(70, 20);
-            this.LabelFiltro.TabIndex = 28;
-            this.LabelFiltro.Text = "FILTRO:";
-            // 
-            // FiltroComboBox
-            // 
-            this.FiltroComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.FiltroComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.FiltroComboBox.Items.AddRange(new object[] {
-            "NOMBRE",
-            "CATEGORIA"});
-            this.FiltroComboBox.Location = new System.Drawing.Point(321, 50);
-            this.FiltroComboBox.Name = "FiltroComboBox";
-            this.FiltroComboBox.Size = new System.Drawing.Size(132, 28);
-            this.FiltroComboBox.TabIndex = 29;
             // 
             // ErrorProviderFiltro
             // 
