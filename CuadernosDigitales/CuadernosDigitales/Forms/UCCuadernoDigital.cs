@@ -41,6 +41,17 @@ namespace CuadernosDigitales.Forms
                 this.CuadernoPictureBox.Image = value;
             }
         }
+        public RichTextBox nombreCuadernoRich
+        {
+            get
+            {
+                return nombreRichTextBox;
+            }
+            set
+            {
+                this.nombreRichTextBox = value;
+            }
+        }
         public String namePicture
         {
             get

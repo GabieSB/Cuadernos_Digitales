@@ -20,6 +20,7 @@ namespace CuadernosDigitales.Forms
         private bool sePuedeEditarNota;
        // private List<Nota> ActualListaEnPantalla;
         private bool buscandoOcultas;
+        private bool buscando;
         ErrorProvider error;
 
         public NotasMenu()
@@ -70,10 +71,10 @@ namespace CuadernosDigitales.Forms
                         ((Panel)item).Name = notaNueva.Titulo;
                         foreach(Control c in ((Panel)item).Controls)
                         {
-                            if(c is Label)
+                            if(c is RichTextBox)
                             {
-                                ((Label)c).Name = item.Name;
-                                ((Label)c).Text = item.Name;
+                                ((RichTextBox)c).Name = item.Name;
+                                ((RichTextBox)c).Text = item.Name;
                             }
                         }
                     }
@@ -86,18 +87,28 @@ namespace CuadernosDigitales.Forms
         private void MostrarNotaEnPantalla(Nota nota)
         {
             Panel panel = new Panel();
-            Label nombre = new Label();
+            Label nombreCuaderno = new Label();
+            RichTextBox nombre = new RichTextBox();
             panel.BackColor = nota.Color;
             panel.Margin = new Padding(15);
             panel.Size = new Size(355, 45);
             panel.TabIndex = 9;
             panel.Name = nota.Titulo;
-            nombre.AutoSize = true;
+            nombre.Size = new Size(335, 20);
             nombre.Name = nota.Titulo;
-            nombre.Text = nota.Titulo;
-            nombre.Location = new Point(14, 12);
+            nombre.Text =" " + nota.Titulo;
+            nombre.Location = new Point(10, 12);
+            nombre.Font = new Font("NewsGoth BT", 12F);
+            nombre.ReadOnly = true;
+            nombre.BorderStyle = BorderStyle.None;
+            nombre.BackColor = nota.Color;
+            if (buscando)
+            {
+                nombre.SelectionStart = nombre.Find(buscarCuadernoTextBox.Text);
+                nombre.SelectionLength = (buscarCuadernoTextBox.Text).Length;
+                nombre.SelectionFont = new Font("NewsGoth BT", 12F, FontStyle.Bold);
+            }
             nombre.Enabled = false;
-            nombre.Font = new Font("NewsGoth BT", 12F, FontStyle.Bold);
             panel.Controls.Add(nombre);
             panel.MouseClick += new MouseEventHandler(this.NotaSeleccionada_MouseClick);
             notasContainer.Controls.Add(panel);
@@ -186,6 +197,7 @@ namespace CuadernosDigitales.Forms
                 verOcultasButton.Visible = false;
                 List<Nota> notasBusqueda = new List<Nota>();
                 List<Nota> notasDondeBuscar = new List<Nota>();
+                buscando = true;
 
 
                 if (buscandoOcultas)
@@ -259,6 +271,7 @@ namespace CuadernosDigitales.Forms
             cancelarButton.Visible = false;
             nuevaNotaButton.Visible = true;
             verOcultasButton.Visible = true;
+            buscando = false;
             buscarCuadernoTextBox.Text = "";
             cargarNotas(cuadernoPadre.getListaDeNotas(),false);
             sePuedeEditarNota = true;

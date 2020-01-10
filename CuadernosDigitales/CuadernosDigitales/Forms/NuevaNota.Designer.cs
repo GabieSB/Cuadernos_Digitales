@@ -56,11 +56,11 @@
             this.tituloNotaTextBox = new System.Windows.Forms.TextBox();
             this.notaYpropiedadesPanel = new System.Windows.Forms.Panel();
             this.notaPanel = new System.Windows.Forms.Panel();
+            this.idPantallaLabel = new System.Windows.Forms.Label();
             this.atrarButton = new System.Windows.Forms.Button();
             this.fechaNotaLabel = new System.Windows.Forms.Label();
             this.fontDialog = new System.Windows.Forms.FontDialog();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
-            this.idPantallaLabel = new System.Windows.Forms.Label();
             this.propiedadesPanel.SuspendLayout();
             this.controlsPropiedadesPanel.SuspendLayout();
             this.coloresPanel.SuspendLayout();
@@ -142,12 +142,15 @@
             // 
             // cambiarFuenteButton
             // 
+            this.cambiarFuenteButton.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.cambiarFuenteButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cambiarFuenteButton.ForeColor = System.Drawing.Color.White;
             this.cambiarFuenteButton.Location = new System.Drawing.Point(33, 17);
             this.cambiarFuenteButton.Name = "cambiarFuenteButton";
             this.cambiarFuenteButton.Size = new System.Drawing.Size(141, 36);
             this.cambiarFuenteButton.TabIndex = 18;
             this.cambiarFuenteButton.Text = "CAMBIAR FUENTE";
-            this.cambiarFuenteButton.UseVisualStyleBackColor = true;
+            this.cambiarFuenteButton.UseVisualStyleBackColor = false;
             this.cambiarFuenteButton.Click += new System.EventHandler(this.CambiarFuenteButton_Click);
             // 
             // ocultarCheckBox
@@ -324,12 +327,13 @@
             // 
             // propiedadesButton
             // 
+            this.propiedadesButton.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.propiedadesButton.Image = global::CuadernosDigitales.Properties.Resources.menu;
             this.propiedadesButton.Location = new System.Drawing.Point(11, 11);
             this.propiedadesButton.Name = "propiedadesButton";
-            this.propiedadesButton.Size = new System.Drawing.Size(38, 23);
+            this.propiedadesButton.Size = new System.Drawing.Size(40, 33);
             this.propiedadesButton.TabIndex = 19;
-            this.propiedadesButton.Text = "+";
-            this.propiedadesButton.UseVisualStyleBackColor = true;
+            this.propiedadesButton.UseVisualStyleBackColor = false;
             this.propiedadesButton.Click += new System.EventHandler(this.PropiedadesButton_Click);
             // 
             // tituloNotaTextBox
@@ -370,6 +374,16 @@
             this.notaPanel.Size = new System.Drawing.Size(578, 543);
             this.notaPanel.TabIndex = 19;
             // 
+            // idPantallaLabel
+            // 
+            this.idPantallaLabel.AutoSize = true;
+            this.idPantallaLabel.ForeColor = System.Drawing.Color.Black;
+            this.idPantallaLabel.Location = new System.Drawing.Point(9, 511);
+            this.idPantallaLabel.Name = "idPantallaLabel";
+            this.idPantallaLabel.Size = new System.Drawing.Size(100, 13);
+            this.idPantallaLabel.TabIndex = 24;
+            this.idPantallaLabel.Text = "ID PANTALLA: 004";
+            // 
             // atrarButton
             // 
             this.atrarButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -378,11 +392,11 @@
             this.atrarButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.atrarButton.Font = new System.Drawing.Font("Dream Orphans", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.atrarButton.ForeColor = System.Drawing.Color.LightGray;
-            this.atrarButton.Location = new System.Drawing.Point(291, 491);
+            this.atrarButton.Image = global::CuadernosDigitales.Properties.Resources.back__2_;
+            this.atrarButton.Location = new System.Drawing.Point(349, 491);
             this.atrarButton.Name = "atrarButton";
-            this.atrarButton.Size = new System.Drawing.Size(133, 34);
+            this.atrarButton.Size = new System.Drawing.Size(75, 34);
             this.atrarButton.TabIndex = 19;
-            this.atrarButton.Text = "ATRAS";
             this.atrarButton.UseVisualStyleBackColor = false;
             this.atrarButton.Click += new System.EventHandler(this.AtrarButton_Click);
             // 
@@ -398,16 +412,6 @@
             // errorProvider
             // 
             this.errorProvider.ContainerControl = this;
-            // 
-            // idPantallaLabel
-            // 
-            this.idPantallaLabel.AutoSize = true;
-            this.idPantallaLabel.ForeColor = System.Drawing.Color.Black;
-            this.idPantallaLabel.Location = new System.Drawing.Point(9, 511);
-            this.idPantallaLabel.Name = "idPantallaLabel";
-            this.idPantallaLabel.Size = new System.Drawing.Size(100, 13);
-            this.idPantallaLabel.TabIndex = 24;
-            this.idPantallaLabel.Text = "ID PANTALLA: 004";
             // 
             // NuevaNota
             // 

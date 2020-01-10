@@ -30,6 +30,7 @@
         {
             this.nombreCuaderno = new System.Windows.Forms.Label();
             this.CuadernoPictureBox = new System.Windows.Forms.PictureBox();
+            this.nombreRichTextBox = new System.Windows.Forms.RichTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.CuadernoPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -52,12 +53,26 @@
             this.CuadernoPictureBox.TabStop = false;
             this.CuadernoPictureBox.MouseClick += new System.Windows.Forms.MouseEventHandler(this.CuadernoPictureBox_MouseClick);
             // 
+            // nombreRichTextBox
+            // 
+            this.nombreRichTextBox.BackColor = System.Drawing.Color.White;
+            this.nombreRichTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.nombreRichTextBox.Font = new System.Drawing.Font("NewsGoth BT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nombreRichTextBox.Location = new System.Drawing.Point(3, 132);
+            this.nombreRichTextBox.Name = "nombreRichTextBox";
+            this.nombreRichTextBox.ReadOnly = true;
+            this.nombreRichTextBox.Size = new System.Drawing.Size(225, 23);
+            this.nombreRichTextBox.TabIndex = 2;
+            this.nombreRichTextBox.Text = "nombre";
+            this.nombreRichTextBox.Visible = false;
+            // 
             // UCCuadernoDigital
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.nombreCuaderno);
             this.Controls.Add(this.CuadernoPictureBox);
+            this.Controls.Add(this.nombreRichTextBox);
             this.Name = "UCCuadernoDigital";
             this.Size = new System.Drawing.Size(231, 167);
             ((System.ComponentModel.ISupportInitialize)(this.CuadernoPictureBox)).EndInit();
@@ -69,5 +84,6 @@
         #endregion
         private System.Windows.Forms.Label nombreCuaderno;
         public System.Windows.Forms.PictureBox CuadernoPictureBox;
+        private System.Windows.Forms.RichTextBox nombreRichTextBox;
     }
 }

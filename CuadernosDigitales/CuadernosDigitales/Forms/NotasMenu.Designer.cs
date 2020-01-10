@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.nuevaNotaButton = new System.Windows.Forms.Button();
             this.notasMenuPanel = new System.Windows.Forms.Panel();
             this.filtroComboBox = new System.Windows.Forms.ComboBox();
             this.idPantallaLabel = new System.Windows.Forms.Label();
@@ -38,6 +37,7 @@
             this.notasContainer = new System.Windows.Forms.FlowLayoutPanel();
             this.buscaNotaButton = new System.Windows.Forms.Button();
             this.buscarCuadernoTextBox = new System.Windows.Forms.TextBox();
+            this.nuevaNotaButton = new System.Windows.Forms.Button();
             this.verNotasButton = new System.Windows.Forms.Button();
             this.eliminarButton = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -48,22 +48,6 @@
             this.notasMenuPanel.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // nuevaNotaButton
-            // 
-            this.nuevaNotaButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.nuevaNotaButton.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.nuevaNotaButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
-            this.nuevaNotaButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.nuevaNotaButton.Font = new System.Drawing.Font("Dream Orphans", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nuevaNotaButton.ForeColor = System.Drawing.Color.LightGray;
-            this.nuevaNotaButton.Location = new System.Drawing.Point(12, 49);
-            this.nuevaNotaButton.Name = "nuevaNotaButton";
-            this.nuevaNotaButton.Size = new System.Drawing.Size(96, 29);
-            this.nuevaNotaButton.TabIndex = 3;
-            this.nuevaNotaButton.Text = "NUEVA NOTA";
-            this.nuevaNotaButton.UseVisualStyleBackColor = false;
-            this.nuevaNotaButton.Click += new System.EventHandler(this.NuevaNotaButton_Click);
             // 
             // notasMenuPanel
             // 
@@ -136,9 +120,9 @@
             this.verOcultasButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.verOcultasButton.Font = new System.Drawing.Font("Dream Orphans", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.verOcultasButton.ForeColor = System.Drawing.Color.LightGray;
-            this.verOcultasButton.Location = new System.Drawing.Point(128, 48);
+            this.verOcultasButton.Location = new System.Drawing.Point(128, 44);
             this.verOcultasButton.Name = "verOcultasButton";
-            this.verOcultasButton.Size = new System.Drawing.Size(94, 29);
+            this.verOcultasButton.Size = new System.Drawing.Size(94, 39);
             this.verOcultasButton.TabIndex = 14;
             this.verOcultasButton.Text = "VER OCULTAS";
             this.verOcultasButton.UseVisualStyleBackColor = false;
@@ -160,9 +144,9 @@
             this.buscaNotaButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buscaNotaButton.Font = new System.Drawing.Font("Dream Orphans", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buscaNotaButton.ForeColor = System.Drawing.Color.LightGray;
-            this.buscaNotaButton.Location = new System.Drawing.Point(722, 49);
+            this.buscaNotaButton.Location = new System.Drawing.Point(722, 44);
             this.buscaNotaButton.Name = "buscaNotaButton";
-            this.buscaNotaButton.Size = new System.Drawing.Size(66, 27);
+            this.buscaNotaButton.Size = new System.Drawing.Size(66, 37);
             this.buscaNotaButton.TabIndex = 7;
             this.buscaNotaButton.Text = "BUSCAR";
             this.buscaNotaButton.UseVisualStyleBackColor = false;
@@ -176,6 +160,25 @@
             this.buscarCuadernoTextBox.Size = new System.Drawing.Size(228, 27);
             this.buscarCuadernoTextBox.TabIndex = 6;
             // 
+            // nuevaNotaButton
+            // 
+            this.nuevaNotaButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.nuevaNotaButton.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.nuevaNotaButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.nuevaNotaButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.nuevaNotaButton.Font = new System.Drawing.Font("Dream Orphans", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nuevaNotaButton.ForeColor = System.Drawing.Color.LightGray;
+            this.nuevaNotaButton.Image = global::CuadernosDigitales.Properties.Resources.board;
+            this.nuevaNotaButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.nuevaNotaButton.Location = new System.Drawing.Point(12, 44);
+            this.nuevaNotaButton.Name = "nuevaNotaButton";
+            this.nuevaNotaButton.Size = new System.Drawing.Size(105, 39);
+            this.nuevaNotaButton.TabIndex = 3;
+            this.nuevaNotaButton.Text = "NUEVA NOTA";
+            this.nuevaNotaButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.nuevaNotaButton.UseVisualStyleBackColor = false;
+            this.nuevaNotaButton.Click += new System.EventHandler(this.NuevaNotaButton_Click);
+            // 
             // verNotasButton
             // 
             this.verNotasButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -184,9 +187,9 @@
             this.verNotasButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.verNotasButton.Font = new System.Drawing.Font("Dream Orphans", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.verNotasButton.ForeColor = System.Drawing.Color.LightGray;
-            this.verNotasButton.Location = new System.Drawing.Point(13, 49);
+            this.verNotasButton.Location = new System.Drawing.Point(13, 44);
             this.verNotasButton.Name = "verNotasButton";
-            this.verNotasButton.Size = new System.Drawing.Size(152, 28);
+            this.verNotasButton.Size = new System.Drawing.Size(152, 37);
             this.verNotasButton.TabIndex = 13;
             this.verNotasButton.Text = "VER TODAS LAS NOTAS";
             this.verNotasButton.UseVisualStyleBackColor = false;
@@ -222,14 +225,14 @@
             // 
             // regresarButton
             // 
+            this.regresarButton.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.regresarButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.regresarButton.Image = global::CuadernosDigitales.Properties.Resources.back;
-            this.regresarButton.Location = new System.Drawing.Point(2, 2);
+            this.regresarButton.Image = global::CuadernosDigitales.Properties.Resources.back__2_;
+            this.regresarButton.Location = new System.Drawing.Point(3, 3);
             this.regresarButton.Name = "regresarButton";
-            this.regresarButton.Size = new System.Drawing.Size(79, 28);
+            this.regresarButton.Size = new System.Drawing.Size(61, 28);
             this.regresarButton.TabIndex = 12;
-            this.regresarButton.Text = "Regresar";
-            this.regresarButton.UseVisualStyleBackColor = true;
+            this.regresarButton.UseVisualStyleBackColor = false;
             this.regresarButton.Click += new System.EventHandler(this.RegresarButton_Click);
             // 
             // nombreCuadernoLabel

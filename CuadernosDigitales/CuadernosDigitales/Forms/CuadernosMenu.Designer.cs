@@ -30,28 +30,32 @@
         {
             this.listaOpcionePanel = new System.Windows.Forms.Panel();
             this.etiquetaCambiarU = new System.Windows.Forms.Panel();
-            this.comprimirButton = new System.Windows.Forms.Button();
             this.etiquetaHistorial = new System.Windows.Forms.Panel();
             this.etiquetaInicio = new System.Windows.Forms.Panel();
-            this.cerrarButton = new System.Windows.Forms.Button();
-            this.historialButton = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.usuarioLabel = new System.Windows.Forms.Label();
-            this.inicioButton = new System.Windows.Forms.Button();
             this.logoPanel = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.cabezaPanel = new System.Windows.Forms.Panel();
             this.tituloLabel = new System.Windows.Forms.Label();
             this.closeAppButton = new System.Windows.Forms.Button();
             this.cuerpoPanel = new System.Windows.Forms.Panel();
+            this.comprimirButton = new System.Windows.Forms.Button();
+            this.cerrarButton = new System.Windows.Forms.Button();
+            this.historialButton = new System.Windows.Forms.Button();
             this.userPictureBox = new System.Windows.Forms.PictureBox();
+            this.inicioButton = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.listaOpcionePanel.SuspendLayout();
             this.panel1.SuspendLayout();
             this.logoPanel.SuspendLayout();
             this.cabezaPanel.SuspendLayout();
+            this.cuerpoPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.userPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // listaOpcionePanel
@@ -72,7 +76,6 @@
             this.listaOpcionePanel.Name = "listaOpcionePanel";
             this.listaOpcionePanel.Size = new System.Drawing.Size(52, 622);
             this.listaOpcionePanel.TabIndex = 0;
-            this.listaOpcionePanel.Paint += new System.Windows.Forms.PaintEventHandler(this.ListaOpcionePanel_Paint);
             // 
             // etiquetaCambiarU
             // 
@@ -81,16 +84,6 @@
             this.etiquetaCambiarU.Name = "etiquetaCambiarU";
             this.etiquetaCambiarU.Size = new System.Drawing.Size(10, 64);
             this.etiquetaCambiarU.TabIndex = 2;
-            // 
-            // comprimirButton
-            // 
-            this.comprimirButton.Location = new System.Drawing.Point(3, 433);
-            this.comprimirButton.Name = "comprimirButton";
-            this.comprimirButton.Size = new System.Drawing.Size(32, 23);
-            this.comprimirButton.TabIndex = 1;
-            this.comprimirButton.Text = "-";
-            this.comprimirButton.UseVisualStyleBackColor = true;
-            this.comprimirButton.Click += new System.EventHandler(this.ComprimirButton_Click);
             // 
             // etiquetaHistorial
             // 
@@ -107,36 +100,7 @@
             this.etiquetaInicio.Name = "etiquetaInicio";
             this.etiquetaInicio.Size = new System.Drawing.Size(10, 47);
             this.etiquetaInicio.TabIndex = 0;
-            // 
-            // cerrarButton
-            // 
-            this.cerrarButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DeepSkyBlue;
-            this.cerrarButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DimGray;
-            this.cerrarButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cerrarButton.Font = new System.Drawing.Font("NewsGoth BT", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cerrarButton.ForeColor = System.Drawing.SystemColors.Control;
-            this.cerrarButton.Location = new System.Drawing.Point(16, 352);
-            this.cerrarButton.Name = "cerrarButton";
-            this.cerrarButton.Size = new System.Drawing.Size(163, 63);
-            this.cerrarButton.TabIndex = 5;
-            this.cerrarButton.Text = "CAMBIAR DE USUARIO";
-            this.cerrarButton.UseVisualStyleBackColor = true;
-            this.cerrarButton.Click += new System.EventHandler(this.CerrarButton_Click);
-            // 
-            // historialButton
-            // 
-            this.historialButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DeepSkyBlue;
-            this.historialButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DimGray;
-            this.historialButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.historialButton.Font = new System.Drawing.Font("NewsGoth BT", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.historialButton.ForeColor = System.Drawing.SystemColors.Control;
-            this.historialButton.Location = new System.Drawing.Point(16, 282);
-            this.historialButton.Name = "historialButton";
-            this.historialButton.Size = new System.Drawing.Size(163, 48);
-            this.historialButton.TabIndex = 4;
-            this.historialButton.Text = "HISTORIAL";
-            this.historialButton.UseVisualStyleBackColor = true;
-            this.historialButton.Click += new System.EventHandler(this.HistorialButton_Click);
+            this.etiquetaInicio.Visible = false;
             // 
             // panel1
             // 
@@ -158,21 +122,6 @@
             this.usuarioLabel.Size = new System.Drawing.Size(98, 25);
             this.usuarioLabel.TabIndex = 3;
             this.usuarioLabel.Text = "@usuario";
-            // 
-            // inicioButton
-            // 
-            this.inicioButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DeepSkyBlue;
-            this.inicioButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DimGray;
-            this.inicioButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.inicioButton.Font = new System.Drawing.Font("NewsGoth BT", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.inicioButton.ForeColor = System.Drawing.SystemColors.Control;
-            this.inicioButton.Location = new System.Drawing.Point(16, 215);
-            this.inicioButton.Name = "inicioButton";
-            this.inicioButton.Size = new System.Drawing.Size(163, 48);
-            this.inicioButton.TabIndex = 2;
-            this.inicioButton.Text = "CUADERNOS";
-            this.inicioButton.UseVisualStyleBackColor = true;
-            this.inicioButton.Click += new System.EventHandler(this.InicioButton_Click);
             // 
             // logoPanel
             // 
@@ -207,7 +156,6 @@
             this.cabezaPanel.Name = "cabezaPanel";
             this.cabezaPanel.Size = new System.Drawing.Size(797, 46);
             this.cabezaPanel.TabIndex = 1;
-            this.cabezaPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.CabezaPanel_Paint);
             this.cabezaPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.CabezaPanel_MouseDown);
             // 
             // tituloLabel
@@ -240,12 +188,61 @@
             // cuerpoPanel
             // 
             this.cuerpoPanel.BackColor = System.Drawing.SystemColors.Control;
+            this.cuerpoPanel.Controls.Add(this.label2);
+            this.cuerpoPanel.Controls.Add(this.pictureBox2);
             this.cuerpoPanel.Font = new System.Drawing.Font("NewsGoth BT", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cuerpoPanel.ForeColor = System.Drawing.SystemColors.GrayText;
             this.cuerpoPanel.Location = new System.Drawing.Point(52, 45);
             this.cuerpoPanel.Name = "cuerpoPanel";
             this.cuerpoPanel.Size = new System.Drawing.Size(800, 575);
             this.cuerpoPanel.TabIndex = 2;
+            // 
+            // comprimirButton
+            // 
+            this.comprimirButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comprimirButton.Image = global::CuadernosDigitales.Properties.Resources.menu;
+            this.comprimirButton.Location = new System.Drawing.Point(15, 439);
+            this.comprimirButton.Name = "comprimirButton";
+            this.comprimirButton.Size = new System.Drawing.Size(32, 23);
+            this.comprimirButton.TabIndex = 1;
+            this.comprimirButton.UseVisualStyleBackColor = true;
+            this.comprimirButton.Click += new System.EventHandler(this.ComprimirButton_Click);
+            // 
+            // cerrarButton
+            // 
+            this.cerrarButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DeepSkyBlue;
+            this.cerrarButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DimGray;
+            this.cerrarButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cerrarButton.Font = new System.Drawing.Font("NewsGoth BT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cerrarButton.ForeColor = System.Drawing.SystemColors.Control;
+            this.cerrarButton.Image = global::CuadernosDigitales.Properties.Resources.refresh;
+            this.cerrarButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.cerrarButton.Location = new System.Drawing.Point(16, 352);
+            this.cerrarButton.Name = "cerrarButton";
+            this.cerrarButton.Size = new System.Drawing.Size(163, 63);
+            this.cerrarButton.TabIndex = 5;
+            this.cerrarButton.Text = "CERRAR SESION";
+            this.cerrarButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.cerrarButton.UseVisualStyleBackColor = true;
+            this.cerrarButton.Click += new System.EventHandler(this.CerrarButton_Click);
+            // 
+            // historialButton
+            // 
+            this.historialButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DeepSkyBlue;
+            this.historialButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DimGray;
+            this.historialButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.historialButton.Font = new System.Drawing.Font("NewsGoth BT", 17F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.historialButton.ForeColor = System.Drawing.SystemColors.Control;
+            this.historialButton.Image = global::CuadernosDigitales.Properties.Resources.history__1_;
+            this.historialButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.historialButton.Location = new System.Drawing.Point(16, 282);
+            this.historialButton.Name = "historialButton";
+            this.historialButton.Size = new System.Drawing.Size(163, 48);
+            this.historialButton.TabIndex = 4;
+            this.historialButton.Text = "HISTORIAL";
+            this.historialButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.historialButton.UseVisualStyleBackColor = true;
+            this.historialButton.Click += new System.EventHandler(this.HistorialButton_Click);
             // 
             // userPictureBox
             // 
@@ -257,6 +254,24 @@
             this.userPictureBox.TabStop = false;
             this.userPictureBox.Visible = false;
             // 
+            // inicioButton
+            // 
+            this.inicioButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DeepSkyBlue;
+            this.inicioButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DimGray;
+            this.inicioButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.inicioButton.Font = new System.Drawing.Font("NewsGoth BT", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.inicioButton.ForeColor = System.Drawing.SystemColors.Control;
+            this.inicioButton.Image = global::CuadernosDigitales.Properties.Resources.books_stack_of_three__1_;
+            this.inicioButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.inicioButton.Location = new System.Drawing.Point(16, 215);
+            this.inicioButton.Name = "inicioButton";
+            this.inicioButton.Size = new System.Drawing.Size(163, 48);
+            this.inicioButton.TabIndex = 2;
+            this.inicioButton.Text = "CUADERNOS";
+            this.inicioButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.inicioButton.UseVisualStyleBackColor = true;
+            this.inicioButton.Click += new System.EventHandler(this.InicioButton_Click);
+            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::CuadernosDigitales.Properties.Resources.LogoBlanco2;
@@ -265,6 +280,27 @@
             this.pictureBox1.Size = new System.Drawing.Size(47, 45);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::CuadernosDigitales.Properties.Resources.azul1;
+            this.pictureBox2.Location = new System.Drawing.Point(345, 159);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(107, 114);
+            this.pictureBox2.TabIndex = 0;
+            this.pictureBox2.TabStop = false;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label2.Font = new System.Drawing.Font("Bebas Neue Regular", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label2.Location = new System.Drawing.Point(334, 289);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(128, 38);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "NOTEBOOKS";
             // 
             // CuadernosInicio
             // 
@@ -287,8 +323,11 @@
             this.logoPanel.PerformLayout();
             this.cabezaPanel.ResumeLayout(false);
             this.cabezaPanel.PerformLayout();
+            this.cuerpoPanel.ResumeLayout(false);
+            this.cuerpoPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.userPictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -313,6 +352,8 @@
         private System.Windows.Forms.PictureBox userPictureBox;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Label label2;
     }
 }
 

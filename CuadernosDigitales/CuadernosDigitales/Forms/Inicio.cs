@@ -65,8 +65,7 @@ namespace CuadernosDigitales.Forms
                 getPicYCuadernoSeleccionado(sender, e);
                 AbrirForm<NotasMenu>();
             }
-            
- 
+
         }
 
         private void AbrirForm<MiForm>() where MiForm : Form, new()
@@ -108,9 +107,18 @@ namespace CuadernosDigitales.Forms
         private void MostrarCuadernoEnPantalla(Cuaderno cuaderno)
         {
             UCCuadernoDigital cuadernoDigital = new UCCuadernoDigital(this);
-            cuadernoDigital.nombreDeCuaderno = cuaderno.Nombre;
+          //  cuadernoDigital.nombreDeCuaderno = cuaderno.Nombre;
             cuadernoDigital.picture = cuaderno.Imagen;
             cuadernoDigital.namePicture = cuaderno.Nombre;
+            cuadernoDigital.nombreCuadernoRich.Text = cuaderno.Nombre;
+            cuadernoDigital.nombreCuadernoRich.SelectionAlignment = HorizontalAlignment.Center;
+            cuadernoDigital.nombreCuadernoRich.Visible = true;
+            if (buscando)
+            {
+                cuadernoDigital.nombreCuadernoRich.SelectionStart = cuadernoDigital.nombreCuadernoRich.Find(buscarTextBox.Text);
+                cuadernoDigital.nombreCuadernoRich.SelectionLength = (buscarTextBox.Text).Length;
+                cuadernoDigital.nombreCuadernoRich.SelectionFont = new Font("NewsGoth BT", 12F, FontStyle.Bold);
+            }
             cuadernosContainer.Controls.Add(cuadernoDigital);
         }
 

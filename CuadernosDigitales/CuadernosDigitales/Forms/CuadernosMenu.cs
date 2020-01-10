@@ -22,9 +22,13 @@ namespace CuadernosDigitales
             InitializeComponent();
             Ingresar ingresar = new Ingresar();
             ingresar.ShowDialog();
-            this.Show();
-            usuarioLabel.Text = "@"+usuarioActual.nombre;
+            if(ingresar.resultado == DialogResult.Yes)
+            {
+                this.Show();
+                usuarioLabel.Text = "@" + usuarioActual.nombre;
+            }
         }
+
 
     
 
@@ -82,8 +86,6 @@ namespace CuadernosDigitales
         {
             if (listaOpcionePanel.Width == 52)
             {
-                //cuerpoPanel.Location = new Point(189, 46);
-                // cuerpoPanel.Width = 660;
                 userPictureBox.Visible = true;
                 listaOpcionePanel.Width = 188;
                 listaOpcionePanel.BorderStyle = BorderStyle.FixedSingle;
@@ -91,8 +93,7 @@ namespace CuadernosDigitales
             }
             else
             {
-                //cuerpoPanel.Location = new Point(61, 46);
-               // cuerpoPanel.Width = 796;
+
                 listaOpcionePanel.Width = 52;
                 userPictureBox.Visible = false;
                 listaOpcionePanel.BorderStyle = BorderStyle.None;
@@ -104,9 +105,7 @@ namespace CuadernosDigitales
         {
             ReleaseCapture();
             SendMessage(this.Handle, 0x112,0xf012,0);
-        }
-
-       
+        }       
 
         private void InicioButton_Click(object sender, EventArgs e)
         {
@@ -148,23 +147,11 @@ namespace CuadernosDigitales
 
         private void CuadernosInicio_Load(object sender, EventArgs e)
         {
-            etiquetaInicio.Visible = true;
+            etiquetaInicio.Visible = false ;
             etiquetaHistorial.Visible = false;
             etiquetaCambiarU.Visible = false;
-
-
         }
 
-        private void CabezaPanel_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void ListaOpcionePanel_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-      
+       
     }
 }

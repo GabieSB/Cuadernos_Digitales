@@ -18,6 +18,7 @@ namespace CuadernosDigitales.Forms
         public DialogResult cuadernoCreado;
         private TextBox[] categoriasTexBox;
         public static Bitmap colorSeleccionado;
+        ErrorProvider error = new ErrorProvider();
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
@@ -145,10 +146,7 @@ namespace CuadernosDigitales.Forms
 
         private void CrearCuadernoButton_Click(object sender, EventArgs e)
         {
-            cuaderno.Nombre = nombreCuadernoTextBox.Text;
-            cuaderno.Color = colorSeleccionadoPanel.BackColor;
-            cuaderno.Imagen = colorSeleccionado;
-           
+
             for (int i = 0; i < 9; i++)
             {
                 if (categoriasTexBox[i].Text.Length != 0)
@@ -158,8 +156,24 @@ namespace CuadernosDigitales.Forms
                     cuaderno.agregarCategoria(categoria1);
                 }
             }
-            cuadernoCreado = DialogResult.Yes;
-            this.Close();
+            if (nombreCuadernoTextBox.Text.Length == 0)
+            {
+                error.SetError(nombreCuadernoTextBox, "El cuaderno requiere un nombre");
+            }
+            else if (cuaderno.getListaDeCategorias().Count == 0)
+            {
+                error.SetError(flowLayoutPanel1, "El cuaderno requiere al menos una categoria");
+            }else if(nombreCuadernoTextBox.Text.Length != 0 && cuaderno.getListaDeCategorias().Count != 0)
+            {
+                cuaderno.Nombre = nombreCuadernoTextBox.Text;
+                cuaderno.Color = colorSeleccionadoPanel.BackColor;
+                cuaderno.Imagen = colorSeleccionado;
+
+
+                cuadernoCreado = DialogResult.Yes;
+                this.Close();
+            }
+           
         }
 
     }
