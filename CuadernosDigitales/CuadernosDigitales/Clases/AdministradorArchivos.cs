@@ -53,7 +53,7 @@ namespace CuadernosDigitales.Clases
             {
                 Usuario usuario = new Usuario();
                 usuario.Nombre = user[0];
-                usuario.Contraseña = Encriptacion.DesencriptarString(user[1], userPassword) ;
+                usuario.Contraseña = user[1];
                 usuarios.Add(usuario);
             }
             return usuarios;

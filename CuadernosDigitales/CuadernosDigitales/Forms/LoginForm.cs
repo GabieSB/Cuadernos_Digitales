@@ -140,17 +140,7 @@ namespace CuadernosDigitales.Forms
         {
             if (administrador.getUsuariosRegistrados().Count > 0)
             {
-                if (Usuarios.Count > 0)
-                {
-                    for (int i = 0; i < administrador.getUsuariosRegistrados().Count; i++)
-                    {
-                        Usuarios.Add((administrador.getUsuariosRegistrados())[i]);
-                    }
-                }
-                else
-                {
-                    Usuarios = administrador.getUsuariosRegistrados();
-                }
+                Usuarios = administrador.getUsuariosRegistrados();
             }
         }
 
