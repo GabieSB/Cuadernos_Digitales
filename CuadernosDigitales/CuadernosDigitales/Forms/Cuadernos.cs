@@ -113,7 +113,7 @@ namespace CuadernosDigitales.Forms
 
             if (nuevoCuaderno.cuadernoCreado == DialogResult.Yes)
             {
-                ArchivoManager archivoManager = new ArchivoManager();
+                ArchivoHistorial archivoManager = new ArchivoHistorial();
                 CargarInformacionActividadUsuario(archivoManager, "Presionar el boton de crear nuevo cuaderno", $"El usuario {CuadernosInicio.UsuariosEstaticos[CuadernosInicio.IndiceUsuarioEstatico].Nombre} creo un nuevo cuaderno", "Nuevo Cuaderno", cuadernos.Count);
                 CrearHistorialCreacionCuaderno(archivoManager);
 
@@ -171,9 +171,9 @@ namespace CuadernosDigitales.Forms
             DialogResult resultado =  MessageBox.Show("¿Esta seguro de querer eliminar el cuaderno: "+CuadernoSeleccionado.Nombre+"?", "Alerta",MessageBoxButtons.YesNoCancel);
             if(resultado == DialogResult.Yes)
             {
-                ArchivoManager archivoManager = new ArchivoManager();
-                CargarInformacionActividadUsuario(archivoManager, "Presionar el boton de Eliminar Cuaderno", $"El usuario {CuadernosInicio.UsuariosEstaticos[CuadernosInicio.IndiceUsuarioEstatico].Nombre} elimino un cuaderno.", "Cuaderno", IndiceCuaderno);
-                CrearHistorialVisitaFormulario(archivoManager);
+                ArchivoHistorial archivoManager = new ArchivoHistorial();
+                CargarInformacionActividadUsuario(archivoManager, "Presionar el boton de Eliminar Cuaderno", $"El usuario {CuadernosInicio.UsuariosEstaticos[CuadernosInicio.IndiceUsuarioEstatico].Nombre} elimino un cuaderno.", "Cuadernos", IndiceCuaderno);
+                CrearHistorialEliminarCuaderno(archivoManager);
 
                 cuadernos.Remove(CuadernoSeleccionado);
                 cuadernosContainer.Controls.Clear();
@@ -236,7 +236,7 @@ namespace CuadernosDigitales.Forms
                 ErrorProviderFiltro.SetError(FiltroComboBox, "Debe ingresar lo que desea buscar");
             }
 
-            ArchivoManager archivoManager = new ArchivoManager();
+            ArchivoHistorial archivoManager = new ArchivoHistorial();
             CargarInformacionActividadUsuario(archivoManager, "Se hizo una búsqueda", $"El usuario {CuadernosInicio.UsuariosEstaticos[CuadernosInicio.IndiceUsuarioEstatico].Nombre} hizo una búsqueda de uno o varios Cuadernos.", "Cuadernos", 0);
             CrearHistorialBusqueda(archivoManager);
         }
@@ -245,7 +245,7 @@ namespace CuadernosDigitales.Forms
         {
 
         }
-        private void CrearHistorialBusqueda(ArchivoManager archivoManager)
+        private void CrearHistorialBusqueda(ArchivoHistorial archivoManager)
         {
             try
             {
@@ -256,11 +256,11 @@ namespace CuadernosDigitales.Forms
                 MessageBox.Show($"Se produjo el siguiente error: {exception}");
             }
         }
-        private void CargarInformacionActividadUsuario(ArchivoManager archivoManager, String accion, String informacionAdicional, string formulario, int objeto)
+        private void CargarInformacionActividadUsuario(ArchivoHistorial archivoManager, String accion, String informacionAdicional, string formulario, int objeto)
         {
             archivoManager.Historial = new Historial(DateTime.Now, CuadernosInicio.UsuariosEstaticos[CuadernosInicio.IndiceUsuarioEstatico].Nombre, accion, informacionAdicional, formulario, objeto);
         }
-        private void CrearHistorialVisitaFormulario(ArchivoManager archivoManager)
+        private void CrearHistorialVisitaFormulario(ArchivoHistorial archivoManager)
         {
             try
             {
@@ -271,7 +271,7 @@ namespace CuadernosDigitales.Forms
                 MessageBox.Show($"Se produjo el siguiente error: {exception}");
             }
         }
-        private void CrearHistorialCreacionCuaderno(ArchivoManager archivoManager)
+        private void CrearHistorialCreacionCuaderno(ArchivoHistorial archivoManager)
         {
             try
             {
@@ -279,7 +279,18 @@ namespace CuadernosDigitales.Forms
             }
             catch (Exception exception)
             {
-
+                MessageBox.Show($"Se produjo el siguiente error: {exception}");
+            }
+        }
+        private void CrearHistorialEliminarCuaderno(ArchivoHistorial archivoManager)
+        {
+            try
+            {
+                string nombreNuevoArchivo = archivoManager.CrearHistorialEdicionObjeto(rutaPorDefecto);
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show($"Se produjo el siguiente error: {exception}");
             }
         }
         private void Cuadernos_Load(object sender, EventArgs e)

@@ -130,7 +130,7 @@ namespace CuadernosDigitales.Forms
             if (ContraseñaActualUsuario && NuevaContraseñaUsuario && RepetirNuevaContraseñaUsuario)
             {
                 CuadernosInicio.UsuariosEstaticos[CuadernosInicio.IndiceUsuarioEstatico].Contraseña = Usuario.Contraseña;
-                ArchivoManager archivoManager = new ArchivoManager();
+                ArchivoHistorial archivoManager = new ArchivoHistorial();
                 CargarInformacionActividadUsuario(archivoManager, "Edición de usuario", $"El usuario {CuadernosInicio.UsuariosEstaticos[CuadernosInicio.IndiceUsuarioEstatico].Nombre} edito su contraseña", "Editar Usuario", CuadernosInicio.IndiceUsuarioEstatico);
                 CrearHistorialEdicionUsuario(archivoManager);
                 DialogResult dialogResult = MessageBox.Show("Se edito la contraseña correctamente");
@@ -140,11 +140,11 @@ namespace CuadernosDigitales.Forms
                 DialogResult dialogResult = MessageBox.Show("Datos incorrectos");
             }
         }
-        private void CargarInformacionActividadUsuario(ArchivoManager archivoManager, String accion, String informacionAdicional, string formulario, int objeto)
+        private void CargarInformacionActividadUsuario(ArchivoHistorial archivoManager, String accion, String informacionAdicional, string formulario, int objeto)
         {
             archivoManager.Historial = new Historial(DateTime.Now, CuadernosInicio.UsuariosEstaticos[CuadernosInicio.IndiceUsuarioEstatico].Nombre, accion, informacionAdicional, formulario, objeto);
         }
-        private void CrearHistorialVisitaFormulario(ArchivoManager archivoManager)
+        private void CrearHistorialVisitaFormulario(ArchivoHistorial archivoManager)
         {
             try
             {
@@ -155,7 +155,7 @@ namespace CuadernosDigitales.Forms
                 MessageBox.Show($"Se produjo el siguiente error: {exception}");
             }
         }
-        private void CrearHistorialEdicionUsuario(ArchivoManager archivoManager)
+        private void CrearHistorialEdicionUsuario(ArchivoHistorial archivoManager)
         {
             try
             {

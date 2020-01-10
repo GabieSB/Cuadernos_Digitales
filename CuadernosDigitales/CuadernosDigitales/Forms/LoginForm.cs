@@ -9,11 +9,14 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using CuadernosDigitales.Forms;
+using CuadernosDigitales.Clases;
 
 namespace CuadernosDigitales.Forms
 {
     public partial class LoginForm : Form
     {
+        private readonly string rutaPorDefecto = AppDomain.CurrentDomain.BaseDirectory;
+        private AdministradorArchivos administrador;
         public List<Usuario> Usuarios
         {
             get;
@@ -33,6 +36,7 @@ namespace CuadernosDigitales.Forms
         public LoginForm()
         {
             InitializeComponent();
+            administrador = new AdministradorArchivos();
             Usuarios = new List<Usuario>();
             Usuario = new Usuario();
         }
@@ -134,7 +138,20 @@ namespace CuadernosDigitales.Forms
 
         private void LoginForm_Load(object sender, EventArgs e)
         {
-
+            if (administrador.getUsuariosRegistrados().Count > 0)
+            {
+                if (Usuarios.Count > 0)
+                {
+                    for (int i = 0; i < administrador.getUsuariosRegistrados().Count; i++)
+                    {
+                        Usuarios.Add((administrador.getUsuariosRegistrados())[i]);
+                    }
+                }
+                else
+                {
+                    Usuarios = administrador.getUsuariosRegistrados();
+                }
+            }
         }
 
         private void cabezaPanel_Paint(object sender, PaintEventArgs e)

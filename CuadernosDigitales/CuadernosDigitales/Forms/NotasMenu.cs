@@ -45,7 +45,7 @@ namespace CuadernosDigitales.Forms
             this.Controls.Add(nuevaNota);
             this.Tag = nuevaNota;
             nuevaNota.BringToFront();
-            ArchivoManager archivoManagerHistorial = new ArchivoManager();
+            ArchivoHistorial archivoManagerHistorial = new ArchivoHistorial();
             CargarInformacionActividadUsuario(archivoManagerHistorial, "Presionar el boton de Nueva Nota", $"El usuario {CuadernosInicio.UsuariosEstaticos[CuadernosInicio.IndiceUsuarioEstatico].Nombre} ingreso al formulario de Nueva Nota", "Nueva Nota", 0);
             CrearHistorialVisitaFormulario(archivoManagerHistorial);
 
@@ -54,7 +54,7 @@ namespace CuadernosDigitales.Forms
         }
         public  void NuevaNotaGuardada()
         {
-            ArchivoManager archivoManager = new ArchivoManager();
+            ArchivoHistorial archivoManager = new ArchivoHistorial();
             CargarInformacionActividadUsuario(archivoManager, "Presionar el boton de crear nueva nota", $"El usuario {CuadernosInicio.UsuariosEstaticos[CuadernosInicio.IndiceUsuarioEstatico].Nombre} creo una nueva nota", "Notas Menu", Cuadernos.CuadernoSeleccionado.getListaDeNotas().Count());
             CrearHistorialCreacionNota(archivoManager);
 
@@ -85,7 +85,7 @@ namespace CuadernosDigitales.Forms
                         }
                     }
                 }
-                ArchivoManager archivoManager = new ArchivoManager();
+                ArchivoHistorial archivoManager = new ArchivoHistorial();
                 CargarInformacionActividadUsuario(archivoManager, "Edición de nota", $"El usuario {CuadernosInicio.UsuariosEstaticos[CuadernosInicio.IndiceUsuarioEstatico].Nombre} edito una nota", "Notas Menu", numeroNota);
                 CrearHistorialCreacionNota(archivoManager);
                 Cuadernos.CuadernoSeleccionado.ModificarNota(numeroNota, notaNueva);
@@ -179,7 +179,7 @@ namespace CuadernosDigitales.Forms
             }
             else if(e.Button == MouseButtons.Left && sePuedeEditarNota)
             {
-                ArchivoManager archivoManager = new ArchivoManager();
+                ArchivoHistorial archivoManager = new ArchivoHistorial();
                 CargarInformacionActividadUsuario(archivoManager, "Presionar una nota", $"El usuario {CuadernosInicio.UsuariosEstaticos[CuadernosInicio.IndiceUsuarioEstatico].Nombre} ingreso al formulario de Nueva Nota para una posible edición de una nota.", "Nueva Nota", IndiceNota);
                 CrearHistorialVisitaFormulario(archivoManager);
 
@@ -268,7 +268,7 @@ namespace CuadernosDigitales.Forms
 
                 ErrorProviderFiltro.SetError(FiltroComboBox, "Debe ingresar lo que desea buscar");
             }
-            ArchivoManager archivoManager = new ArchivoManager();
+            ArchivoHistorial archivoManager = new ArchivoHistorial();
             CargarInformacionActividadUsuario(archivoManager, "Se hizo una búsqueda", $"El usuario {CuadernosInicio.UsuariosEstaticos[CuadernosInicio.IndiceUsuarioEstatico].Nombre} hizo una búsqueda de una o varias notas.", "Notas Menu", 0);
             CrearHistorialBusqueda(archivoManager);
         }
@@ -288,7 +288,7 @@ namespace CuadernosDigitales.Forms
 
         private void VerOcultasButton_Click(object sender, EventArgs e)
         {
-            ArchivoManager archivoManagerHistorial = new ArchivoManager();
+            ArchivoHistorial archivoManagerHistorial = new ArchivoHistorial();
             CargarInformacionActividadUsuario(archivoManagerHistorial, "Presionar el boton de Ver Ocultas", $"El usuario {CuadernosInicio.UsuariosEstaticos[CuadernosInicio.IndiceUsuarioEstatico].Nombre} ingreso al formulario de Notas Ocultas", "Notas Ocultas", 0);
             CrearHistorialVisitaFormulario(archivoManagerHistorial);
 
@@ -314,7 +314,7 @@ namespace CuadernosDigitales.Forms
 
         private void EliminarButton_Click(object sender, EventArgs e)
         {
-            ArchivoManager archivoManager = new ArchivoManager();
+            ArchivoHistorial archivoManager = new ArchivoHistorial();
             CargarInformacionActividadUsuario(archivoManager, "Se elimino una nota", $"El usuario {CuadernosInicio.UsuariosEstaticos[CuadernosInicio.IndiceUsuarioEstatico].Nombre} elimino una nota.", "Notas Menu", IndiceNota);
             CrearHistorialEliminarNota(archivoManager);
 
@@ -347,11 +347,11 @@ namespace CuadernosDigitales.Forms
                 //MessageBox.Show(c.Nombre);
             }
 
-            ArchivoManager archivoManager = new ArchivoManager();
+            ArchivoHistorial archivoManager = new ArchivoHistorial();
             CargarInformacionActividadUsuario(archivoManager, "Presionar un cuaderno", $"El usuario {CuadernosInicio.UsuariosEstaticos[CuadernosInicio.IndiceUsuarioEstatico].Nombre} ingreso al formulario de Notas Menu", "Notas Menu", 0);
             CrearHistorialVisitaFormulario(archivoManager);
         }
-        private void CrearHistorialCreacionNota(ArchivoManager archivoManager)
+        private void CrearHistorialCreacionNota(ArchivoHistorial archivoManager)
         {
             try
             {
@@ -359,14 +359,14 @@ namespace CuadernosDigitales.Forms
             }
             catch (Exception exception)
             {
-
+                MessageBox.Show($"Se produjo el siguiente error: {exception}");
             }
         }
-        private void CargarInformacionActividadUsuario(ArchivoManager archivoManager, String accion, String informacionAdicional, string formulario, int objeto)
+        private void CargarInformacionActividadUsuario(ArchivoHistorial archivoManager, String accion, String informacionAdicional, string formulario, int objeto)
         {
             archivoManager.Historial = new Historial(DateTime.Now, CuadernosInicio.UsuariosEstaticos[CuadernosInicio.IndiceUsuarioEstatico].Nombre, accion, informacionAdicional, formulario, objeto);
         }
-        private void CrearHistorialVisitaFormulario(ArchivoManager archivoManager)
+        private void CrearHistorialVisitaFormulario(ArchivoHistorial archivoManager)
         {
             try
             {
@@ -374,10 +374,10 @@ namespace CuadernosDigitales.Forms
             }
             catch (Exception exception)
             {
-
+                MessageBox.Show($"Se produjo el siguiente error: {exception}");
             }
         }
-        private void CrearHistorialBusqueda(ArchivoManager archivoManager)
+        private void CrearHistorialBusqueda(ArchivoHistorial archivoManager)
         {
             try
             {
@@ -385,10 +385,10 @@ namespace CuadernosDigitales.Forms
             }
             catch (Exception exception)
             {
-
+                MessageBox.Show($"Se produjo el siguiente error: {exception}");
             }
         }
-        private void CrearHistorialEliminarNota(ArchivoManager archivoManager)
+        private void CrearHistorialEliminarNota(ArchivoHistorial archivoManager)
         {
             try
             {
@@ -396,7 +396,7 @@ namespace CuadernosDigitales.Forms
             }
             catch (Exception exception)
             {
-
+                MessageBox.Show($"Se produjo el siguiente error: {exception}");
             }
         }
 

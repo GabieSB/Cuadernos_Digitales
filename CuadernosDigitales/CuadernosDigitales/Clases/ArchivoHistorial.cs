@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 
 namespace CuadernosDigitales
 {
-    public class ArchivoManager
+    public class ArchivoHistorial
     {
          
         public Historial Historial { get; set; }
 
-        public ArchivoManager()
+        public ArchivoHistorial()
         {
             Historial = new Historial();
         }

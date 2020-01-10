@@ -164,11 +164,11 @@ namespace CuadernosDigitales.Forms
             cuadernoCreado = DialogResult.Yes;
             this.Close();
         }
-        private void CargarInformacionActividadUsuario(ArchivoManager archivoManager, String accion, String informacionAdicional, string formulario, int objeto)
+        private void CargarInformacionActividadUsuario(ArchivoHistorial archivoManager, String accion, String informacionAdicional, string formulario, int objeto)
         {
             archivoManager.Historial = new Historial(DateTime.Now, CuadernosInicio.UsuariosEstaticos[CuadernosInicio.IndiceUsuarioEstatico].Nombre, accion, informacionAdicional, formulario, objeto);
         }
-        private void CrearHistorialVisitaFormulario(ArchivoManager archivoManager)
+        private void CrearHistorialVisitaFormulario(ArchivoHistorial archivoManager)
         {
             try
             {
@@ -176,10 +176,10 @@ namespace CuadernosDigitales.Forms
             }
             catch (Exception exception)
             {
-
+                MessageBox.Show($"Se produjo el siguiente error: {exception}");
             }
         }
-        private void CrearHistorialCreacionCuaderno(ArchivoManager archivoManager)
+        private void CrearHistorialCreacionCuaderno(ArchivoHistorial archivoManager)
         {
             try
             {
@@ -187,13 +187,13 @@ namespace CuadernosDigitales.Forms
             }
             catch (Exception exception)
             {
-
+                MessageBox.Show($"Se produjo el siguiente error: {exception}");
             }
         }
 
         private void NuevoCuaderno_Load(object sender, EventArgs e)
         {
-            ArchivoManager archivoManager = new ArchivoManager();
+            ArchivoHistorial archivoManager = new ArchivoHistorial();
             CargarInformacionActividadUsuario(archivoManager, "Presionar el boton de Nuevo Cuaderno", $"El usuario {CuadernosInicio.UsuariosEstaticos[CuadernosInicio.IndiceUsuarioEstatico].Nombre} ingreso al formulario de Nuevo Cuaderno", "Nuevo Cuaderno", 0);
             CrearHistorialVisitaFormulario(archivoManager);
         }

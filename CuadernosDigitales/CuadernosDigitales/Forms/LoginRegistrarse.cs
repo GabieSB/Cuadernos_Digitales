@@ -9,11 +9,14 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using CuadernosDigitales.Forms;
+using CuadernosDigitales.Clases;
 
 namespace CuadernosDigitales.Forms
 {
     public partial class LoginRegistrarse : Form
     {
+        private readonly string rutaPorDefecto = AppDomain.CurrentDomain.BaseDirectory;
+        private AdministradorArchivos administrador;
         public List<Usuario> Usuarios
         {
             get;
@@ -42,6 +45,7 @@ namespace CuadernosDigitales.Forms
         public LoginRegistrarse()
         {
             InitializeComponent();
+            administrador = new AdministradorArchivos();
             Usuarios = new List<Usuario>();
             Usuario = new Usuario();
 
@@ -76,6 +80,7 @@ namespace CuadernosDigitales.Forms
         {
             if(NombreUsuario && ContraseñaUsuario && RepetirContraseñaUsuario)
             {
+                administrador.GuardarUsuario(rutaPorDefecto, Usuario);
                 Usuarios.Add(Usuario);
                 MessageBox.Show("Se registro el nuevo usuario exitosamente");
                 this.Close();

@@ -280,11 +280,11 @@ namespace CuadernosDigitales.Forms
         {
 
         }
-        private void CargarInformacionActividadUsuario(ArchivoManager archivoManager, String accion, String informacionAdicional, string formulario, int objeto)
+        private void CargarInformacionActividadUsuario(ArchivoHistorial archivoManager, String accion, String informacionAdicional, string formulario, int objeto)
         {
             archivoManager.Historial = new Historial(DateTime.Now, CuadernosInicio.UsuariosEstaticos[CuadernosInicio.IndiceUsuarioEstatico].Nombre, accion, informacionAdicional, formulario, objeto);
         }
-        private void CrearHistorialVisitaFormulario(ArchivoManager archivoManager)
+        private void CrearHistorialVisitaFormulario(ArchivoHistorial archivoManager)
         {
             try
             {
@@ -292,7 +292,7 @@ namespace CuadernosDigitales.Forms
             }
             catch (Exception exception)
             {
-
+                MessageBox.Show($"Se produjo el siguiente error: {exception}");
             }
         }
 

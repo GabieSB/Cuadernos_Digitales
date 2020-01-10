@@ -47,7 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Clases\AdministradorArchivos.cs" />
-    <Compile Include="Clases\ArchivoManager.cs" />
+    <Compile Include="Clases\ArchivoHistorial.cs" />
     <Compile Include="Clases\Categoria.cs" />
     <Compile Include="Clases\Cuaderno.cs" />
     <Compile Include="Clases\Encriptacion.cs" />

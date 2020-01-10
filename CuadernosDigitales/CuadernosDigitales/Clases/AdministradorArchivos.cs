@@ -11,16 +11,17 @@ namespace CuadernosDigitales.Clases
     {
         public List<Usuario> usuarios { get; set; }
         string pathUsuarios;
+        private readonly string userPassword = "El20Examen20Estaba20Faci20";
         public AdministradorArchivos()
         {
             usuarios = new List<Usuario>();
             pathUsuarios = "usuarios.csv";
         }
-    /*    public void GuardarUsuario(string rutaBase, Usuario usuario)
+        public void GuardarUsuario(string rutaBase, Usuario usuario)
         {
            
             StreamWriter writer = File.AppendText(@pathUsuarios);
-            var line = $"{usuario.nombre},{usuario.contrasena}";
+            var line = $"{usuario.Nombre},{usuario.Contraseña}";
             writer.WriteLine(line);
             writer.Close();
 
@@ -51,11 +52,11 @@ namespace CuadernosDigitales.Clases
             foreach(string[] user in listUserString)
             {
                 Usuario usuario = new Usuario();
-                usuario.nombre = user[0];
-                usuario.contrasena = user[1];
+                usuario.Nombre = user[0];
+                usuario.Contraseña = Encriptacion.DesencriptarString(user[1], userPassword) ;
                 usuarios.Add(usuario);
             }
             return usuarios;
-        }*/
+        }
     }
 }

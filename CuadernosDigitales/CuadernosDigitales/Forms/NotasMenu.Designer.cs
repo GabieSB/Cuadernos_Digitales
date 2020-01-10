@@ -199,7 +199,7 @@
             this.verNotasButton.ForeColor = System.Drawing.Color.LightGray;
             this.verNotasButton.Location = new System.Drawing.Point(13, 49);
             this.verNotasButton.Name = "verNotasButton";
-            this.verNotasButton.Size = new System.Drawing.Size(152, 28);
+            this.verNotasButton.Size = new System.Drawing.Size(201, 28);
             this.verNotasButton.TabIndex = 13;
             this.verNotasButton.Text = "VER TODAS LAS NOTAS";
             this.verNotasButton.UseVisualStyleBackColor = false;
