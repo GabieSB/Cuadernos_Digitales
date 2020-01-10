@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CuadernosDigitales.Clases;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,6 +14,10 @@ namespace CuadernosDigitales.Forms
     public partial class EditarUsuario : Form
     {
         private readonly string rutaPorDefecto = AppDomain.CurrentDomain.BaseDirectory;
+
+        private readonly string rutaUsuarios = AppDomain.CurrentDomain.BaseDirectory;
+
+        private AdministradorArchivos administradorUsuarios;
         public Usuario Usuario
         {
             get;
@@ -36,6 +41,8 @@ namespace CuadernosDigitales.Forms
         public EditarUsuario()
         {
             InitializeComponent();
+            administradorUsuarios = new AdministradorArchivos();
+
 
             ContraseñaActualUsuario = false;
             NuevaContraseñaUsuario = false;
@@ -135,6 +142,8 @@ namespace CuadernosDigitales.Forms
                 CrearHistorialEdicionUsuario(archivoManager);
                 DialogResult dialogResult = MessageBox.Show("Se edito la contraseña correctamente");
                 LimpiarTextBoxYErroProvider();
+
+                administradorUsuarios.EditarUsuarios(CuadernosInicio.UsuariosEstaticos, rutaUsuarios);
             }
             else{
                 DialogResult dialogResult = MessageBox.Show("Datos incorrectos");

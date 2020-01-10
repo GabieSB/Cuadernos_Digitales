@@ -138,9 +138,16 @@ namespace CuadernosDigitales.Forms
 
         private void LoginForm_Load(object sender, EventArgs e)
         {
-            if (administrador.getUsuariosRegistrados().Count > 0)
+            try
             {
-                Usuarios = administrador.getUsuariosRegistrados();
+                if (administrador.getUsuariosRegistrados().Count > 0)
+                {
+                    Usuarios = administrador.getUsuariosRegistrados();
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show($"Se produjo el siguiente error: {ex}");
             }
         }
 
