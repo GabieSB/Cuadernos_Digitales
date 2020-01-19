@@ -115,15 +115,8 @@ namespace CuadernosDigitales
             tituloLabel.Text = "INICIO";
             AbrirForm<Inicio>(); 
         }
-       
-        private void InicioButtonAlternative_Click(object sender, EventArgs e)
-        {
-            etiquetaInicio.Visible = true;
-            etiquetaHistorial.Visible = false;
-            etiquetaCambiarU.Visible = false;
-            tituloLabel.Text = "INICIO";
-            MostrarFormEnPanel(new Inicio());
-        }
+      
+        
 
         private void HistorialButton_Click(object sender, EventArgs e)
         {
@@ -131,7 +124,8 @@ namespace CuadernosDigitales
             etiquetaHistorial.Visible = true;
             etiquetaCambiarU.Visible = false;
             tituloLabel.Text = "HISTORIAL";
-           // AbrirForm<NuevaNota>();
+            AbrirForm<Historial>();
+            // AbrirForm<NuevaNota>();
         }
 
         private void CerrarButton_Click(object sender, EventArgs e)

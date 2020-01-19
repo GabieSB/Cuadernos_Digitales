@@ -14,3 +14,4 @@ C:\Users\Asus\Documents\GitHub\Cuadernos_Digitales\CuadernosDigitales\CuadernosD
 C:\Users\Asus\Documents\GitHub\Cuadernos_Digitales\CuadernosDigitales\CuadernosDigitales\obj\Debug\CuadernosDigitales.csprojAssemblyReference.cache
 C:\Users\Asus\Documents\GitHub\Cuadernos_Digitales\CuadernosDigitales\CuadernosDigitales\obj\Debug\CuadernosDigitales.Forms.UCCuadernoDigital.resources
 C:\Users\Asus\Documents\GitHub\Cuadernos_Digitales\CuadernosDigitales\CuadernosDigitales\obj\Debug\CuadernosDigitales.Forms.Ingresar.resources
+C:\Users\Asus\Documents\GitHub\Cuadernos_Digitales\CuadernosDigitales\CuadernosDigitales\obj\Debug\CuadernosDigitales.Forms.Historial.resources

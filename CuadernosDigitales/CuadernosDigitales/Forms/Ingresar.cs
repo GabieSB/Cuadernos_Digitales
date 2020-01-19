@@ -44,7 +44,7 @@ namespace CuadernosDigitales.Forms
             if (usuarioActual != null)
             {
                // passDecencriptada = Encriptacion.DesencriptarString(usuarioActual.contrasena, userPassword);
-                if (contrasenaTextBox.Text == usuarioActual.nombre && usuarioTextBox.Text == usuarioActual.nombre)
+                if (contrasenaTextBox.Text == usuarioActual.contrasena && usuarioTextBox.Text == usuarioActual.nombre)
                 {
                     resultado = new DialogResult();
                     resultado = DialogResult.Yes;

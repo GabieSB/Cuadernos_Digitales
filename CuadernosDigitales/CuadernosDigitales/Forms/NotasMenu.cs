@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CuadernosDigitales.Clases;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -52,7 +53,14 @@ namespace CuadernosDigitales.Forms
             notaNueva = NuevaNota.nota;
             notaNueva.Orden = Inicio.CuadernoSeleccionado.getListaDeNotas().Count;
             Inicio.CuadernoSeleccionado.agregarNota(notaNueva);
-            if(!notaNueva.Privacidad) MostrarNotaEnPantalla(notaNueva);
+            Accion accion = new Accion();
+            accion.Objeto = "NOTA";
+            accion.NombreUsuario = CuadernosInicio.usuarioActual.nombre;
+            accion.Actividad = "Crear";
+            accion.Fecha = DateTime.Now;
+            accion.Descripcion = "Se creo una nueva nota con nombre: " + NuevaNota.nota.Titulo;
+            AdministradorArchivos.GuardarAccion(accion);
+            if (!notaNueva.Privacidad) MostrarNotaEnPantalla(notaNueva);
 
 
         }
@@ -79,7 +87,13 @@ namespace CuadernosDigitales.Forms
                         }
                     }
                 }
-
+                Accion accion = new Accion();
+                accion.Objeto = "NOTA";
+                accion.NombreUsuario = CuadernosInicio.usuarioActual.nombre;
+                accion.Actividad = "Editar";
+                accion.Fecha = DateTime.Now;
+                accion.Descripcion = "Se creo edito nota con nombre: " + notaNueva.Titulo;
+                AdministradorArchivos.GuardarAccion(accion);
                 Inicio.CuadernoSeleccionado.ModificarNota(numeroNota, notaNueva);
             }
         }
@@ -246,6 +260,13 @@ namespace CuadernosDigitales.Forms
                 {
                     MessageBox.Show("No hay resultados de su busqueda", "Informacion");
                 }
+                Accion accion = new Accion();
+                accion.Objeto = "NOTA";
+                accion.NombreUsuario = CuadernosInicio.usuarioActual.nombre;
+                accion.Actividad = "Buscar";
+                accion.Fecha = DateTime.Now;
+                accion.Descripcion = "Se buscaron notas con " + filtroComboBox.SelectedItem.ToString() + " " + buscarCuadernoTextBox.Text;
+                AdministradorArchivos.GuardarAccion(accion);
 
 
             }
@@ -295,15 +316,32 @@ namespace CuadernosDigitales.Forms
                     verOcultasButton.Visible = false;
                     verNotasButton.Visible = true;
                     cargarNotas(notasOcultas, true);
+                    Accion accion = new Accion();
+                    accion.Objeto = "CUADERNO";
+                    accion.NombreUsuario = CuadernosInicio.usuarioActual.nombre;
+                    accion.Actividad = "Ver Notas Ocultas";
+                    accion.Fecha = DateTime.Now;
+                    accion.Descripcion = "Se vieron las notas ocultas del cuaderno " + cuadernoPadre.Nombre;
+                    AdministradorArchivos.GuardarAccion(accion);
+
                 }
                 
             }
+
+            
 
         }
 
         private void EliminarButton_Click(object sender, EventArgs e)
         {
             cuadernoPadre.EliminarNota(notaSeleccionada);
+            Accion accion = new Accion();
+            accion.Objeto = "NOTA";
+            accion.NombreUsuario = CuadernosInicio.usuarioActual.nombre;
+            accion.Actividad = "Eliminar";
+            accion.Fecha = DateTime.Now;
+            accion.Descripcion = "Se creo elimino nota con nombre: " + notaSeleccionada.Titulo;
+            AdministradorArchivos.GuardarAccion(accion);
             VerNotasButton_Click(sender, e);
         }
 

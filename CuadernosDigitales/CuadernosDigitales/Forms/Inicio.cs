@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CuadernosDigitales.Clases;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -99,6 +100,13 @@ namespace CuadernosDigitales.Forms
                 MostrarCuadernoEnPantalla(NuevoCuaderno.cuaderno);
                 NuevoCuaderno.cuaderno.Orden = CuadernosInicio.usuarioActual.cuadernos.Count;
                 cuadernos.Add(NuevoCuaderno.cuaderno);
+                Accion accion = new Accion();
+                accion.Objeto = "CUADERNO";
+                accion.NombreUsuario = CuadernosInicio.usuarioActual.nombre;
+                accion.Actividad = "Crear";
+                accion.Fecha = DateTime.Now;
+                accion.Descripcion = "Se creo un nuevo cuaderno con nombre: " + NuevoCuaderno.cuaderno.Nombre;
+                AdministradorArchivos.GuardarAccion(accion);
                 CuadernosInicio.usuarioActual.AgregarCuaderno(NuevoCuaderno.cuaderno);
             }
            
@@ -161,6 +169,13 @@ namespace CuadernosDigitales.Forms
             if(resultado == DialogResult.Yes)
             {
                 cuadernos.Remove(CuadernoSeleccionado);
+                Accion accion = new Accion();
+                accion.Objeto = "CUADERNO";
+                accion.NombreUsuario = CuadernosInicio.usuarioActual.nombre;
+                accion.Actividad = "Eliminar";
+                accion.Fecha = DateTime.Now;
+                accion.Descripcion = "Se eliminó un nuevo cuaderno con nombre: " + NuevoCuaderno.cuaderno.Nombre;
+                AdministradorArchivos.GuardarAccion(accion);
                 cuadernosContainer.Controls.Clear();
                 cargarCuadernos(cuadernos);
                 AtrasButton_Click(sender, e);
@@ -211,6 +226,13 @@ namespace CuadernosDigitales.Forms
                 {
                     MessageBox.Show("No hay resultados de su busqueda", "Informacion");
                 }
+                Accion accion = new Accion();
+                accion.Objeto = "CUADERNO";
+                accion.NombreUsuario = CuadernosInicio.usuarioActual.nombre;
+                accion.Actividad = "Buscar";
+                accion.Fecha = DateTime.Now;
+                accion.Descripcion = "Se buscaron cuadernos con "+ filtroComboBox.SelectedItem.ToString() + " " +buscarTextBox.Text;
+                AdministradorArchivos.GuardarAccion(accion);
             }
             else if(filtroComboBox.SelectedItem == null)
             {
